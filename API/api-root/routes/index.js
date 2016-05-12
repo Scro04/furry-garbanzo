@@ -13,7 +13,7 @@ router.use('/workshops', require('./workshops.js'));
 
 // default route
 router.get('/', function(req, res) {
-   res.send("Welcome to the TAO-API")
+   res.send("-- Welcome to the TAO-API --")
 });
 
 module.exports = router;
