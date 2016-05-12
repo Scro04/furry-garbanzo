@@ -3,7 +3,7 @@ var winston = require('winston'); // logger
 var logger = new(winston.Logger)({
     transports: [
         new(winston.transports.Console)(),
-        new(winston.transports.File)({filename: 'apiLog.log'})
+        new(winston.transports.File)({filename: '/home/ubuntu/apiLog.log'})
     ]
 });
 
