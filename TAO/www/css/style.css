@@ -1,1 +1,19 @@
-/* Empty. Add your own CSS if you like */
+.tabs {
+    background-color: #b61e3a;
+}
+
+.tab-item .icon {
+    color: #ffffff !important;
+    font-size: 30px !important;
+    height: 30px !important;
+}
+
+ion-tabs.tabs-color-active-positive .tab-item.tab-item-active,
+ion-tabs.tabs-color-active-positive .tab-item.active,
+ion-tabs.tabs-color-active-positive .tab-item.activated {
+    color: white !important;
+}
+
+ion-tabs.tabs-color-active-positive .tab-item {
+    color: white !important;
+}
