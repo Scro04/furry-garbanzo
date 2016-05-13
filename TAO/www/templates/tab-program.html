@@ -1,5 +1,37 @@
+<link href="templates/css/tab-programm.css" rel="stylesheet">
 <ion-view view-title="Kongressprogramm">
-    <ion-content class="padding">
-        <p>Programm</p>
-    </ion-content>
+
+  <ion-nav-buttons side="left">
+    <button class="button homeBtn" ng-click="goHome()">
+      <i class="ion-home"></i>
+    </button>
+  </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+    <button class="button searchBtn" ng-click="search()">
+      <i class="ion-search"></i>
+    </button>
+  </ion-nav-buttons>
+
+  <ion-content>
+    <div class="list" collection-repeat="entry in TEST">
+      {{entry}}
+      <div class="item item-divider dividerLine">
+        Freitag
+      </div>
+      <a class="item programRow" ng-click="goToDetail()">
+        <div class="timeWrapper">
+          09:30 <br> - <br> 09:45
+        </div>
+        <div class="infoWrapper">
+          <div class="programType">VORTRAG</div>
+          <div class="programName">Titel 1 für einen unglaublichen Workshop</div>
+          <div class="programAuthor">Dr. Valentin Pfeiffenberger</div>
+        </div>
+        <div class="detailBox">
+          <i class="ion-chevron-right"></i>
+        </div>
+      </a>
+    </div>
+
+  </ion-content>
 </ion-view>

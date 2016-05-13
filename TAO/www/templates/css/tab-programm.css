@@ -1,0 +1,64 @@
+.homeBtn i, .searchBtn i {
+  font-size: 22px;
+  color: #b61e3a;
+}
+.item-divider {
+  background-color: #b61e3a;
+  color: white;
+}
+.programRow {
+  padding-left: 0px !important;
+  height:94px;
+}
+.dividerLine {
+  color: white;
+  background-color: #b61e3a;
+  font-size: 12px;
+  height:22px;
+  padding: 0px;
+  padding-left: 5px;
+  min-height: 22px;
+}
+.timeWrapper {
+  position: relative;
+  float: left;
+  width: 50px;
+  text-align: center;
+  height:100%;
+  font-size: 12px;
+}
+.programType {
+  color: #b61e3a;
+  text-transform: uppercase;
+  font-weight:500;
+  font-size: 14px;
+
+}
+.programName {
+  font-size: 16px;
+  color:black;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.programAuthor {
+  font-size: 14px;
+  color: darkgray;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.infoWrapper {
+  position: relative;
+  float: left;
+  max-width: 80%;
+  overflow-x: hidden;
+}
+.detailBox {
+  position: relative;
+  float: right;
+  margin-top: 20px;
+  font-size: 25px;
+  color: #b61e3a;
+}
