@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8ff432fc-e05c-4bdf-b59c-aee4c7e03739" name="Default" comment="[AS, CA]&#10;&#10;Set up the basic structure of the app and all basic controller. The tab navigation is also working fine.">
+    <list default="true" id="8ff432fc-e05c-4bdf-b59c-aee4c7e03739" name="Default" comment="[AS, CA]&#10;">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="98d1112f-8e90-4b45-916d-44f8c6aad528" name="Rejected commit: Default" comment="[AS, CA]&#10;&#10;Set up the basic structure of the app and all basic controller. The tab navigation is also working fine.">
@@ -11,6 +11,7 @@
     <ignored path="TAO.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <file path="$PROJECT_DIR$/www/templates/tab-program.html" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,8 +71,8 @@
       <file leaf-file-name="tab-program.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/templates/tab-program.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="35" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
+            <state relative-caret-position="150">
+              <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -492,7 +493,7 @@
       <updated>1462889883561</updated>
       <workItem from="1462889884696" duration="2214000" />
       <workItem from="1462980233205" duration="9000" />
-      <workItem from="1463128988467" duration="441000" />
+      <workItem from="1463128988467" duration="491000" />
     </task>
     <task id="LOCAL-00001" summary="[AS, CA]&#10;&#10;Set up the basic structure of the app and all basic controller. The tab navigation is also working fine.">
       <created>1462893606944</created>
@@ -501,11 +502,18 @@
       <option name="project" value="LOCAL" />
       <updated>1462893606945</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="[AS, CA]&#10;">
+      <created>1463129453257</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1463129453257</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2664000" />
+    <option name="totallyTimeSpent" value="2714000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1349" y="23" width="1211" height="1372" extended-state="0" />
@@ -544,7 +552,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="[AS, CA]&#10;&#10;Set up the basic structure of the app and all basic controller. The tab navigation is also working fine." />
-    <option name="LAST_COMMIT_MESSAGE" value="[AS, CA]&#10;&#10;Set up the basic structure of the app and all basic controller. The tab navigation is also working fine." />
+    <MESSAGE value="[AS, CA]&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="[AS, CA]&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -823,8 +832,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/templates/tab-program.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="35" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
+        <state relative-caret-position="150">
+          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
           <folding />
         </state>
       </provider>
