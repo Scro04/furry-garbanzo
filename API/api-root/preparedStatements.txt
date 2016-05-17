@@ -8,3 +8,15 @@ SELECT * FROM appReferenten JOIN appReferentenBilder USING(id)
 All Workshop with Speaker
 
 SELECT * FROM appWorkshopReferenten JOIN appWorkshops on WorkshopId = appWorkshops.id JOIN appReferenten on ReferentId = appReferenten.id;
+
+
+----------------------------------------------------
+
+All Groups with prices:
+
+SELECT * FROM appPreisGruppen;
+
+SELECT * FROM appPreise WHERE PreisGruppeId = 1;
+
+----------------------------------------------------
+
