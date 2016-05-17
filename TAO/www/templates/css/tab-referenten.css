@@ -11,7 +11,6 @@ a.item.programRow.speaker {
 }
 
 .authorName {
-  text-transform: uppercase;
   font-size: 18px;
 
 }
@@ -33,3 +32,8 @@ a.item.programRow.speaker {
 .noPaddingList {
   padding-top: 0px;
 }
+
+#nachname {
+  text-transform: uppercase;
+}
+
