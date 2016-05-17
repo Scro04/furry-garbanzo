@@ -13,7 +13,8 @@ app.controller('referentenCtrl', function($scope, $state) {
     for (var i = 0; i < 2; i++) {
       var elem = {
         id: i,
-        name: "Dr. Peter Aluani",
+        vorname: "Dr. Peter",
+        nachname: "Aluani",
         country: "Österreich",
         image: "img/icons/partner.png"
       };
