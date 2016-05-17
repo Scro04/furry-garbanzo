@@ -8,7 +8,8 @@ app.controller('programCtrl', function ($scope, $state) {
 
         for (var i = 0; i < 4; i++) {
             var elem = {
-                type: 0,
+                id: i,
+                type: "Vortrag",
                 title: "Titel des Vortrags Nr. 1 - Zusätzlicher Titel",
                 speaker: "Dr. Max Mustermann1",
                 start: "09:00",
@@ -19,7 +20,20 @@ app.controller('programCtrl', function ($scope, $state) {
             $scope.data["Sonntag"].push(elem);
 
         }
-
         console.log($scope.data);
     });
+
+    $scope.goToDetail = function(entry)
+    {
+      var data = {
+        id: entry.id
+      };
+
+      $state.go('tab.courseInfo', data);
+    }
+
+  $scope.goHome = function ()
+  {
+    $state.go('home');
+  }
 });

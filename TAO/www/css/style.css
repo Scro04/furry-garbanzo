@@ -17,3 +17,18 @@ ion-tabs.tabs-color-active-positive .tab-item.activated {
 ion-tabs.tabs-color-active-positive .tab-item {
     color: white !important;
 }
+
+.type0 /* VORTRAG */ {
+  color: #b61e3a;
+}
+.type1 /* WORKSHOP */
+{
+  color: yellow;
+}
+.type2 /* VORKONGRESS */
+{
+  color: green;
+}
+.type3 /* NACHKONGRESS */ {
+  color: orange;
+}

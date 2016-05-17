@@ -1,0 +1,24 @@
+.infoWrapper {
+  float: left;
+}
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.infoDetailChevron {
+  float: right;
+  margin-left: auto;
+  padding-left: 15px;
+  font-size:22px;
+  color: #b61e3a;
+}
+a.item:nth-child(1) {
+  border-top: none;
+}
+
+.info-tab h2, .info-tab p {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}

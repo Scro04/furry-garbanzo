@@ -1,0 +1,51 @@
+<link href="templates/css/courseInfo.css" rel="stylesheet">
+<ion-view view-title="Kongressprogramm">
+
+  <ion-nav-buttons side="left">
+    <button class="button goBack" ng-click="goBack()">
+      <i class="ion-chevron-left"></i>
+    </button>
+  </ion-nav-buttons>
+
+  <ion-content class="courseDetailView">
+
+    <div class="upperSection">
+
+      <span id="courseType" class="fullWidth" ng-class="{type0: entry.type == 'Vortrag', type1: entry.type == 'Workshop', type2: entry.type == 'Vorkongress', type3: entry.type == 'Nachkongress'}">Vortrag</span>
+      <span id="courseTitle" class="fullWidth">Titel des Vortrags Nr.1 für Anfänger</span>
+      <span id="courseSubtitle" class="fullWidth">Zusätzlicher Titel</span>
+
+      <span id="courseTime" class="fullWidth"><i class="ion-clock"></i></span>
+      <span id="courseStart" class="fullWidth">Beginn: 09:00</span>
+      <span id="courseEnd" class="fullWidth">Ende: 09:30</span>
+
+
+      <span id="courseLocation" class="fullWidth"><i class="ion-location"></i></span>
+      <span id="courseLocationText" class="fullWidth">HS 1 - Vorklinik 1.Stock</span>
+      <span id="courseLocationLink" class="fullWidth" ng-click="openRaumplan()">Raumplan</span>
+    </div>
+
+    <div class="speakerSection">
+
+      <div id="speakerImage"><img src="img/icons/people.png"/></div>
+      <div id="speakerName">Dr. Peter Aluani <br> <span id="country">Österreich</span></div>
+      <div id="speakerLinking"><i class="ion-chevron-right"></i></div>
+
+    </div>
+
+    <div class="handoutSection">
+
+      <div id="handoutImage"><img src="img/icons/pdf_logo.jpg"/></div>
+      <div id="handoutInfo" ng-click="openLink()">Handout downloaden</div>
+
+    </div>
+
+    <div class="courseContent">
+
+      <span id="courseHeader" class="fullWidth">Inhalt</span>
+      <span id="courseText" class="fullWidth">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
+
+    </div>
+
+  </ion-content>
+</ion-view>

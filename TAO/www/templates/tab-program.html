@@ -1,6 +1,7 @@
 <link href="templates/css/tab-programm.css" rel="stylesheet">
 <ion-view view-title="Kongressprogramm">
 
+
   <ion-nav-buttons side="left">
     <button class="button homeBtn" ng-click="goHome()">
       <i class="ion-home"></i>
@@ -11,27 +12,24 @@
       <i class="ion-search"></i>
     </button>
   </ion-nav-buttons>
-
   <ion-content>
-    <div class="list" collection-repeat="entry in TEST">
-      {{entry}}
+    <div class="list" ng-repeat="(key, value) in data">
       <div class="item item-divider dividerLine">
-        Freitag
+        {{key}}
       </div>
-      <a class="item programRow" ng-click="goToDetail()">
+      <a class="item programRow" ng-repeat="entry in value" ng-click="goToDetail(entry)">
         <div class="timeWrapper">
-          09:30 <br> - <br> 09:45
+         {{entry.start}} <br> - <br> {{entry.end}}
         </div>
         <div class="infoWrapper">
-          <div class="programType">VORTRAG</div>
-          <div class="programName">Titel 1 für einen unglaublichen Workshop</div>
-          <div class="programAuthor">Dr. Valentin Pfeiffenberger</div>
+          <div class="programType" ng-class="{type0: entry.type == 'Vortrag', type1: entry.type == 'Workshop', type2: entry.type == 'Vorkongress', type3: entry.type == 'Nachkongress'}">{{entry.type}}</div>
+          <div class="programName">{{entry.title}}</div>
+          <div class="programAuthor">{{entry.speaker}}</div>
         </div>
         <div class="detailBox">
           <i class="ion-chevron-right"></i>
         </div>
       </a>
     </div>
-
   </ion-content>
 </ion-view>

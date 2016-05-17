@@ -1,0 +1,35 @@
+.authorImage {
+  float:left;
+  margin-left: 20px;
+}
+.authorImage img {
+  width: 60px;
+}
+
+a.item.programRow.speaker {
+  justify-content: left !important;
+}
+
+.authorName {
+  text-transform: uppercase;
+  font-size: 18px;
+
+}
+.authorCountry {
+  font-size: 16px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  color: darkgray;
+}
+
+.referenten .infoWrapper {
+  padding-left: 20px;
+}
+.referenten .detailBox {
+  margin-left: auto;
+}
+
+.noPaddingList {
+  padding-top: 0px;
+}
