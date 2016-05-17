@@ -16,7 +16,7 @@ app.controller('referentenCtrl', function($scope, $state) {
         vorname: "Dr. Peter",
         nachname: "Aluani",
         country: "Österreich",
-        image: "img/icons/partner.png"
+        image: "img/16.jpg"
       };
       $scope.data["A"].push(elem);
       $scope.data["B"].push(elem);

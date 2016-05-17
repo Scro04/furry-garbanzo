@@ -118,6 +118,15 @@
   text-transform: uppercase;
 }
 
+.speakerEventsWrapper .timeWrapper
+{
+  text-align: center;
+}
+
+div.timeWrapper.leftAligned {
+  padding-right: 40px;
+}
+
 
 @media(min-width: 415px) {
   .informationSection #name {
