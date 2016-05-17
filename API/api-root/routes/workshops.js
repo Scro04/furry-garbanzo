@@ -11,7 +11,10 @@ const logger = require('../helpers/logger.js');
  * @apiSuccess {JSON} All workshops listed
  */
 router.get('/', function(req, res) {
-    res.send("Not yet implemented");
+    connection.connection.query('SELECT * FROM appWorkshops', function(err, rows) {
+       
+        res.send(rows);
+    });
 });
 
 module.exports = router;

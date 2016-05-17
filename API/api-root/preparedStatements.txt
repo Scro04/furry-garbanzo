@@ -1,0 +1,10 @@
+Getting all Speakers with picture
+
+SELECT * FROM appReferenten JOIN appReferentenBilder USING(id)
+
+
+----------------------------------------------------
+
+All Workshop with Speaker
+
+SELECT * FROM appWorkshopReferenten JOIN appWorkshops on WorkshopId = appWorkshops.id JOIN appReferenten on ReferentId = appReferenten.id;
