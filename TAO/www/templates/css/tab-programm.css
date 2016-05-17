@@ -80,3 +80,10 @@
   border-top: none;
 }
 
+.dividerLine {
+  justify-content: left;
+}
+
+.noPaddingTop {
+  padding-top: 0px;
+}
