@@ -21,11 +21,12 @@
 .homeView .actionContainer .row > div {
     width: 100%;
     background-color: #b61e3a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .homeView .actionContainer .row > div .action {
-    margin-top: 50%;
-    transform: translateY(-50%);
     text-align: center;
 }
 
@@ -37,12 +38,12 @@
 }
 
 .homeView .actionContainer .row > div .action .actionImage {
-    margin-bottom: 5%;
+    margin-bottom: 13px;
     height: 50px;
 }
 
 .homeView .actionTitle {
-    font-size: 22px;
+    font-size: 19px;
     font-family: Helvetica;
     font-weight: 100;
     color: white;
@@ -82,10 +83,22 @@
         font-size: 22px;
     }
     .homeView .titleImageContainer #homeTitle {
-        font-size: 30px;
+        font-size: 35px;
+        margin-bottom: 5.5%;
     }
     .homeView .titleImageContainer #homeSubtitle {
-        font-size: 22px;
+        font-size: 29px;
+        line-height: 38px;
+    }
+    .homeView .titleImageContainer img {
+        width: 50%;
+    }
+    .homeView .actionContainer .row > div .action .actionImage {
+        margin-bottom: 17px;
+        height: 62px;
+    }
+    .homeView .actionContainer .row > div .action .actionTitle {
+        font-size: 28px;
     }
 }
 
