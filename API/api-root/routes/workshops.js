@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const logger = require('../helpers/logger.js');
+var connection = require('../helpers/database.js');
 
 /**
  * @api {get} /workshops/ All Workshops
