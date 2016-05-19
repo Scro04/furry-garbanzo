@@ -2,25 +2,25 @@
 <link href="templates/css/tab-referenten.css" rel="stylesheet">
 
 <ion-view view-title="Referenten">
-  <ion-content class="referenten">
+    <ion-content class="referenten">
 
-    <div class="list noPaddingList" ng-repeat="(key, value) in data">
-      <div class="item item-divider dividerLine speaker">
-        {{key}}
-      </div>
-      <a class="item programRow speaker" ng-repeat="entry in value" ng-click="goToSpeakerDetail(entry)">
-        <div class="authorImage">
-         <img ng-src="{{entry.image}}"/>
-        </div>
-        <div class="infoWrapper">
-          <div class="authorName">{{entry.vorname}} <span id="nachname">{{entry.nachname}}</span></div>
-          <div class="authorCountry">{{entry.country}}</div>
-        </div>
-        <div class="detailBox">
-          <i class="ion-chevron-right"></i>
-        </div>
-      </a>
-    </div>
+        <div class="list noPaddingList" ng-repeat="(key, value) in data">
+            <div class="item item-divider dividerLine speaker">
+                {{key}}
+            </div>
+            <a class="item programRow speaker" ng-repeat="entry in value" ng-click="goToSpeakerDetail(entry)">
 
-  </ion-content>
+                <img class="authorImage" ng-src="{{entry.Bild}}" />
+
+                <div class="infoWrapper">
+                    <div class="authorName">{{entry.Vorname}} <span id="nachname">{{entry.Name}}</span></div>
+                    <div class="authorCountry">{{entry.Land}}</div>
+                </div>
+                <div class="detailBox">
+                    <i class="ion-chevron-right"></i>
+                </div>
+            </a>
+        </div>
+
+    </ion-content>
 </ion-view>

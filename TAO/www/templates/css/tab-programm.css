@@ -10,11 +10,12 @@
 }
 
 .programRow {
-    padding-left: 0px !important;
-    height: 94px;
+    padding-left: 8px !important;
+    height: auto;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    padding: 5px;
 }
 
 .dividerLine {
@@ -23,17 +24,18 @@
     font-size: 12px;
     height: 22px;
     padding: 0px;
-    padding-left: 20px;
+    padding-left: 8px;
     min-height: 22px;
 }
 
 .timeWrapper {
     position: relative;
     float: left;
-    width: 50px;
+    width: auto;
     text-align: center;
     height: 100%;
     font-size: 12px;
+    padding-right: 8px;
 }
 
 .programType {
@@ -62,8 +64,9 @@
 .infoWrapper {
     position: relative;
     float: left;
-    max-width: 75%;
+    width: 85%;
     overflow-x: hidden;
+    padding-right: 8px;
 }
 
 .detailBox {
@@ -90,7 +93,7 @@
 }
 
 .dividerLine {
-    justify-content: left;
+    justify-content: flex-start;
 }
 
 .noPaddingTop {

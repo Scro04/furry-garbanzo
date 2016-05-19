@@ -1,11 +1,12 @@
 app.factory('apiFactory', function ($http, $ionicPlatform, ApiEndpoint) {
     var urlBase = "";
-    if (window.cordova) {
-        // running on device/emulator
-        urlBase = 'http://api.codeshaped.at/';
-    } else {
+    //if (window.cordova) {
+    // running on device/emulator
+    urlBase = 'http://api.codeshaped.at/tao/';
+    //} 
+    /*else {
         urlBase = ApiEndpoint.url;
-    }
+    }*/
     var speakers = [];
 
     //$http.defaults.headers.common['Authorization'] = 'M9PEVE8PjvPryiYjKTmLUqeYpLxnAdshfdEr';
@@ -21,14 +22,13 @@ app.factory('apiFactory', function ($http, $ionicPlatform, ApiEndpoint) {
         getAllSpeakers: function () {
             return $http({
                 method: 'GET',
-                url: urlBase + 'speaker',
+                url: urlBase + 'speakers',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
                         //'Authorization': "Basic M9PEVE8PjvPryiYjKTmLUqeYpLxnAdshfdEr"
                 }
             }).then(function (response) {
-                console.log(response);
-                return response;
+                return response.data;
             }, function (error) {
                 console.log(error);
                 return error;

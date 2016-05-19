@@ -3,8 +3,8 @@
   "app_id": "",
   "proxies": [
     {
-      "path": "/api",
-      "proxyUrl": "http://gastroapp.krone.at/api/"
+      "path": "/tao",
+      "proxyUrl": "http://api.codeshaped.at/tao/"
     }
   ]
 }
