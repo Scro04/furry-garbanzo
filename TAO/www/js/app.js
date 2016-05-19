@@ -8,7 +8,7 @@
 var app = angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
 .constant('ApiEndpoint', {
-    url: 'http://192.168.0.11:8100/'
+    url: 'http://192.168.0.18:8100/'
 })
 
 .run(function ($ionicPlatform) {
