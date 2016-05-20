@@ -6,15 +6,7 @@ app.controller('referentenCtrl', function ($scope, $state, apiFactory) {
     $scope.data = {};
 
     apiFactory.getAllSpeakers().then(function (response) {
-        for (var i = 0; i < response.length; i++) {
-            var speaker = response[i];
-            var str = speaker.Name.substr(0, 1);
-            if ($scope.data[str] == undefined) {
-                $scope.data[str] = [];
-            }
-
-            $scope.data[str].push(speaker);
-        }
+        $scope.data = response;
 
     }, function (error) {
         console.log(error);
@@ -44,8 +36,8 @@ app.controller('referentenCtrl', function ($scope, $state, apiFactory) {
 
     $scope.goToSpeakerDetail = function (speaker) {
 
-      $scope.$root.currentSpeaker = speaker;
-      $state.go('tab.speakerDetail');
+        $scope.$root.currentSpeaker = speaker;
+        $state.go('tab.speakerDetail');
     }
 
 })
