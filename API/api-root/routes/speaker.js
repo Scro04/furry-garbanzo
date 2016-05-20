@@ -15,15 +15,15 @@ router.get('/', function(req, res) {
 
     //SELECT * FROM appReferenten JOIN appReferentenBilder USING(id)
     connection.connection.query('SELECT * FROM appReferenten JOIN appReferentenBilder USING(id)', function(err, rows) {
-        console.log(rows.length);
+
         var response = rows;
         //var index = 0;
         function getWorkshopsForSpeaker(index) {
             if(index < response.length)
             {
-                console.log(index)
                 connection.connection.query('SELECT WorkshopId FROM appWorkshopsReferenten WHERE ReferentId = ?', response[index]["id"] , function(err, rows) {
-                    console.log(rows);
+
+                    response[index]["Bild"] = "http://www.tcmkongress.at/de/Referenten/GetFoto/" + response[index]["id"];
                     response[index]["workshopsIDs"] = [];
                     for (var z = 0; z < rows.length; z++)
                     {
