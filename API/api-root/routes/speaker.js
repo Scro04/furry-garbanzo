@@ -14,22 +14,29 @@ var connection = require('../helpers/database.js');
 router.get('/', function(req, res) {
 
     //SELECT * FROM appReferenten JOIN appReferentenBilder USING(id)
-    connection.connection.query('SELECT * FROM appReferenten JOIN appReferentenBilder USING(id)', function(err, rows) {
-
-        var response = rows;
+    connection.connection.query('SELECT * FROM appReferenten JOIN appReferentenBilder USING(id) ORDER BY Name', function(err, rows) {
+        var rowBuffer = rows;
+        var response = {};
         //var index = 0;
         function getWorkshopsForSpeaker(index) {
-            if(index < response.length)
+            if(index < rowBuffer.length)
             {
-                connection.connection.query('SELECT WorkshopId FROM appWorkshopsReferenten WHERE ReferentId = ?', response[index]["id"] , function(err, rows) {
+                connection.connection.query('SELECT WorkshopId FROM appWorkshopsReferenten WHERE ReferentId = ?', rowBuffer[index]["id"] , function(err, rows) {
 
-                    response[index]["Bild"] = "http://www.tcmkongress.at/de/Referenten/GetFoto/" + response[index]["id"];
-                    response[index]["workshopsIDs"] = [];
+                    rowBuffer[index]["Bild"] = "http://www.tcmkongress.at/de/Referenten/GetFoto/" + rowBuffer[index]["id"];
+                    rowBuffer[index]["workshopsIDs"] = [];
                     for (var z = 0; z < rows.length; z++)
                     {
-                        response[index]["workshopsIDs"].push(rows[z]["WorkshopId"]);
+                        rowBuffer[index]["workshopsIDs"].push(rows[z]["WorkshopId"]);
                     }
+                    var tempFirstLetter = rowBuffer[index]["Name"][0];
+                    if(!response[tempFirstLetter])
+                        response[tempFirstLetter] = [];
+                    response[tempFirstLetter].push(rowBuffer[index])
+
+
                     getWorkshopsForSpeaker(++index);
+
                 })
 
             }else {
