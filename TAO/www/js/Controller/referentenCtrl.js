@@ -43,10 +43,9 @@ app.controller('referentenCtrl', function ($scope, $state, apiFactory) {
     });
 
     $scope.goToSpeakerDetail = function (speaker) {
-        var data = {
-            id: speaker.id
-        };
-        $state.go('tab.speakerDetail', data);
+
+      $scope.$root.currentSpeaker = speaker;
+      $state.go('tab.speakerDetail');
     }
 
 })

@@ -96,7 +96,7 @@ var app = angular.module('starter', ['ionic', 'starter.controllers', 'starter.se
             }
         })
         .state('tab.speakerDetail', {
-            url: '/speaker/:id',
+            url: '/speaker',
             views: {
                 'tab-speakerDetail': {
                     templateUrl: 'templates/speakerDetail.html',
