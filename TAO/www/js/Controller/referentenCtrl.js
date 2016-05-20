@@ -15,7 +15,7 @@ app.controller('referentenCtrl', function ($scope, $state, apiFactory) {
 
             $scope.data[str].push(speaker);
         }
-        console.log($scope.data);
+
     }, function (error) {
         console.log(error);
     });
