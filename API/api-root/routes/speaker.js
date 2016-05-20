@@ -15,7 +15,29 @@ router.get('/', function(req, res) {
 
     //SELECT * FROM appReferenten JOIN appReferentenBilder USING(id)
     connection.connection.query('SELECT * FROM appReferenten JOIN appReferentenBilder USING(id)', function(err, rows) {
-        res.send(rows);
+        console.log(rows.length);
+        var response = rows;
+        //var index = 0;
+        function getWorkshopsForSpeaker(index) {
+            if(index < response.length)
+            {
+                console.log(index)
+                connection.connection.query('SELECT WorkshopId FROM appWorkshopsReferenten WHERE ReferentId = ?', response[index]["id"] , function(err, rows) {
+                    console.log(rows);
+                    response[index]["workshopsIDs"] = [];
+                    for (var z = 0; z < rows.length; z++)
+                    {
+                        response[index]["workshopsIDs"].push(rows[z]["WorkshopId"]);
+                    }
+                    getWorkshopsForSpeaker(++index);
+                })
+
+            }else {
+                res.send(response);
+            }
+        }
+        getWorkshopsForSpeaker(0);
+
     });
 });
 
