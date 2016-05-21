@@ -1,3 +1,4 @@
 .DS_STORE
 .vagrant
 api-root/node_modules/
+api-root/dbmirror.js
