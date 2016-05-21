@@ -7,6 +7,10 @@
 // 'starter.controllers' is found in controllers.js
 var app = angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
+.constant('ApiEndpoint', {
+    url: 'http://192.168.0.18:8100/'
+})
+
 .run(function ($ionicPlatform) {
     $ionicPlatform.ready(function () {
         // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -92,7 +96,7 @@ var app = angular.module('starter', ['ionic', 'starter.controllers', 'starter.se
             }
         })
         .state('tab.speakerDetail', {
-            url: '/speaker/:id',
+            url: '/speaker',
             views: {
                 'tab-speakerDetail': {
                     templateUrl: 'templates/speakerDetail.html',

@@ -13,13 +13,13 @@
 
     <div class="speakerUpperSection">
 
-      <div class="imageSpeaker"><img ng-src="img/icons/partner.png"/></div>
+      <div class="imageSpeaker"><img ng-src="img/16.jpg"/></div>
 
       <div class="informationSection">
 
-        <span class="fullWidth" id="profession">Prof. Dr. med.</span>
-        <span class="fullWidth" id="name">Frank Bahr</span>
-        <span class="fullWidth" id="country">Deutschland</span>
+        <span class="fullWidth" id="profession">{{$root.currentSpeaker.AkadgradPre}}</span>
+        <span class="fullWidth" id="name">{{$root.currentSpeaker.Vorname}} <span id="nachname">{{$root.currentSpeaker.Name}}</span></span>
+        <span class="fullWidth" id="country">{{$root.currentSpeaker.Land}}</span>
 
       </div>
     </div>
@@ -67,7 +67,7 @@
     <div class="courseContent">
 
       <span id="courseHeader" class="fullWidth">Inhalt</span>
-      <span id="courseText" class="fullWidth">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
+      <span id="courseText" class="fullWidth" ng-bind-html="$root.currentSpeaker.BeschreibungGER"></span>
 
     </div>
 

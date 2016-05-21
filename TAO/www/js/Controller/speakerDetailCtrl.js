@@ -1,10 +1,12 @@
 
 app.controller('speakerDetailCtrl', function ($scope, $state, $stateParams, $ionicHistory) {
 
-  $scope.data = $stateParams.id;
 
-  console.log($scope.data);
+  $scope.$on("$ionicView.beforeEnter", function () {
 
+    console.log($scope.$root.currentSpeaker);
+
+  });
 
   $scope.goBack = function()
   {
