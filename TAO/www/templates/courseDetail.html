@@ -11,39 +11,38 @@
 
     <div class="upperSection">
 
-      <span id="courseType" class="fullWidth" ng-class="{type0: entry.type == 'Vortrag', type1: entry.type == 'Workshop', type2: entry.type == 'Vorkongress', type3: entry.type == 'Nachkongress'}">Vortrag</span>
-      <span id="courseTitle" class="fullWidth">Titel des Vortrags Nr.1 für Anfänger</span>
-      <span id="courseSubtitle" class="fullWidth">Zusätzlicher Titel</span>
+      <span id="courseType" class="fullWidth" ng-class="{type0: $root.currentProgram.typeString == 'Vortrag', type1: $root.currentProgram.typeString == 'Workshop', type2: $root.currentProgram.typeString == 'Vorkongress', type3: $root.currentProgram.typeString == 'Nachkongress'}">$root.currentProgram.typeString</span>
+      <span id="courseTitle" class="fullWidth">$root.currentProgram.TitelGER</span>
 
       <span id="courseTime" class="fullWidth"><i class="ion-clock"></i></span>
-      <span id="courseStart" class="fullWidth">Beginn: 09:00</span>
-      <span id="courseEnd" class="fullWidth">Ende: 09:30</span>
+      <span id="courseStart" class="fullWidth">Beginn: $root.currentProgram.startZeit</span>
+      <span id="courseEnd" class="fullWidth">Ende: $root.currentProgram.endZeit</span>
 
 
       <span id="courseLocation" class="fullWidth"><i class="ion-location"></i></span>
-      <span id="courseLocationText" class="fullWidth">HS 1 - Vorklinik 1.Stock</span>
+      <span id="courseLocationText" class="fullWidth">$root.currentProgram.Seminarraum</span>
       <span id="courseLocationLink" class="fullWidth" ng-click="openRaumplan()">Raumplan</span>
     </div>
 
     <div class="speakerSection">
-
-      <div id="speakerImage"><img src="img/16.jpg"/></div>
-      <div id="speakerName">Dr. Peter Aluani <br> <span id="country">Österreich</span></div>
+<div class="speakerContainer" ng-repeat="speakerObject in $root.currentProgram.speakers">
+      <div id="speakerImage"><img ng-src="{{speakerObject.Bild}}"/></div>
+      <div id="speakerName">{{speakerObject.AkadgradPre}} {{speakerObject.Name}} {{speakerObject.Vorname}} <br> <span id="country">{{speakerObject.Land}}</span></div>
       <div id="speakerLinking"><i class="ion-chevron-right"></i></div>
-
+</div>
     </div>
 
     <div class="handoutSection">
 
-      <div id="handoutImage"><img src="img/icons/pdf_logo.jpg"/></div>
-      <div id="handoutInfo" ng-click="openLink()">Handout downloaden</div>
+      <div id="handoutImage"><img src="img/icons/pdf_logo.jpg"/>Handout downloaden</div>
+      <div id="handoutInfo" ng-click="openLink({{$root.currentProgram.Handout}})"></div>
 
     </div>
 
     <div class="courseContent">
 
       <span id="courseHeader" class="fullWidth">Inhalt</span>
-      <span id="courseText" class="fullWidth">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
+      <span id="courseText" class="fullWidth" ng-bind-html="$root.currentProgram.BeschreibungGER"></span>
 
     </div>
 

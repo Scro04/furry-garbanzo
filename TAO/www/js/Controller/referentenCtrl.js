@@ -3,14 +3,8 @@ app.controller('referentenCtrl', function ($scope, $state, apiFactory) {
     console.log("referentenCtrl");
 
 
-    $scope.data = {};
+    $scope.data = $scope.$root.speaker;
 
-    apiFactory.getAllSpeakers().then(function (response) {
-        $scope.data = response;
-
-    }, function (error) {
-        console.log(error);
-    });
 
     $scope.$on("$ionicView.beforeEnter", function () {
 

@@ -3,7 +3,7 @@ app.factory('apiFactory', function ($http, $ionicPlatform, ApiEndpoint) {
     //if (window.cordova) {
     // running on device/emulator
     urlBase = 'http://api.codeshaped.at/tao/';
-    //} 
+    //}
     /*else {
         urlBase = ApiEndpoint.url;
     }*/
@@ -33,6 +33,21 @@ app.factory('apiFactory', function ($http, $ionicPlatform, ApiEndpoint) {
                 console.log(error);
                 return error;
             });
-        }
+        },
+      getWorkshops: function () {
+        return $http({
+          method: 'GET',
+          url: urlBase + 'workshops',
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+            //'Authorization': "Basic M9PEVE8PjvPryiYjKTmLUqeYpLxnAdshfdEr"
+          }
+        }).then(function (response) {
+          return response.data;
+        }, function (error) {
+          console.log(error);
+          return error;
+        });
+      }
     }
 });

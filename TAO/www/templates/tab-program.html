@@ -19,11 +19,11 @@
       </div>
       <a class="item programRow" ng-repeat="entry in value" ng-click="goToDetail(entry)">
         <div class="timeWrapper">
-         {{entry.start}} <br> - <br> {{entry.end}}
+         {{entry.startZeit}} <br> - <br> {{entry.endZeit}}
         </div>
         <div class="infoWrapper">
-          <div class="programType" ng-class="{type0: entry.type == 'Vortrag', type1: entry.type == 'Workshop', type2: entry.type == 'Vorkongress', type3: entry.type == 'Nachkongress'}">{{entry.type}}</div>
-          <div class="programName">{{entry.title}}</div>
+          <div class="programType" ng-class="{type0: entry.typeString == 'Vortrag', type1: entry.typeString == 'Workshop', type2: entry.typeString == 'Vorkongress', type3: entry.typeString == 'Nachkongress'}">{{entry.typeString}}</div>
+          <div class="programName">{{entry.TitelGER}}</div>
           <div class="programAuthor">{{entry.speaker}}</div>
         </div>
         <div class="detailBox">
