@@ -39,7 +39,13 @@ router.get('/', function(req, res) {
             response[pricegroup]["Preise"].push(rows[i]);
         }
 
-        res.send(response);
+        var keys = Object.keys(response);
+        var tmpresp = [];
+        for(var i = 0; i < keys.length; i++) {
+            tmpresp.push(response[keys[i]]);
+        }
+
+        res.send(tmpresp);
     })
 
 });
