@@ -7,11 +7,6 @@ app.controller('speakerDetailCtrl', function ($scope, $state, $stateParams, $ion
     console.log($scope.$root.currentSpeaker);
 
   });
-
-  $scope.goBack = function()
-  {
-    console.log($ionicHistory);
-    $state.go('tab.referenten');
-  }
+  
 
 });

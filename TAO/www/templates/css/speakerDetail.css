@@ -143,3 +143,10 @@ div.timeWrapper.leftAligned {
   }
 
 }
+
+.back-text {
+  display: none !important;
+}
+i.icon.ion-ios-arrow-back {
+  color: #b61e3a;
+}

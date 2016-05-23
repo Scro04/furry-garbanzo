@@ -87,9 +87,9 @@ var app = angular.module('starter', ['ionic', 'starter.controllers', 'starter.se
             }
         })
         .state('tab.courseInfo', {
-            url: '/courseInfo/:id',
+            url: '/courseInfo',
             views: {
-                'tab-courseInfo': {
+                'tab-program': {
                     templateUrl: 'templates/courseDetail.html',
                     controller: 'courseInfoCtrl'
                 }
@@ -98,7 +98,7 @@ var app = angular.module('starter', ['ionic', 'starter.controllers', 'starter.se
         .state('tab.speakerDetail', {
             url: '/speaker',
             views: {
-                'tab-speakerDetail': {
+                'tab-referenten': {
                     templateUrl: 'templates/speakerDetail.html',
                     controller: 'speakerDetailCtrl'
                 }

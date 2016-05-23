@@ -9,6 +9,7 @@ app.controller('homeCtrl', function($scope, $state, apiFactory) {
 
   apiFactory.getAllSpeakers().then(function (response) {
     $scope.$root.speaker = response;
+    console.log(response);
 
   }, function (error) {
     console.log(error);
@@ -16,7 +17,7 @@ app.controller('homeCtrl', function($scope, $state, apiFactory) {
 
   apiFactory.getWorkshops().then(function (response) {
     $scope.$root.program = response;
-    console.log($scope.data);
+    console.log(response);
 
   }, function (error) {
     console.log(error);
