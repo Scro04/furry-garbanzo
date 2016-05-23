@@ -103,6 +103,15 @@ var app = angular.module('starter', ['ionic', 'starter.controllers', 'starter.se
                     controller: 'speakerDetailCtrl'
                 }
             }
+        })
+        .state('tab.prices', {
+            url: '/prices',
+            views: {
+                'tab-info': {
+                    templateUrl: 'templates/prices.html',
+                    controller: 'pricesCtrl'
+                }
+            }
         });
 
     console.log("otherwise");
