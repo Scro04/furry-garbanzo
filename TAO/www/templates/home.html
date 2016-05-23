@@ -1,9 +1,42 @@
-<ion-view view-title="HOME">
-  <ion-content class="padding">
-   <h1>HOME!</h1>
-    <button ng-click="tabs('tab.program')">Go to tabs</button>
-    <button ng-click="tabs('tab.referenten')">Go to tabs</button>
-    <button ng-click="tabs('tab.anfahrt')">Go to tabs</button>
-    <button ng-click="tabs('tab.info')">Go to tabs</button>
-  </ion-content>
+<link href="templates/css/home.css" rel="stylesheet">
+<ion-view title="Home" class="homeView" hide-nav-bar="true">
+    <ion-content scroll="false" padding="false" cache="false">
+        <div class="titleImageContainer">
+            <img src="img/header.png"></img>
+            <h4 id="homeTitle">Aus der Praxis für die Praxis</h4>
+            <span id="homeSubtitle">13. Internationaler<br />TCM Kongress</span>
+        </div>
+        <div class="actionContainer">
+            <div class="row">
+                <div class="col col-50" ng-click="tabs('tab.program')">
+                    <div class="action">
+                        <img class="actionImage" src="img/icons/clock_home.png">
+                        <span class="actionTitle">Programm</span>
+                    </div>
+                </div>
+                <div class="col col-50" ng-click="tabs('tab.referenten')">
+
+                    <div class="action">
+                        <img class="actionImage" src="img/icons/people_home.png">
+                        <span class="actionTitle">Referenten</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col col-50" ng-click="tabs('tab.anfahrt')">
+                    <div class="action">
+                        <img class="actionImage" src="img/icons/map_icon_home.png">
+                        <span class="actionTitle">Anfahrt</span>
+                    </div>
+                </div>
+                <div class="col col-50" ng-click="tabs('tab.info')">
+                    <div class="action">
+                        <img class="actionImage" src="img/icons/info_icon_home.png">
+                        <span class="actionTitle">Informationen</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </ion-content>
 </ion-view>

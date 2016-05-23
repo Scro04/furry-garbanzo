@@ -1,5 +1,26 @@
+<link href="templates/css/tab-programm.css" rel="stylesheet">
+<link href="templates/css/tab-referenten.css" rel="stylesheet">
+
 <ion-view view-title="Referenten">
-  <ion-content>
-  <p>Referenten</p>
-  </ion-content>
+    <ion-content class="referenten" scroll="true">
+
+        <div class="list noPaddingList" ng-repeat="(key, value) in data">
+            <div class="item item-divider dividerLine speaker">
+                {{key}}
+            </div>
+            <a class="item programRow speaker" ng-repeat="entry in value" ng-click="goToSpeakerDetail(entry)">
+
+                <img class="authorImage" ng-src="{{entry.Bild}}" />
+
+                <div class="infoWrapper">
+                    <div class="authorName">{{entry.AkadgradPre}} {{entry.Vorname}} <span id="nachname">{{entry.Name}} {{entry.AkadgradPost}}</span></div>
+                    <div class="authorCountry">{{entry.Land}}</div>
+                </div>
+                <div class="detailBox">
+                    <i class="ion-chevron-right"></i>
+                </div>
+            </a>
+        </div>
+
+    </ion-content>
 </ion-view>

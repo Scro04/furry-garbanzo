@@ -1,5 +1,35 @@
-<ion-view view-title="Programm">
-  <ion-content class="padding">
-    <p>Programm</p>
+<link href="templates/css/tab-programm.css" rel="stylesheet">
+<ion-view view-title="Kongressprogramm">
+
+
+  <ion-nav-buttons side="left">
+    <button class="button homeBtn" ng-click="goHome()">
+      <i class="ion-home"></i>
+    </button>
+  </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+    <button class="button searchBtn" ng-click="search()">
+      <i class="ion-search"></i>
+    </button>
+  </ion-nav-buttons>
+  <ion-content>
+    <div class="list noPaddingTop" ng-repeat="(key, value) in data">
+      <div class="item item-divider dividerLine">
+        {{key}}
+      </div>
+      <a class="item programRow" ng-repeat="entry in value" ng-click="goToDetail(entry)">
+        <div class="timeWrapper">
+         {{entry.startZeit}} <br> - <br> {{entry.endZeit}}
+        </div>
+        <div class="infoWrapper">
+          <div class="programType" ng-class="{type0: entry.typeString == 'Vortrag', type1: entry.typeString == 'Workshop', type2: entry.typeString == 'Vorkongress', type3: entry.typeString == 'Nachkongress'}">{{entry.typeString}}</div>
+          <div class="programName">{{entry.TitelGER}}</div>
+          <div class="programAuthor">{{entry.speaker}}</div>
+        </div>
+        <div class="detailBox">
+          <i class="ion-chevron-right"></i>
+        </div>
+      </a>
+    </div>
   </ion-content>
 </ion-view>

@@ -1,0 +1,50 @@
+<link href="templates/css/courseInfo.css" rel="stylesheet">
+<ion-view view-title="Kongressprogramm">
+
+  <ion-nav-buttons side="left">
+    <button class="button goBack" ng-click="goBack()">
+      <i class="ion-chevron-left"></i>
+    </button>
+  </ion-nav-buttons>
+
+  <ion-content class="courseDetailView">
+
+    <div class="upperSection">
+
+      <span id="courseType" class="fullWidth" ng-class="{type0: $root.currentProgram.typeString == 'Vortrag', type1: $root.currentProgram.typeString == 'Workshop', type2: $root.currentProgram.typeString == 'Vorkongress', type3: $root.currentProgram.typeString == 'Nachkongress'}">{{$root.currentProgram.typeString}}</span>
+      <span id="courseTitle" class="fullWidth">{{$root.currentProgram.TitelGER}}</span>
+
+      <span id="courseTime" class="fullWidth"><i class="ion-clock"></i></span>
+      <span id="courseStart" class="fullWidth">Beginn: {{$root.currentProgram.startZeit}}</span>
+      <span id="courseEnd" class="fullWidth">Ende: {{$root.currentProgram.endZeit}}</span>
+
+
+      <span id="courseLocation" class="fullWidth"><i class="ion-location"></i></span>
+      <span id="courseLocationText" class="fullWidth">{{$root.currentProgram.Seminarraum}}</span>
+      <span id="courseLocationLink" class="fullWidth" ng-click="openRaumplan()">Raumplan</span>
+    </div>
+
+    <div class="speakerSection">
+<div class="speakerContainer" ng-repeat="speakerObject in $root.currentProgram.speakers">
+      <div id="speakerImage"><img ng-src="{{speakerObject.Bild}}"/></div>
+      <div id="speakerName">{{speakerObject.AkadgradPre}} {{speakerObject.Name}} {{speakerObject.Vorname}} <br> <span id="country">{{speakerObject.Land}}</span></div>
+      <div id="speakerLinking"><i class="ion-chevron-right"></i></div>
+</div>
+    </div>
+
+    <div class="handoutSection" ng-click="openLink('{{$root.currentProgram.Handout}}')">
+
+      <div id="handoutImage"><img src="img/icons/pdf_logo.jpg"/>Handout downloaden</div>
+      <!--<div id="handoutInfo" ></div>-->
+
+    </div>
+
+    <div class="courseContent">
+
+      <span id="courseHeader" class="fullWidth">Inhalt</span>
+      <span id="courseText" class="fullWidth" ng-bind-html="$root.currentProgram.BeschreibungGER"></span>
+
+    </div>
+
+  </ion-content>
+</ion-view>

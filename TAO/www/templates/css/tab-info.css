@@ -1,0 +1,46 @@
+.infoWrapper {
+  float: left;
+}
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.infoDetailChevron {
+  float: right;
+  margin-left: auto;
+  padding-left: 15px;
+  font-size:22px;
+  color: #b61e3a;
+}
+a.item:nth-child(1) {
+  border-top: none;
+}
+
+.info-tab h2, .info-tab p {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.info-tab h2 {
+  font-size: 16px;
+}
+.info-tab p {
+  font-size: 12px;
+}
+
+
+@media(min-width: 415px) {
+
+  .info-tab .item {
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+  }
+  .info-tab h2 {
+    font-size: 18px;
+  }
+  .info-tab p {
+    font-size: 14px;
+  }
+}

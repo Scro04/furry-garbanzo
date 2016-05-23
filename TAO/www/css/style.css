@@ -1,1 +1,58 @@
-/* Empty. Add your own CSS if you like */
+.tabs {
+    background-color: #b61e3a !important;
+}
+
+.tab-item .icon {
+    color: #ffffff !important;
+    font-size: 30px !important;
+    height: 30px !important;
+}
+
+.tab-item.tab-item-active,
+.tab-item.active,
+.tab-item.activated {
+    color: white !important;
+}
+
+.tab-item {
+    color: white !important;
+}
+
+.tabs-striped .tabs {
+    border-bottom: none !important;
+    padding-top: 4px !important;
+}
+
+ion-tabs.tabs-striped.tabs-color-active-positive .tab-item.tab-item-active,
+ion-tabs.tabs-striped.tabs-color-active-positive .tab-item.active,
+ion-tabs.tabs-striped.tabs-color-active-positive .tab-item.activated {
+    border: none !important;
+}
+
+.type0
+/* VORTRAG */
+
+{
+    color: #b61e3a;
+}
+
+.type1
+/* WORKSHOP */
+
+{
+    color: yellow;
+}
+
+.type2
+/* VORKONGRESS */
+
+{
+    color: green;
+}
+
+.type3
+/* NACHKONGRESS */
+
+{
+    color: orange;
+}

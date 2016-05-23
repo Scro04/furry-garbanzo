@@ -1,5 +1,16 @@
-app.controller('programCtrl', function($scope, $state) {
+app.controller('programCtrl', function ($scope, $state, apiFactory) {
 
-  console.log("programCtrl");
+    $scope.data = $scope.$root.program;
 
-})
+
+    $scope.goToDetail = function(entry)
+    {
+      $scope.$root.currentProgram = entry;
+      $state.go('tab.courseInfo');
+    }
+
+  $scope.goHome = function ()
+  {
+    $state.go('home');
+  }
+});
