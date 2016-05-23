@@ -11,16 +11,16 @@
 
     <div class="upperSection">
 
-      <span id="courseType" class="fullWidth" ng-class="{type0: $root.currentProgram.typeString == 'Vortrag', type1: $root.currentProgram.typeString == 'Workshop', type2: $root.currentProgram.typeString == 'Vorkongress', type3: $root.currentProgram.typeString == 'Nachkongress'}">$root.currentProgram.typeString</span>
-      <span id="courseTitle" class="fullWidth">$root.currentProgram.TitelGER</span>
+      <span id="courseType" class="fullWidth" ng-class="{type0: $root.currentProgram.typeString == 'Vortrag', type1: $root.currentProgram.typeString == 'Workshop', type2: $root.currentProgram.typeString == 'Vorkongress', type3: $root.currentProgram.typeString == 'Nachkongress'}">{{$root.currentProgram.typeString}}</span>
+      <span id="courseTitle" class="fullWidth">{{$root.currentProgram.TitelGER}}</span>
 
       <span id="courseTime" class="fullWidth"><i class="ion-clock"></i></span>
-      <span id="courseStart" class="fullWidth">Beginn: $root.currentProgram.startZeit</span>
-      <span id="courseEnd" class="fullWidth">Ende: $root.currentProgram.endZeit</span>
+      <span id="courseStart" class="fullWidth">Beginn: {{$root.currentProgram.startZeit}}</span>
+      <span id="courseEnd" class="fullWidth">Ende: {{$root.currentProgram.endZeit}}</span>
 
 
       <span id="courseLocation" class="fullWidth"><i class="ion-location"></i></span>
-      <span id="courseLocationText" class="fullWidth">$root.currentProgram.Seminarraum</span>
+      <span id="courseLocationText" class="fullWidth">{{$root.currentProgram.Seminarraum}}</span>
       <span id="courseLocationLink" class="fullWidth" ng-click="openRaumplan()">Raumplan</span>
     </div>
 
@@ -32,10 +32,10 @@
 </div>
     </div>
 
-    <div class="handoutSection">
+    <div class="handoutSection" ng-click="openLink('{{$root.currentProgram.Handout}}')">
 
       <div id="handoutImage"><img src="img/icons/pdf_logo.jpg"/>Handout downloaden</div>
-      <div id="handoutInfo" ng-click="openLink({{$root.currentProgram.Handout}})"></div>
+      <!--<div id="handoutInfo" ></div>-->
 
     </div>
 
