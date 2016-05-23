@@ -11,41 +11,31 @@ var connection = require('../helpers/database.js');
  *
  * @apiSuccess {JSON} All speakers listed
  */
-router.get('/', function(req, res) {
 
-    //SELECT * FROM appReferenten JOIN appReferentenBilder USING(id)
-    connection.connection.query('SELECT * FROM appReferenten JOIN appReferentenBilder USING(id) ORDER BY Name', function(err, rows) {
-        var rowBuffer = rows;
+router.get('/', function (req, res) {
+
+    connection.connection.query('SELECT appReferenten.id, Name, Vorname, AkadgradPre, AkadGradPost, Land, appReferenten.BeschreibungGER, appReferenten.BeschreibungENG,group_concat(DISTINCT appWorkshopsReferenten.WorkshopId) as WorkshopId FROM appReferenten LEFT JOIN appWorkshopsReferenten on appReferenten.id = appWorkshopsReferenten.ReferentId GROUP BY appReferenten.id ORDER BY Name', function (err, rows) {
         var response = {};
         //var index = 0;
-        function getWorkshopsForSpeaker(index) {
-            if(index < rowBuffer.length)
-            {
-                connection.connection.query('SELECT WorkshopId FROM appWorkshopsReferenten WHERE ReferentId = ?', rowBuffer[index]["id"] , function(err, rows) {
+        for(var i = 0; i < rows.length ; i++)
+        {
+            rows[i]["Bild"] = "http://www.tcmkongress.at/de/Referenten/GetFoto/" + rows[i]["id"];
 
-                    rowBuffer[index]["Bild"] = "http://www.tcmkongress.at/de/Referenten/GetFoto/" + rowBuffer[index]["id"];
-                    rowBuffer[index]["workshopsIDs"] = [];
-                    for (var z = 0; z < rows.length; z++)
-                    {
-                        rowBuffer[index]["workshopsIDs"].push(rows[z]["WorkshopId"]);
-                    }
-                    var tempFirstLetter = rowBuffer[index]["Name"][0];
-                    if(!response[tempFirstLetter])
-                        response[tempFirstLetter] = [];
-                    response[tempFirstLetter].push(rowBuffer[index])
+            if(rows[i]["WorkshopId"])
+                rows[i]["WorkshopId"] = rows[i]["WorkshopId"].split(',');
 
+            var tempFirstLetter = rows[i]["Name"][0];
+            if (!response[tempFirstLetter])
+                response[tempFirstLetter] = [];
 
-                    getWorkshopsForSpeaker(++index);
+            response[tempFirstLetter].push(rows[i])
 
-                })
-
-            }else {
-                res.send(response);
-            }
         }
-        getWorkshopsForSpeaker(0);
 
-    });
+        res.send(response);
+    })
+
+
 });
 
 /**
