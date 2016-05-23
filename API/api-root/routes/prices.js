@@ -36,7 +36,6 @@ router.get('/', function(req, res) {
             delete rows[i]["Preisgruppe"];
             delete rows[i]["id"];
 
-            console.log(response[pricegroup]);
             response[pricegroup]["Preise"].push(rows[i]);
         }
 
