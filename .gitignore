@@ -1,0 +1,5 @@
+.DS_Store
+.idea/
+API/api-root/dbmirror.js
+API/apiLog.log
+API/taoKongress_2016-05-19.sql
