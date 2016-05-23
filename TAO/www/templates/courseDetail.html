@@ -1,12 +1,6 @@
 <link href="templates/css/courseInfo.css" rel="stylesheet">
 <ion-view view-title="Kongressprogramm">
 
-  <ion-nav-buttons side="left">
-    <button class="button goBack" ng-click="goBack()">
-      <i class="ion-chevron-left"></i>
-    </button>
-  </ion-nav-buttons>
-
   <ion-content class="courseDetailView">
 
     <div class="upperSection">
@@ -20,14 +14,14 @@
 
 
       <span id="courseLocation" class="fullWidth"><i class="ion-location"></i></span>
-      <span id="courseLocationText" class="fullWidth">{{$root.currentProgram.Seminarraum}}</span>
-      <span id="courseLocationLink" class="fullWidth" ng-click="openRaumplan()">Raumplan</span>
+      <span id="courseLocationText" class="fullWidth">{{$root.currentProgram.Seminarraum}} Empty aktuell<span ng-if="$root.currentProgram.AKPunkte != null" class="akPoints">AK-Punkte:</span></span>
+      <span id="courseLocationLink" class="fullWidth" ng-click="openRaumplan()">Raumplan<span ng-if="$root.currentProgram.AKPunkte != null" class="akPoints">{{$root.currentProgram.AKPunkte}}</span></span>
     </div>
 
-    <div class="speakerSection">
-<div class="speakerContainer" ng-repeat="speakerObject in $root.currentProgram.speakers">
+    <div class="speakerSection" ng-repeat="speakerObject in $root.currentProgram.speakers">
+<div class="speakerContainer">
       <div id="speakerImage"><img ng-src="{{speakerObject.Bild}}"/></div>
-      <div id="speakerName">{{speakerObject.AkadgradPre}} {{speakerObject.Name}} {{speakerObject.Vorname}} <br> <span id="country">{{speakerObject.Land}}</span></div>
+      <div id="speakerName"><span id="country">{{speakerObject.AkadgradPre}}</span><br>{{speakerObject.Name}} {{speakerObject.Vorname}}<br> <span id="country">{{speakerObject.Land}}</span></div>
       <div id="speakerLinking"><i class="ion-chevron-right"></i></div>
 </div>
     </div>

@@ -6,3 +6,8 @@ TAO/platforms/
 TAO/plugins/
 TAO/.brackets.json
 TAO/resources
+.DS_Store
+.gitignore~HEAD
+.idea/
+API/apiLog.log
+API/taoKongress_2016-05-19.sql
