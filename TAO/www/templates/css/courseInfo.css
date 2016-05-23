@@ -99,7 +99,7 @@ font-size: 22px;
   font-weight:500;
 }
 #speakerName {
-  max-width: 70%;
+  width: 70%;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
@@ -169,7 +169,12 @@ font-size: 22px;
   }
 }
 
-
+.back-text {
+  display: none !important;
+}
+i.icon.ion-ios-arrow-back {
+  color: #b61e3a;
+}
 
 div.speakerContainer {
   display: flex;
@@ -182,7 +187,7 @@ div.speakerContainer {
 .akPoints {
   float: right;
   width: 90px;
-  text-align: left;
+  text-align: right;
 }
 .speakerSection:nth-child(1n+3)
 {

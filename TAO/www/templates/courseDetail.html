@@ -1,12 +1,6 @@
 <link href="templates/css/courseInfo.css" rel="stylesheet">
 <ion-view view-title="Kongressprogramm">
 
-  <ion-nav-buttons side="left">
-    <button class="button goBack" ng-click="goBack()">
-      <i class="ion-chevron-left"></i>
-    </button>
-  </ion-nav-buttons>
-
   <ion-content class="courseDetailView">
 
     <div class="upperSection">
@@ -27,7 +21,7 @@
     <div class="speakerSection" ng-repeat="speakerObject in $root.currentProgram.speakers">
 <div class="speakerContainer">
       <div id="speakerImage"><img ng-src="{{speakerObject.Bild}}"/></div>
-      <div id="speakerName">{{speakerObject.AkadgradPre}} {{speakerObject.Name}} {{speakerObject.Vorname}}<br> <span id="country">{{speakerObject.Land}}</span></div>
+      <div id="speakerName"><span id="country">{{speakerObject.AkadgradPre}}</span><br>{{speakerObject.Name}} {{speakerObject.Vorname}}<br> <span id="country">{{speakerObject.Land}}</span></div>
       <div id="speakerLinking"><i class="ion-chevron-right"></i></div>
 </div>
     </div>
