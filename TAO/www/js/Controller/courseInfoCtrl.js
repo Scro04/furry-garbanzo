@@ -1,4 +1,4 @@
-app.controller('courseInfoCtrl', function ($scope, $state, $stateParams, $ionicPopup, $ionicModal, $q) {
+app.controller('courseInfoCtrl', function ($scope, $state, $stateParams, $ionicPopup, $ionicModal, $q, $cordovaCalendar) {
 
     $scope.speakerDataModel = undefined;
 
