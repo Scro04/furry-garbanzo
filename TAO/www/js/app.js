@@ -121,6 +121,15 @@ var app = angular.module('starter', ['ionic', 'starter.controllers', 'starter.se
             controller: 'informationCtrl'
           }
         }
+      })
+      .state('tab.kontakt', {
+        url: '/kontakt',
+        views: {
+          'tab-info': {
+            templateUrl: 'templates/kontakt.html',
+            controller: 'kontaktCtrl'
+          }
+        }
       });
 
     console.log("otherwise");

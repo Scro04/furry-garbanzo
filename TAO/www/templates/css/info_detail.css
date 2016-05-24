@@ -129,3 +129,18 @@
    font-size: 25px;
   }
 }
+
+
+/* ------------------------------------------------------------ */
+/*                     CSS FOR CONTACT SCREEN                   */
+/* ------------------------------------------------------------ */
+
+.contactView img
+{
+  max-width: 150px;
+}
+
+.contactPerson, a[x-apple-data-detectors]
+{
+  text-decoration: none !important;
+}

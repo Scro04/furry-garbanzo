@@ -33,7 +33,7 @@ app.controller('infoCtrl', function ($scope, $state) {
             headline: "Kontakt",
             text: "Für weitere Informationen stehen wir gerne zur Verfügung!",
             image: "img/icons/contact.png",
-            state: "informations"
+            state: "tab.kontakt"
         }];
 
 
