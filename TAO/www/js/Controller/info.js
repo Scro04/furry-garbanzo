@@ -9,7 +9,7 @@ app.controller('infoCtrl', function ($scope, $state) {
             headline: "Informationen",
             text: "Wichtige Details und News!",
             image: "img/icons/info_icon.png",
-            state: "informations"
+            state: "tab.information"
         },
         {
             headline: "Partner",
@@ -24,16 +24,10 @@ app.controller('infoCtrl', function ($scope, $state) {
             state: "informations"
         },
         {
-            headline: "Anfahrt",
-            text: "Alle Infos rund um die Anreise!",
-            image: "img/icons/map_icon.png",
-            state: "informations"
-        },
-        {
             headline: "Kongresstarife",
             text: "Alle Info's zur Teilnahme!",
             image: "img/icons/ticket.png",
-            state: "informations"
+            state: "tab.prices"
         },
         {
             headline: "Kontakt",
@@ -43,14 +37,10 @@ app.controller('infoCtrl', function ($scope, $state) {
         }];
 
 
-    $scope.goToState = function (headline) {
-        switch (headline) {
-        case "Kongresstarife":
-            $state.go("tab.prices");
-            break;
-        default:
-            break;
-        }
+    $scope.goToState = function (state) {
+
+            $state.go(state);
+
     }
 
 

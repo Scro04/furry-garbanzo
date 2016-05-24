@@ -4,7 +4,7 @@
     <ion-content>
 
         <div class="list info-tab">
-            <a class="item item-avatar" ng-click="goToState(section.headline)" ng-repeat="section in sections">
+            <a class="item item-avatar" ng-click="goToState(section.state)" ng-repeat="section in sections">
                 <img ng-src="{{section.image}}">
                 <div class="infoWrapper">
                     <h2>{{section.headline}}</h2>
@@ -13,6 +13,7 @@
                 <i class="ion-chevron-right infoDetailChevron"></i>
             </a>
         </div>
+
 
     </ion-content>
 </ion-view>
