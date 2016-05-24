@@ -1,4 +1,4 @@
-app.controller('homeCtrl', function ($scope, $state, dataFactory, $ionicPopup) {
+app.controller('homeCtrl', function ($scope, $state, dataFactory, $ionicPopup, $cordovaSplashscreen, $ImageCacheFactory, $q) {
 
     $scope.$root.currentSpeaker;
     $scope.$root.currentProgram;
@@ -14,14 +14,55 @@ app.controller('homeCtrl', function ($scope, $state, dataFactory, $ionicPopup) {
         });
     };
 
+    $scope.preLoadSpeakerImages = function () {
+        var deferred = $q.defer();
+        try {
+            var data_obj = {};
+            var images = [];
+            dataFactory.getSpeakers().then(function (data) {
+                data_obj = data;
+                if (data_obj != undefined) {
+                    for (key in data_obj) {
+                        var speaker = [];
+                        if (data_obj.hasOwnProperty(key)) {
+                            var speaker = data_obj[key];
+                            if (speaker != undefined) {
+                                for (var i = 0; i < speaker.length; i++) {
+                                    if (speaker[i] != undefined && speaker[i].Bild != undefined) {
+                                        images.push(speaker[i].Bild);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    
+                    $ImageCacheFactory.Cache(images).then(function () {
+                        console.log("Images done loading!");
+                        deferred.resolve();
+
+                    }, function (failed) {
+                        console.log("An image failed: " + failed);
+                        deferred.resolve();
+                    });
+                }
+            }, function () { })
+        } catch (error) {
+            console.log(error);
+            deferred.resolve();
+        }
+
+        return deferred.promise;
+    };
 
     dataFactory.loadData().then(function () {
-        if (window.cordova && $cordovaSplashscreen) {
-            setTimeout(function () {
-                $cordovaSplashscreen.hide();
-            }, 1000);
+        $scope.preLoadSpeakerImages().then(function () {
+            if (window.cordova && $cordovaSplashscreen) {
+                setTimeout(function () {
+                    $cordovaSplashscreen.hide();
+                }, 1000);
+            }
+        });
 
-        }
     }, function () {
         console.log("error");
         $scope.showAlert();

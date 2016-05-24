@@ -62,15 +62,18 @@ app.controller('courseInfoCtrl', function ($scope, $state, $stateParams, $ionicP
 
         console.log(date.getDate() + "." + date.getMonth() + "." + date.getFullYear());
 
-
-
         if ($cordovaCalendar && window.cordova) {
+            var day = date.getDate();
+            var month = date.getMonth();
+            var year = date.getFullYear();
+            var start_hour = $root.currentProgram.startZeit;
+            var end_hour = $root.currentProgram.endZeit;
             $cordovaCalendar.createEventInteractively({
                 title: $scope.$root.currentProgram.TitelGER,
                 location: 'Vorklinik Uni Graz',
                 notes: notes,
-                startDate: new Date(2016, 8, 22, 09, 0, 0, 0, 0),
-                endDate: new Date(2016, 8, 22, 10, 30, 0, 0, 0)
+                startDate: new Date(year, month, day, 09, 0, 0, 0, 0),
+                endDate: new Date(year, month, day, 10, 30, 0, 0, 0)
             }).then(function (result) {
                 console.log("Event created successfully");
             }, function (err) {

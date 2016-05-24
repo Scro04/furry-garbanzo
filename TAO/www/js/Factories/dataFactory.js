@@ -36,12 +36,26 @@ app.factory('dataFactory', function ($localstorage, apiFactory, $q) {
             $localstorage.setObject(user, user_data);
         },
         getSpeakers: function () {
+             var deferred = $q.defer();
             var data = $localstorage.getObject(speaker);
-            return data;
+            if(data != undefined) {
+                deferred.resolve(data);
+            }
+            else {
+                deferred.reject();
+            }
+            return deferred.promise;
         },
         getProgram: function () {
+            var deferred = $q.defer();
             var data = $localstorage.getObject(program);
-            return data;
+            if(data != undefined) {
+                deferred.resolve(data);
+            }
+            else {
+                deferred.reject();
+            }
+            return deferred.promise;
         },
         clearData: function () {
             var result = $localstorage.deleteObject(speaker);
