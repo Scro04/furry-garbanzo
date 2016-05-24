@@ -1,14 +1,29 @@
-<!--
-  This template loads for the 'tab.friend-detail' state (app.js)
-  'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
-  The FriendsCtrl pulls data from the Friends service (service.js)
-  The Friends service returns an array of friend data
--->
+<link href="templates/css/tab-anfahrt.css" rel="stylesheet">
 <ion-view view-title="Anfahrt">
-  <ion-content class="padding">
+  <ion-content class="anfahrt" padding="true">
 
-    <p>
-     Anfahrt
-    </p>
+        <h1>Kongressort</h1>
+        <h2>Vorklinik der Medizinischen Universität Graz<br></h2>
+        <h2>Harrachgasse 21<br></h2>
+        <h2>8010 Graz<br></h2>
+
+        <h2 id="verkehrsmittelHeadline">Anfahrt mit den öffentlichen Verkehrsmitteln:<br></h2>
+        <a
+          ng-click="openInAppBrowser('https://www.google.at/maps/place/Vorklinik+(Medizinische+Universität+Graz)/@47.0774206,15.4131211,13z/data=!4m15!1m12!4m11!1m6!1m2!1s0x476e358773b04b7b:0xb8ea781b2d47bc59!2sVorklinik+(Medizinische+Universität+Graz),+Harrachgasse+21,+8010+Graz!2m2!1d15.448142!2d47.077325!1m3!2m2!1d15.4512299!2d47.0784727!3m1!1s0x476e358773b04b7b:0xb8ea781b2d47bc59?hl=de')">Link
+          zum Google-Routenplaner</a>
+
+
+        <p>Die Vorklinik ist sowohl mit dem Auto als auch mit den öffentlichen Verkehrsmitteln gut erreichbar.<br></p>
+        <bold>Mit öffentlichen Verkehrsmitteln<br></bold>
+        <p>
+          • Bus vom Hauptbahnhof: 58 (Mozartgasse) oder 63 (Attemsgasse)<br>
+          • Bus vom Jakominiplatz: 31 (Uni Mensa), 30 (Mozartgasse), 39 (Attemsgasse)<br>
+          <a ng-click="openInAppBrowser('http://www.verbundlinie.at/busbahnbim-auskunft/')">Bus/Bahn/Bim</a><br>
+          • Taxistandplatz – Geidorfplatz
+        </p>
+      </ion-content>
+    </ion-view>
+
+
   </ion-content>
 </ion-view>

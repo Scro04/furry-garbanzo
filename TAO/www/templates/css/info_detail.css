@@ -70,3 +70,62 @@
 }
 
 @media(min-width: 415px) {}
+
+
+/* ------------------------------------------------------------ */
+/*                     CSS FOR INFORMATION SCREEN               */
+/* ------------------------------------------------------------ */
+
+.information h1, .information h2, .information h3 {
+  font-family: Helvetica;
+  font-weight: 400;
+}
+.information h1 {
+  font-size: 22px;
+  font-weight: 400;
+}
+.information h2 {
+  font-size: 18px;
+}
+.information h3 {
+  font-size: 18px;
+}
+.information bold {
+  font-weight: bold;
+}
+.information a {
+  text-decoration: underline;
+  color: black;
+}
+.information #headline {
+  padding-top: 20px;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-align: center;
+}
+.information #subline {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.information .wrapper {
+  padding-bottom: 20px;
+}
+
+@media(min-width: 415px) {
+  .information h1 {
+    font-size: 22px;
+  }
+  .information h2 {
+    font-size: 20px;
+  }
+  .information h3 {
+    font-size: 18px;
+  }
+  .information #headline {
+    font-size: 25px;
+  }
+  .information #subline {
+   font-size: 25px;
+  }
+}

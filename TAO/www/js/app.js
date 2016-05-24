@@ -112,7 +112,16 @@ var app = angular.module('starter', ['ionic', 'starter.controllers', 'starter.se
                     controller: 'pricesCtrl'
                 }
             }
-        });
+        })
+      .state('tab.information', {
+        url: '/information',
+        views: {
+          'tab-info': {
+            templateUrl: 'templates/information.html',
+            controller: 'informationCtrl'
+          }
+        }
+      });
 
     console.log("otherwise");
     // if none of the above states are matched, use this as the fallback

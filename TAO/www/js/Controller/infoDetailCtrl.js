@@ -14,13 +14,32 @@ app.controller('pricesCtrl', function ($scope, $state, apiFactory) {
                     if (elem.PreisbezeichnungGer.indexOf(" TAO") !== -1)
                         elem.PreisbezeichnungGer = elem.PreisbezeichnungGer.replace(" TAO", "");
                 }
-
             }
         }
-
     }, function (error) {
         console.log(error);
     });
+});
 
 
-})
+app.controller('informationCtrl', function ($scope, $state, $cordovaInAppBrowser) {
+
+  console.log("informationCtrl");
+
+  $scope.openInAppBrowser = function(url) {
+
+    var options = {
+      location: 'no',
+      clearcache: 'yes',
+      toolbar: 'yes'
+    };
+
+    $cordovaInAppBrowser.open(url, '_blank', options)
+      .then(function (event) {
+        // success
+      })
+      .catch(function (event) {
+        // error
+      });
+  }
+});
