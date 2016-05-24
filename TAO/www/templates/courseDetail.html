@@ -18,7 +18,7 @@
       <span id="courseLocationLink" class="fullWidth" ng-click="openRaumplan()">Raumplan<span ng-if="$root.currentProgram.AKPunkte != null" class="akPoints">{{$root.currentProgram.AKPunkte}}</span></span>
     </div>
 
-    <div class="speakerSection" ng-repeat="speakerObject in $root.currentProgram.speakers">
+    <div class="speakerSection" ng-repeat="speakerObject in $root.currentProgram.speakers" ng-click="openSpeakerModal('{{speakerObject.ReferentId}}')">
     <div class="speakerContainer">
       <div id="speakerImage"><img ng-src="{{speakerObject.Bild}}"/></div>
       <div id="speakerName"><span id="country"><span ng-if="speakerObject.AkadgradPre != null">{{speakerObject.AkadgradPre}}<br></span></span>{{speakerObject.Name}} {{speakerObject.Vorname}}<br><span id="country">{{speakerObject.Land}}</span></div>

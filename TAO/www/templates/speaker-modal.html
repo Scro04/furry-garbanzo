@@ -2,20 +2,23 @@
 <link href="templates/css/tab-programm.css" rel="stylesheet">
 
 <ion-view view-title="Referent" class="speakerDetailView">
+  <ion-modal-view>
+
+  <ion-header-bar class="bar bar-header bar-stable">
+    <button class="button button-clear item-button-left button-primary" ng-click="modal.hide()"><i class="ion ion-close"></i></button>
+    <h1 class="title">Speaker</h1>
+  </ion-header-bar>
 
 
   <ion-content class="speakerDetailContent">
 
     <div class="speakerUpperSection">
-
-      <div class="imageSpeaker"><img ng-src="{{$root.currentSpeaker.Bild}}"/></div>
+      <div class="imageSpeaker"><img ng-src="{{speakerDataModel.Bild}}"/></div>
 
       <div class="informationSection">
-
-        <span class="fullWidth" id="profession">{{$root.currentSpeaker.AkadgradPre}}</span>
-        <span class="fullWidth" id="name">{{$root.currentSpeaker.Vorname}} <span id="nachname">{{$root.currentSpeaker.Name}}</span></span>
-        <span class="fullWidth" id="country">{{$root.currentSpeaker.Land}}</span>
-
+        <span class="fullWidth" id="profession">{{speakerDataModel.AkadgradPre}}</span>
+        <span class="fullWidth" id="name">{{speakerDataModel.Vorname}} <span id="nachname">{{speakerDataModel.Name}}</span></span>
+        <span class="fullWidth" id="country">{{speakerDataModel.Land}}</span>
       </div>
     </div>
 
@@ -62,10 +65,10 @@
     <div class="courseContent">
 
       <span id="courseHeader" class="fullWidth">Lebenslauf</span>
-      <span id="courseText" class="fullWidth" ng-bind-html="$root.currentSpeaker.BeschreibungGER"></span>
+      <span id="courseText" class="fullWidth" ng-bind-html="speakerDataModel.BeschreibungGER"></span>
 
     </div>
 
   </ion-content>
-
+</ion-modal-view>
   </ion-view>
