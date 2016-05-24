@@ -52,16 +52,17 @@ app.controller('courseInfoCtrl', function ($scope, $state, $stateParams, $ionicP
 
   $scope.getWorkshopsOfSpeaker = function(referentId)
   {
+    $scope.workshopsSpeaker = [];
     try {
-      for (var key in $scope.$root.program) {
-        if ($scope.$root.speaker.hasOwnProperty(key)) {
-          for (var program in $scope.$root.program[key]) {
+      for(workshopId in $scope.speakerDataModel.WorkshopId) {
+        for (var key in $scope.$root.program) {
+          if ($scope.$root.speaker.hasOwnProperty(key)) {
+            for (var program in $scope.$root.program[key]) {
+              if ($scope.$root.speaker[key].hasOwnProperty(program)) {
 
-            if ($scope.$root.speaker[key].hasOwnProperty(program)) {
 
-
+              }
             }
-          }
           }
         }
       }
