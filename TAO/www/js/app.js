@@ -27,6 +27,10 @@ var app = angular.module('starter', ['ionic', 'starter.controllers', 'starter.se
     });
 })
 
+  .config(function ($sceDelegateProvider) {
+    $sceDelegateProvider.resourceUrlWhitelist(['self', 'http://www.cnn.com/']);
+  })
+
 .config(function ($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
 
     // Ionic uses AngularUI Router which uses the concept of states
