@@ -7,6 +7,12 @@ app.factory('dataFactory', function ($localstorage, apiFactory, $q) {
     return {
         loadData: function () {
             var deferred = $q.defer();
+            var obj = $localstorage.getObject("eventdata");
+            if (obj == undefined) {
+                obj = {};
+                $localstorage.setObject("eventdata", obj);
+            }
+
             apiFactory.getAllSpeakers().then(function (response) {
                 if (response != "" && response != null) {
                     $localstorage.setObject(speaker, response);
@@ -32,14 +38,26 @@ app.factory('dataFactory', function ($localstorage, apiFactory, $q) {
             return deferred.promise;
         },
         setData: function (key, value) {
-            user_data[key] = value;
-            $localstorage.setObject(user, user_data);
+            var obj = $localstorage.getObject("eventdata");
+            obj[key] = value;
+            $localstorage.setObject("eventdata", obj);
         },
         getSpeakers: function () {
-             var deferred = $q.defer();
+            var deferred = $q.defer();
             var data = $localstorage.getObject(speaker);
-            if(data != undefined) {
+            if (data != undefined) {
                 deferred.resolve(data);
+            }
+            else {
+                deferred.reject();
+            }
+            return deferred.promise;
+        },
+        getData: function (key) {
+            var deferred = $q.defer();
+            var data = $localstorage.getObject("eventdata");
+            if (data != undefined) {
+                deferred.resolve(data[key]);
             }
             else {
                 deferred.reject();
@@ -49,7 +67,7 @@ app.factory('dataFactory', function ($localstorage, apiFactory, $q) {
         getProgram: function () {
             var deferred = $q.defer();
             var data = $localstorage.getObject(program);
-            if(data != undefined) {
+            if (data != undefined) {
                 deferred.resolve(data);
             }
             else {
