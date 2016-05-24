@@ -50,9 +50,19 @@ app.controller('courseInfoCtrl', function ($scope, $state, $stateParams, $ionicP
         var notes = "Vortrag - ";
         for (var i = 0; i < $scope.$root.currentProgram.speakers.length; i++) {
             var speaker = $scope.$root.currentProgram.speakers[i];
-            notes += speaker.AkadgradPre + " " + speaker.Vorname + " " + speaker.Name + " | ";
+            notes += speaker.AkadgradPre + " " + speaker.Vorname + " " + speaker.Name;
+            if ((i + 1) !== $scope.$root.currentProgram.speakers.length) {
+                notes += " | ";
+            }
         }
+
         console.log(notes);
+
+        var date = new Date($scope.$root.currentProgram.Datum);
+
+        console.log(date.getDate() + "." + date.getMonth() + "." + date.getFullYear());
+
+
 
         if ($cordovaCalendar && window.cordova) {
             $cordovaCalendar.createEventInteractively({
