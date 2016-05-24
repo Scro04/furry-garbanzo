@@ -1,12 +1,5 @@
 <link href="templates/css/courseInfo.css" rel="stylesheet">
 <ion-view view-title="Kongressprogramm">
-
-    <ion-nav-buttons side="right">
-        <button class="button calendarBtn" ng-click="addToCalendar()">
-            <i class="ion-calendar"></i>
-        </button>
-    </ion-nav-buttons>
-
     <ion-content class="courseDetailView">
 
         <div class="upperSection">
@@ -14,14 +7,23 @@
             <span id="courseType" class="fullWidth" ng-class="{type0: $root.currentProgram.typeString == 'Vortrag', type1: $root.currentProgram.typeString == 'Workshop', type2: $root.currentProgram.typeString == 'Vorkongress', type3: $root.currentProgram.typeString == 'Nachkongress'}">{{$root.currentProgram.typeString}}</span>
             <span id="courseTitle" class="fullWidth">{{$root.currentProgram.TitelGER}}</span>
 
-            <span id="courseTime" class="fullWidth"><i class="ion-clock"></i></span>
-            <span id="courseStart" class="fullWidth">Beginn: {{$root.currentProgram.startZeit}}</span>
-            <span id="courseEnd" class="fullWidth">Ende: {{$root.currentProgram.endZeit}}</span>
+            <div class="timeWrapper">
+                <span id="courseTime" class="fullWidth"><i class="ion-clock"></i></span>
+                <span id="courseStart" class="fullWidth">Beginn: {{$root.currentProgram.startZeit}}</span>
+                <span id="courseEnd" class="fullWidth">Ende: {{$root.currentProgram.endZeit}}</span>
+            </div>
 
-
-            <span id="courseLocation" class="fullWidth"><i class="ion-location"></i></span>
-            <span id="courseLocationText" class="fullWidth">{{$root.currentProgram.Seminarraum}} Empty aktuell<span ng-if="$root.currentProgram.AKPunkte != null" class="akPoints">AK-Punkte:</span></span>
-            <span id="courseLocationLink" class="fullWidth" ng-click="openRaumplan()">Raumplan<span ng-if="$root.currentProgram.AKPunkte != null" class="akPoints">{{$root.currentProgram.AKPunkte}}</span></span>
+            <div class="locationWrapper">
+                <span id="courseLocation" class="fullWidth"><i class="ion-location"></i></span>
+                <span id="courseLocationText" class="fullWidth">{{$root.currentProgram.Seminarraum}} Empty aktuell</span>
+                <span id="courseLocationLink" class="fullWidth" ng-click="openRaumplan()">Raumplan</span>
+            </div>
+            <div class="pointWrapper">
+                <span id="courseLocation" class="fullWidth"><i class="ion-ribbon-b"></i></span>
+                <span ng-if="$root.currentProgram.AKPunkte != null" class="akPoints">AK-Punkte:</span>
+                <span ng-if="$root.currentProgram.AKPunkte != null" class="akPoints">{{$root.currentProgram.AKPunkte}}</span>
+            </div>
+            <button class="button icon-left ion-calendar button-assertive" ng-click="addToCalendar()">Termin eintragen</button>
         </div>
 
         <div class="speakerSection" ng-repeat="speakerObject in $root.currentProgram.speakers" ng-click="openSpeakerModal('{{speakerObject.ReferentId}}')">

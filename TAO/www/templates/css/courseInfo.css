@@ -206,9 +206,10 @@ div.speakerContainer {
 }
 
 .akPoints {
-    float: right;
-    width: 90px;
-    text-align: right;
+    float: left;
+    width: auto;
+    font-size: 16px;
+    padding-right: 5px;
 }
 
 .speakerSection:nth-child(1n+3) {
@@ -218,4 +219,45 @@ div.speakerContainer {
 .calendarBtn i {
     font-size: 22px;
     color: #b61e3a;
+}
+
+.timeWrapper {
+    width: 50%;
+    height: auto;
+    position: relative;
+    float: left;
+    text-align: left;
+}
+
+.locationWrapper {
+    width: 50%;
+    height: auto;
+    position: relative;
+    float: left;
+    text-align: right;
+}
+
+.pointWrapper {
+    width: 30%;
+    height: auto;
+    position: relative;
+    float: left;
+    text-align: left;
+    padding-top: 10px;
+}
+
+.button.icon-left:before {
+    padding-right: .5em;
+    font-size: 18px;
+    line-height: 35px;
+}
+
+.button.button-assertive {
+    font-size: 13px;
+    position: relative;
+    float: right;
+    max-width: 70%;
+    margin-top: 30px;
+    min-height: 30px;
+    line-height: 35px;
 }

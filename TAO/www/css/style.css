@@ -56,3 +56,7 @@ ion-tabs.tabs-striped.tabs-color-active-positive .tab-item.activated {
 {
     color: orange;
 }
+
+.button.button-assertive {
+    background-color: #b61e3a !important;
+}
