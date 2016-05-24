@@ -15,7 +15,7 @@ router.get('/', function (req, res) {
     connection.connection.query('SELECT WorkshopId, appWorkshops.EinheitId, appWorkshops.Sprache, appWorkshops.TitelGER, appWorkshops.TitelENG, appWorkshops.BeschreibungGER, appWorkshops.BeschreibungENG, appWorkshops.Teil, Zeit, appWorkshops.AKId, appWorkshops.Handout, AKPunkte, appWorkshops.Reihung, appWorkshops.Seminarraum, GROUP_CONCAT(DISTINCT ReferentId) as ReferentId, appEinheiten.TagId ,appEinheiten.Uhrzeit AS EinheitZeit, appTage.Datum, group_concat( appReferenten.Vorname) as Vorname, group_concat( appReferenten.Name) as Name ,group_concat( appReferenten.AkadgradPre ) as AkadgradPre , group_concat(appReferenten.AkadGradPost ) as AkadGradPost, group_concat(appReferenten.Land) as Land, group_concat(DISTINCT appReferenten.id) as SpeakerId FROM appWorkshopsReferenten JOIN appWorkshops on WorkshopId = appWorkshops.id JOIN appEinheiten on appWorkshops.EinheitId = appEinheiten.id JOIN appTage on appTage.id = appEinheiten.TagId JOIN appReferenten on appReferenten.id = ReferentId GROUP BY WorkshopId ORDER BY appEinheiten.TagId', function (err, rows) {
         // ordering to match structure
         var response = {};
-        const weekdays = ["Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag", "Sonntag"];
+        const weekdays = [ "Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag"];
         for (var i = 0; i < rows.length; i++) {
             var date = new Date(rows[i]["Datum"]);
             stringdate = weekdays[date.getDay()] + " " + date.getDate() + "." + (date.getMonth() + 1);
