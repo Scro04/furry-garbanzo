@@ -5,7 +5,9 @@ $cordovaCalendar, dataFactory) {
     $scope.eventAdded = false;
     
     $scope.$on("$ionicView.beforeEnter", function() {
-        dataFactory.getData($scope.$root.currentProgram.Id.toString()).then(function(value) {
+        console.log($scope.$root.currentProgram);
+        dataFactory.getData($scope.$root.currentProgram.WorkshopId.toString()).then(function(value) {
+            console.log(value);
             if(value != undefined) {
                 $scope.eventAdded = Boolean(value);
             }  
@@ -94,7 +96,7 @@ $cordovaCalendar, dataFactory) {
                 console.log("Event created successfully");
                 console.log(result);
                 $scope.eventAdded = true;
-                dataFactory.setData($scope.$root.currentProgram.Id.toString(), $scope.eventAdded.toString());
+                dataFactory.setData($scope.$root.currentProgram.WorkshopId.toString(), $scope.eventAdded.toString());
             }, function (err) {
                 console.error("There was an error: " + err);
             });

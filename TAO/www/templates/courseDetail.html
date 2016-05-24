@@ -23,7 +23,7 @@
                 <span ng-if="$root.currentProgram.AKPunkte != null" class="akPoints">AK-Punkte:</span>
                 <span ng-if="$root.currentProgram.AKPunkte != null" class="akPoints">{{$root.currentProgram.AKPunkte}}</span>
             </div>
-            <button class="button icon-left ion-calendar button-assertive" ng-click="addToCalendar()" ng-if="eventAdded">Termin eintragen</button>
+            <button class="button icon-left ion-calendar button-assertive" ng-click="addToCalendar()" ng-if="!eventAdded">Termin eintragen</button>
             <button class="button icon-left ion-checkmark button-positive" ng-if="eventAdded">Hinzugefügt</button>
         </div>
 
