@@ -1,44 +1,51 @@
 <link href="templates/css/courseInfo.css" rel="stylesheet">
 <ion-view view-title="Kongressprogramm">
 
-  <ion-content class="courseDetailView">
+    <ion-nav-buttons side="right">
+        <button class="button calendarBtn" ng-click="addToCalendar()">
+            <i class="ion-calendar"></i>
+        </button>
+    </ion-nav-buttons>
 
-    <div class="upperSection">
+    <ion-content class="courseDetailView">
 
-      <span id="courseType" class="fullWidth" ng-class="{type0: $root.currentProgram.typeString == 'Vortrag', type1: $root.currentProgram.typeString == 'Workshop', type2: $root.currentProgram.typeString == 'Vorkongress', type3: $root.currentProgram.typeString == 'Nachkongress'}">{{$root.currentProgram.typeString}}</span>
-      <span id="courseTitle" class="fullWidth">{{$root.currentProgram.TitelGER}}</span>
+        <div class="upperSection">
 
-      <span id="courseTime" class="fullWidth"><i class="ion-clock"></i></span>
-      <span id="courseStart" class="fullWidth">Beginn: {{$root.currentProgram.startZeit}}</span>
-      <span id="courseEnd" class="fullWidth">Ende: {{$root.currentProgram.endZeit}}</span>
+            <span id="courseType" class="fullWidth" ng-class="{type0: $root.currentProgram.typeString == 'Vortrag', type1: $root.currentProgram.typeString == 'Workshop', type2: $root.currentProgram.typeString == 'Vorkongress', type3: $root.currentProgram.typeString == 'Nachkongress'}">{{$root.currentProgram.typeString}}</span>
+            <span id="courseTitle" class="fullWidth">{{$root.currentProgram.TitelGER}}</span>
+
+            <span id="courseTime" class="fullWidth"><i class="ion-clock"></i></span>
+            <span id="courseStart" class="fullWidth">Beginn: {{$root.currentProgram.startZeit}}</span>
+            <span id="courseEnd" class="fullWidth">Ende: {{$root.currentProgram.endZeit}}</span>
 
 
-      <span id="courseLocation" class="fullWidth"><i class="ion-location"></i></span>
-      <span id="courseLocationText" class="fullWidth">{{$root.currentProgram.Seminarraum}} Empty aktuell<span ng-if="$root.currentProgram.AKPunkte != null" class="akPoints">AK-Punkte:</span></span>
-      <span id="courseLocationLink" class="fullWidth" ng-click="openRaumplan()">Raumplan<span ng-if="$root.currentProgram.AKPunkte != null" class="akPoints">{{$root.currentProgram.AKPunkte}}</span></span>
-    </div>
+            <span id="courseLocation" class="fullWidth"><i class="ion-location"></i></span>
+            <span id="courseLocationText" class="fullWidth">{{$root.currentProgram.Seminarraum}} Empty aktuell<span ng-if="$root.currentProgram.AKPunkte != null" class="akPoints">AK-Punkte:</span></span>
+            <span id="courseLocationLink" class="fullWidth" ng-click="openRaumplan()">Raumplan<span ng-if="$root.currentProgram.AKPunkte != null" class="akPoints">{{$root.currentProgram.AKPunkte}}</span></span>
+        </div>
 
-    <div class="speakerSection" ng-repeat="speakerObject in $root.currentProgram.speakers" ng-click="openSpeakerModal('{{speakerObject.ReferentId}}')">
-    <div class="speakerContainer">
-      <div id="speakerImage"><img ng-src="{{speakerObject.Bild}}"/></div>
-      <div id="speakerName"><span id="country"><span ng-if="speakerObject.AkadgradPre != null">{{speakerObject.AkadgradPre}}<br></span></span>{{speakerObject.Name}} {{speakerObject.Vorname}}<br><span id="country">{{speakerObject.Land}}</span></div>
-      <div id="speakerLinking"><i class="ion-chevron-right"></i></div>
-    </div>
-    </div>
+        <div class="speakerSection" ng-repeat="speakerObject in $root.currentProgram.speakers" ng-click="openSpeakerModal('{{speakerObject.ReferentId}}')">
+            <div class="speakerContainer">
+                <div id="speakerImage"><img ng-src="{{speakerObject.Bild}}" /></div>
+                <div id="speakerName"><span id="country"><span ng-if="speakerObject.AkadgradPre != null">{{speakerObject.AkadgradPre}}<br></span></span>{{speakerObject.Name}} {{speakerObject.Vorname}}
+                    <br><span id="country">{{speakerObject.Land}}</span></div>
+                <div id="speakerLinking"><i class="ion-chevron-right"></i></div>
+            </div>
+        </div>
 
-    <div class="handoutSection" ng-click="openLink('{{$root.currentProgram.Handout}}')">
+        <div class="handoutSection" ng-click="openLink('{{$root.currentProgram.Handout}}')">
 
-      <div id="handoutImage"><img src="img/icons/pdf_logo.jpg"/>Handout downloaden</div>
-      <!--<div id="handoutInfo" ></div>-->
+            <div id="handoutImage"><img src="img/icons/pdf_logo.jpg" />Handout downloaden</div>
+            <!--<div id="handoutInfo" ></div>-->
 
-    </div>
+        </div>
 
-    <div class="courseContent" ng-if="$root.currentProgram.BeschreibungGER != null">
+        <div class="courseContent" ng-if="$root.currentProgram.BeschreibungGER != null">
 
-      <span id="courseHeader" class="fullWidth">Inhalt</span>
-      <span id="courseText" class="fullWidth" ng-bind-html="$root.currentProgram.BeschreibungGER"></span>
+            <span id="courseHeader" class="fullWidth">Inhalt</span>
+            <span id="courseText" class="fullWidth" ng-bind-html="$root.currentProgram.BeschreibungGER"></span>
 
-    </div>
+        </div>
 
-  </ion-content>
+    </ion-content>
 </ion-view>
