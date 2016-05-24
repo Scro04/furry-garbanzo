@@ -1,32 +1,41 @@
-app.controller('homeCtrl', function($scope, $state, apiFactory) {
+app.controller('homeCtrl', function ($scope, $state, dataFactory, $ionicPopup) {
+
+    $scope.$root.currentSpeaker;
+    $scope.$root.currentProgram;
+
+    $scope.showAlert = function () {
+        var alertPopup = $ionicPopup.alert({
+            title: 'Daten konnten nicht aktulisiert werden!',
+            template: 'Bitte überprüfen Sie Ihre Internetverbindung',
+            buttons: [{
+                text: 'OK',
+                type: 'button-assertive'
+            }]
+        });
+    };
 
 
-  $scope.$root.speaker;
-  $scope.$root.currentSpeaker;
-  $scope.$root.program;
-  $scope.$root.currentProgram;
+    dataFactory.loadData().then(function () {
+        if (window.cordova && $cordovaSplashscreen) {
+            setTimeout(function () {
+                $cordovaSplashscreen.hide();
+            }, 1000);
+
+        }
+    }, function () {
+        console.log("error");
+        $scope.showAlert();
+        if (window.cordova && $cordovaSplashscreen) {
+            setTimeout(function () {
+                $cordovaSplashscreen.hide();
+            }, 1000);
+
+        }
+    });
 
 
-  apiFactory.getAllSpeakers().then(function (response) {
-    $scope.$root.speaker = response;
-    console.log(response);
-
-  }, function (error) {
-    console.log(error);
-  });
-
-  apiFactory.getWorkshops().then(function (response) {
-    $scope.$root.program = response;
-    console.log(response);
-
-  }, function (error) {
-    console.log(error);
-  });
-
-
-$scope.tabs = function(state)
-{
-  $state.go(state);
-}
+    $scope.tabs = function (state) {
+        $state.go(state);
+    }
 
 });
