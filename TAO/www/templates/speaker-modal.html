@@ -4,7 +4,7 @@
 <ion-view view-title="Referent" class="speakerDetailView">
   <ion-modal-view>
 
-  <ion-header-bar class="bar bar-header bar-stable">
+  <ion-header-bar class="bar bar-header bar-stable customModal">
     <button class="button button-clear item-button-left button-primary" ng-click="modal.hide()"><i class="ion ion-close"></i></button>
     <h1 class="title">Speaker</h1>
   </ion-header-bar>
@@ -22,51 +22,36 @@
       </div>
     </div>
 
+    <!--
     <div class="speakerEventsWrapper">
 
       <span class="headline">Events</span>
 
+        <div ng-repeat="entry in workshopsSpeaker">
       <a class="item eventRow" id="test">
       <div class="timeWrapper leftAligned">
        <span id="day">FR</span><br>22.09
       </div>
         <div class="timeWrapper">
-         09:30<br> - <br>09:45
+         {{entry.startZeit}}<br> - <br>{{entry.endZeit}}
         </div>
         <div class="infoWrapper">
-          <div class="programType" ng-class="{type0: entry.type == 'Vortrag', type1: entry.type == 'Workshop', type2: entry.type == 'Vorkongress', type3: entry.type == 'Nachkongress'}">Vortrag</div>
-          <div class="programName">Das ist eine Test Headline</div>
-          <div class="programAuthor">Hier kommt ein zusätzlicher Titel</div>
+          <div class="programType" ng-class="{type0: entry.typeString == 'Vortrag', type1: entry.typeString == 'Workshop', type2: entry.typeString == 'Vorkongress', type3: entry.typeString == 'Nachkongress'}">{{entry.typeString}}</div>
+          <div class="programName">{{entry.TitelGER}}</div>
+         <div class="programAuthor" ng-bind-html="entry.BeschreibungGER"></div>
         </div>
         <div class="detailBox">
           <i class="ion-chevron-right"></i>
         </div>
       </a>
-
-      <a class="item eventRow">
-        <div class="timeWrapper leftAligned">
-          <span id="day">FR</span><br>22.09
-        </div>
-        <div class="timeWrapper">
-          09:30<br> - <br>09:45
-        </div>
-        <div class="infoWrapper">
-          <div class="programType" ng-class="{type0: entry.type == 'Vortrag', type1: entry.type == 'Workshop', type2: entry.type == 'Vorkongress', type3: entry.type == 'Nachkongress'}">Vortrag</div>
-          <div class="programName">Das ist eine Test Headline</div>
-          <div class="programAuthor">Hier kommt ein zusätzlicher Titel</div>
-        </div>
-        <div class="detailBox">
-          <i class="ion-chevron-right"></i>
-        </div>
-      </a>
-
+      </div>
     </div>
 
-    <div class="courseContent">
+    -->
 
+    <div class="courseContent">
       <span id="courseHeader" class="fullWidth">Lebenslauf</span>
       <span id="courseText" class="fullWidth" ng-bind-html="speakerDataModel.BeschreibungGER"></span>
-
     </div>
 
   </ion-content>

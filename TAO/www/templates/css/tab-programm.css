@@ -42,7 +42,7 @@
     color: #b61e3a;
     text-transform: uppercase;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .programName {
@@ -137,4 +137,8 @@
     .detailBox {
         font-size: 30px;
     }
+}
+
+.smallLineHeight {
+  line-height: 12px;
 }

@@ -56,6 +56,10 @@ font-size: 22px;
   justify-content: left;
 }
 
+.modalBorder {
+  border-top: 1px solid lightgray !important;
+}
+
 #speakerImage {
   float: left;
   width: 80px;

@@ -1,7 +1,6 @@
-app.controller('courseInfoCtrl', function ($scope, $state, $stateParams, $ionicPopup, $ionicModal) {
+app.controller('courseInfoCtrl', function ($scope, $state, $stateParams, $ionicPopup, $ionicModal, $q) {
 
   $scope.speakerDataModel = undefined;
-
 
   $ionicModal.fromTemplateUrl('templates/speaker-modal.html', {
     scope: $scope,
@@ -20,7 +19,6 @@ app.controller('courseInfoCtrl', function ($scope, $state, $stateParams, $ionicP
     $scope.modal.remove();
   });
 
-
   $scope.showAlert = function() {
     var alertPopup = $ionicPopup.alert({
       title: 'Ein Fehler ist aufgetreten!',
@@ -36,32 +34,8 @@ app.controller('courseInfoCtrl', function ($scope, $state, $stateParams, $ionicP
           for (var speaker in $scope.$root.speaker[key]) {
             if ($scope.$root.speaker[key].hasOwnProperty(speaker) && $scope.$root.speaker[key][speaker].id != null && $scope.$root.speaker[key][speaker].id == referentId) {
               $scope.speakerDataModel = $scope.$root.speaker[key][speaker];
-              console.log($scope.speakerDataModel);
-              $scope.openModal();
-            }
-          }
-        }
-      }
-    }
-    catch(error)
-    {
-      console.log(error);
-      $scope.showAlert();
-    }
-  }
 
-  $scope.getWorkshopsOfSpeaker = function(referentId)
-  {
-    $scope.workshopsSpeaker = [];
-    try {
-      for(workshopId in $scope.speakerDataModel.WorkshopId) {
-        for (var key in $scope.$root.program) {
-          if ($scope.$root.speaker.hasOwnProperty(key)) {
-            for (var program in $scope.$root.program[key]) {
-              if ($scope.$root.speaker[key].hasOwnProperty(program)) {
-
-
-              }
+               $scope.openModal();
             }
           }
         }
