@@ -1,18 +1,17 @@
-
 <link href="templates/css/tab-info.css" rel="stylesheet">
 
 <ion-view view-title="Informationen">
     <ion-content>
 
-      <div class="list info-tab">
-        <a class="item item-avatar" ng-click="" ng-repeat="section in sections">
-          <img ng-src="{{section.image}}">
-          <div class="infoWrapper">
-          <h2>{{section.headline}}</h2>
-          <p>{{section.text}}</p>
-          </div>
-          <i class="ion-chevron-right infoDetailChevron"></i>
-        </a>
+        <div class="list info-tab">
+            <a class="item item-avatar" ng-click="goToState(section.headline)" ng-repeat="section in sections">
+                <img ng-src="{{section.image}}">
+                <div class="infoWrapper">
+                    <h2>{{section.headline}}</h2>
+                    <p>{{section.text}}</p>
+                </div>
+                <i class="ion-chevron-right infoDetailChevron"></i>
+            </a>
         </div>
 
     </ion-content>
