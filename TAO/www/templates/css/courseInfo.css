@@ -68,6 +68,10 @@
     justify-content: left;
 }
 
+.modalBorder {
+  border-top: 1px solid lightgray !important;
+}
+
 #speakerImage {
     float: left;
     width: 80px;
@@ -221,7 +225,7 @@ div.speakerContainer {
     color: #b61e3a;
 }
 
-.timeWrapper {
+.courseTimeWrapper {
     width: 50%;
     height: auto;
     position: relative;

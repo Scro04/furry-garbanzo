@@ -19,45 +19,31 @@
       </div>
     </div>
 
-    <div class="speakerEventsWrapper">
+
+    <div class="speakerEventsWrapper" ng-if="workshopsSpeaker.length > 0">
 
       <span class="headline">Events</span>
 
-      <a class="item eventRow" id="test">
-      <div class="timeWrapper leftAligned">
-       <span id="day">FR</span><br>22.09
+      <div ng-repeat="entry in workshopsSpeaker">
+        <a class="item eventRow" id="test" ng-click="openWorkshopModal(entry)">
+          <div class="timeWrapper leftAligned">
+            <span id="day">FR</span><br>22.09
+          </div>
+          <div class="timeWrapper smallLineHeight">
+            {{entry.startZeit}}<br> - <br>{{entry.endZeit}}
+          </div>
+          <div class="infoWrapper">
+            <div class="programType" ng-class="{type0: entry.typeString == 'Vortrag', type1: entry.typeString == 'Workshop', type2: entry.typeString == 'Vorkongress', type3: entry.typeString == 'Nachkongress'}">{{entry.typeString}}</div>
+            <div class="programName">{{entry.TitelGER}}</div>
+           <!-- <div class="programAuthor" ng-bind-html="entry.BeschreibungGER"></div> -->
+          </div>
+          <div class="detailBox">
+            <i class="ion-chevron-right"></i>
+          </div>
+        </a>
       </div>
-        <div class="timeWrapper">
-         09:30<br> - <br>09:45
-        </div>
-        <div class="infoWrapper">
-          <div class="programType" ng-class="{type0: entry.type == 'Vortrag', type1: entry.type == 'Workshop', type2: entry.type == 'Vorkongress', type3: entry.type == 'Nachkongress'}">Vortrag</div>
-          <div class="programName">Das ist eine Test Headline</div>
-          <div class="programAuthor">Hier kommt ein zusätzlicher Titel</div>
-        </div>
-        <div class="detailBox">
-          <i class="ion-chevron-right"></i>
-        </div>
-      </a>
-
-      <a class="item eventRow">
-        <div class="timeWrapper leftAligned">
-          <span id="day">FR</span><br>22.09
-        </div>
-        <div class="timeWrapper">
-          09:30<br> - <br>09:45
-        </div>
-        <div class="infoWrapper">
-          <div class="programType" ng-class="{type0: entry.type == 'Vortrag', type1: entry.type == 'Workshop', type2: entry.type == 'Vorkongress', type3: entry.type == 'Nachkongress'}">Vortrag</div>
-          <div class="programName">Das ist eine Test Headline</div>
-          <div class="programAuthor">Hier kommt ein zusätzlicher Titel</div>
-        </div>
-        <div class="detailBox">
-          <i class="ion-chevron-right"></i>
-        </div>
-      </a>
-
     </div>
+
 
     <div class="courseContent">
 

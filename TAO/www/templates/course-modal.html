@@ -1,0 +1,58 @@
+<link href="templates/css/courseInfo.css" rel="stylesheet">
+<ion-view view-title="Kongressprogramm">
+
+  <ion-modal-view>
+
+    <ion-header-bar class="bar bar-header bar-stable customModal">
+      <button class="button button-clear item-button-left button-primary" ng-click="modal.hide()"><i class="ion ion-close"></i></button>
+      <h1 class="title">Programm</h1>
+    </ion-header-bar>
+
+
+
+    <ion-content class="courseDetailView">
+
+    <div class="upperSection">
+
+      <span id="courseType" class="fullWidth" ng-class="{type0: workshopDataModal.typeString == 'Vortrag', type1: workshopDataModal.typeString == 'Workshop', type2: workshopDataModal.typeString == 'Vorkongress', type3: workshopDataModal.typeString == 'Nachkongress'}">{{workshopDataModal.typeString}}</span>
+      <span id="courseTitle" class="fullWidth">{{workshopDataModal.TitelGER}}</span>
+
+      <span id="courseTime" class="fullWidth"><i class="ion-clock"></i></span>
+      <span id="courseStart" class="fullWidth">Beginn: {{workshopDataModal.startZeit}}</span>
+      <span id="courseEnd" class="fullWidth">Ende: {{workshopDataModal.endZeit}}</span>
+
+
+      <span id="courseLocation" class="fullWidth"><i class="ion-location"></i></span>
+      <span id="courseLocationText" class="fullWidth">{{workshopDataModal.Seminarraum}} Empty aktuell<span ng-if="workshopDataModal.AKPunkte != null" class="akPoints">AK-Punkte:</span></span>
+      <span id="courseLocationLink" class="fullWidth" ng-click="openRaumplan()">Raumplan<span ng-if="workshopDataModal.AKPunkte != null" class="akPoints">{{workshopDataModal.AKPunkte}}</span></span>
+    </div>
+
+    <!--
+    <div class="speakerSection" ng-repeat="speakerObject in workshopDataModal.speakers" ng-click="openSpeakerModal('{{speakerObject.ReferentId}}')">
+    <div class="speakerContainer">
+      <div id="speakerImage"><img ng-src="{{speakerObject.Bild}}"/></div>
+      <div id="speakerName"><span id="country"><span ng-if="speakerObject.AkadgradPre != null">{{speakerObject.AkadgradPre}}<br></span></span>{{speakerObject.Name}} {{speakerObject.Vorname}}<br><span id="country">{{speakerObject.Land}}</span></div>
+      <div id="speakerLinking"><i class="ion-chevron-right"></i></div>
+    </div>
+    </div>
+
+    -->
+
+    <div class="handoutSection modalBorder" ng-click="openLink('{{workshopDataModal.Handout}}')">
+
+      <div id="handoutImage"><img src="img/icons/pdf_logo.jpg"/>Handout downloaden</div>
+      <!--<div id="handoutInfo" ></div>-->
+
+    </div>
+
+    <div class="courseContent" ng-if="workshopDataModal.BeschreibungGER != null">
+
+      <span id="courseHeader" class="fullWidth">Inhalt</span>
+      <span id="courseText" class="fullWidth" ng-bind-html="workshopDataModal.BeschreibungGER"></span>
+
+    </div>
+
+  </ion-content>
+
+    </ion-modal-view>
+</ion-view>

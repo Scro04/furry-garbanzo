@@ -33,30 +33,98 @@ ion-tabs.tabs-striped.tabs-color-active-positive .tab-item.activated {
 /* VORTRAG */
 
 {
-    color: #b61e3a;
+    /* color: #b61e3a; */
 }
 
 .type1
 /* WORKSHOP */
 
 {
-    color: yellow;
+    /* color: yellow; */
 }
 
 .type2
 /* VORKONGRESS */
 
 {
-    color: green;
+    /* color: green; */
 }
 
 .type3
 /* NACHKONGRESS */
 
 {
-    color: orange;
+    /*  color: orange; */
 }
 
 .button.button-assertive {
     background-color: #b61e3a !important;
+}
+
+.loading-container {
+    bottom: 47px !important;
+}
+
+.loading-container .loading {
+    background-color: transparent !important;
+}
+
+div.loading-container.visible.active {
+    background-color: white;
+    !important;
+}
+
+ion-spinner.spinner.spinner-ios {
+    stroke: #b61e3a !important;
+}
+
+.backdrop.visible {
+    visibility: hidden !important;
+}
+
+i.ion.ion-close {
+    color: white !important;
+    font-size: 22px !important;
+}
+
+button.button.button-clear.item-button-left.button-primary {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+ion-header-bar.bar.bar-header.bar-stable.customModal {
+    background-color: #b61e3a !important;
+}
+
+ion-header-bar.bar.bar-header.bar-stable.customModal h1 {
+    color: white !important;
+}
+
+.active .modal-backdrop-bg {
+    opacity: 0 !important;
+}
+
+.modal {
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    width: 100%;
+}
+
+ion-header-bar.bar.bar-header.bar-stable.customModal {
+    padding-top: 20px !important;
+}
+
+.platform-ios.platform-cordova .modal-wrapper .modal .bar-header:not(.bar-subheader) {
+    height: 64px !important;
+}
+
+ion-header-bar.bar.bar-header.bar-stable.customModal h1 {
+    margin-top: 17px !important;
+}
+
+.platform-ios.platform-cordova .modal-wrapper .modal .has-header {
+    top: 64px !important;
 }
