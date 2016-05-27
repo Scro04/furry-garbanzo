@@ -71,7 +71,6 @@ ion-tabs.tabs-striped.tabs-color-active-positive .tab-item.activated {
 
 div.loading-container.visible.active {
     background-color: white;
-    !important;
 }
 
 ion-spinner.spinner.spinner-ios {
