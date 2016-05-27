@@ -265,3 +265,13 @@ div.speakerContainer {
     min-height: 30px;
     line-height: 35px;
 }
+
+.button.button-positive {
+    font-size: 13px;
+    position: relative;
+    float: right;
+    max-width: 70%;
+    margin-top: 30px;
+    min-height: 30px;
+    line-height: 35px;
+}

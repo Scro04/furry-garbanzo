@@ -1,6 +1,18 @@
-app.controller('courseInfoCtrl', function ($scope, $state, $stateParams, $ionicPopup, $ionicModal, $q, $cordovaCalendar) {
+app.controller('courseInfoCtrl', function ($scope, $state, $stateParams, $ionicPopup, $ionicModal, $q, 
+$cordovaCalendar, dataFactory) {
 
     $scope.speakerDataModel = undefined;
+    $scope.eventAdded = false;
+    
+    $scope.$on("$ionicView.beforeEnter", function() {
+        console.log($scope.$root.currentProgram);
+        dataFactory.getData($scope.$root.currentProgram.WorkshopId.toString()).then(function(value) {
+            console.log(value);
+            if(value != undefined) {
+                $scope.eventAdded = Boolean(value);
+            }  
+        })
+    })
 
     $ionicModal.fromTemplateUrl('templates/speaker-modal.html', {
         scope: $scope,
@@ -55,6 +67,8 @@ app.controller('courseInfoCtrl', function ($scope, $state, $stateParams, $ionicP
                 notes += " | ";
             }
         }
+        
+        var title = "[TA0 2016] " + $scope.$root.currentProgram.TitelGER;
 
         console.log(notes);
 
@@ -62,17 +76,27 @@ app.controller('courseInfoCtrl', function ($scope, $state, $stateParams, $ionicP
 
         console.log(date.getDate() + "." + date.getMonth() + "." + date.getFullYear());
 
-
+        var day = date.getDate();
+        var month = date.getMonth();
+        var year = date.getFullYear();
+        var start_hour = parseInt($scope.$root.currentProgram.startZeit.split(":")[0]);
+        var start_minute = parseInt($scope.$root.currentProgram.startZeit.split(":")[1]);
+        var end_hour = parseInt($scope.$root.currentProgram.endZeit.split(":")[0]);
+        var end_minute = parseInt($scope.$root.currentProgram.endZeit.split(":")[1]);
 
         if ($cordovaCalendar && window.cordova) {
+
             $cordovaCalendar.createEventInteractively({
-                title: $scope.$root.currentProgram.TitelGER,
+                title: title,
                 location: 'Vorklinik Uni Graz',
                 notes: notes,
-                startDate: new Date(2016, 8, 22, 09, 0, 0, 0, 0),
-                endDate: new Date(2016, 8, 22, 10, 30, 0, 0, 0)
+                startDate: new Date(year, month, day, start_hour, start_minute, 0, 0, 0),
+                endDate: new Date(year, month, day, end_hour, end_minute, 0, 0, 0)
             }).then(function (result) {
                 console.log("Event created successfully");
+                console.log(result);
+                $scope.eventAdded = true;
+                dataFactory.setData($scope.$root.currentProgram.WorkshopId.toString(), $scope.eventAdded.toString());
             }, function (err) {
                 console.error("There was an error: " + err);
             });
