@@ -36,13 +36,13 @@ app.controller('homeCtrl', function ($scope, $state, dataFactory, $ionicPopup, $
                         }
                     }
                     
+                    deferred.resolve();
+                    
                     $ImageCacheFactory.Cache(images).then(function () {
                         console.log("Images done loading!");
-                        deferred.resolve();
 
                     }, function (failed) {
                         console.log("An image failed: " + failed);
-                        deferred.resolve();
                     });
                 }
             }, function () { })

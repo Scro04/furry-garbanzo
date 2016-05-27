@@ -30,7 +30,7 @@
         <div class="speakerSection" ng-repeat="speakerObject in $root.currentProgram.speakers" ng-click="openSpeakerModal('{{speakerObject.ReferentId}}')">
             <div class="speakerContainer">
                 <div id="speakerImage"><img ng-src="{{speakerObject.Bild}}" /></div>
-                <div id="speakerName"><span id="country"><span ng-if="speakerObject.AkadgradPre != null">{{speakerObject.AkadgradPre}}<br></span></span>{{speakerObject.Name}} {{speakerObject.Vorname}}
+                <div id="speakerName"><span id="country"><span ng-if="speakerObject.AkadgradPre != null">{{speakerObject.AkadgradPre}}<br></span></span>{{speakerObject.Vorname}} {{speakerObject.Name}}
                     <br><span id="country">{{speakerObject.Land}}</span></div>
                 <div id="speakerLinking"><i class="ion-chevron-right"></i></div>
             </div>
