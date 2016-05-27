@@ -36,17 +36,20 @@
     height: 100%;
     font-size: 12px;
     padding-right: 8px;
+    margin-right: 8px;
+    border-right: 1px solid #aaa;
+    font-weight: 400;
 }
 
 .programType {
     color: #b61e3a;
     text-transform: uppercase;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .programName {
-    font-size: 16px;
+    font-size: 13px;
     color: black;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -54,7 +57,7 @@
 }
 
 .programAuthor {
-    font-size: 14px;
+    font-size: 12px;
     color: darkgray;
     text-overflow: ellipsis;
     overflow: hidden;
