@@ -27,6 +27,7 @@ app.controller('programCtrl', function ($scope, $state, dataFactory, $ionicPopup
     $state.go('tab.courseInfo');
   }
 
+
   $scope.goHome = function () {
     $state.go('home');
   }

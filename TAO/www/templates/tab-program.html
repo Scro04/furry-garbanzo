@@ -22,9 +22,10 @@
          {{entry.startZeit}} <br> - <br> {{entry.endZeit}}
         </div>
         <div class="infoWrapper">
-          <div class="programType" ng-class="{type0: entry.typeString == 'Vortrag', type1: entry.typeString == 'Workshop', type2: entry.typeString == 'Vorkongress', type3: entry.typeString == 'Nachkongress'}">{{entry.typeString}}</div>
+          <div class="programType" ng-class="{type0: entry.typeString == 'Vortrag', type1: entry.typeString == 'Workshop', type2: entry.typeString == 'Vorkongress', 
+          type3: entry.typeString == 'Nachkongress'}">{{entry.typeString}} {{entry.Teil !== null ? "- Teil " + entry.Teil : ""}}</div>
           <div class="programName">{{entry.TitelGER}}</div>
-          <div class="programAuthor">{{entry.speakers[0].AkadgradPre}} {{entry.speakers[0].Name}} {{entry.speakers[0].Vorname}}</div>
+          <div class="programAuthor">{{entry.speakers[0].Vorname}} {{entry.speakers[0].Name}} </div>
         </div>
         <div class="detailBox">
           <i class="ion-chevron-right"></i>
