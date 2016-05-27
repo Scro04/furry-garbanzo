@@ -15,6 +15,7 @@ app.factory('dataFactory', function ($localstorage, apiFactory, $q) {
 
             apiFactory.getAllSpeakers().then(function (response) {
                 if (response != "" && response != null) {
+                    console.log(response);
                     $localstorage.setObject(speaker, response);
                     apiFactory.getWorkshops().then(function (second_response) {
                         if (second_response != "" && second_response != null) {
@@ -80,6 +81,39 @@ app.factory('dataFactory', function ($localstorage, apiFactory, $q) {
             var result = $localstorage.deleteObject(program);
             success.success = result;
             return success;
+        },
+        getSpeaker: function (id) {
+            var defered = $q.defer();
+            var elem = $localstorage.getObject("speaker");
+            var result = undefined;
+            for (var key in elem) {
+                if (elem.hasOwnProperty(key)) {
+                    for (var speaker in elem[key]) {
+                        console.log(speaker);
+                        if (elem[key].hasOwnProperty(speaker) && elem[key][speaker].id == id) {
+                           result = elem[key][speaker];
+                        }
+                    }
+                }
+            }
+            defered.resolve(result);
+            return defered.promise;
+        },
+        getEventsForSpeaker: function (id) {
+            var defered = $q.defer();
+            var elem = $localstorage.getObject("program");
+            var result = undefined;
+            for (var key in elem) {
+                if (elem.hasOwnProperty(key)) {
+                    for (var program in elem[key]) {
+                        if (elem[key].hasOwnProperty(program) && elem[key][program].WorkshopId == id) {
+                           result = elem[key][program];
+                        }
+                    }
+                }
+            }
+            defered.resolve(result);
+            return defered.promise;
         }
     }
 });

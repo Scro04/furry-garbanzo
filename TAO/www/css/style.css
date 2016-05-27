@@ -113,7 +113,7 @@ ion-header-bar.bar.bar-header.bar-stable.customModal h1 {
     width: 100%;
 }
 
-ion-header-bar.bar.bar-header.bar-stable.customModal {
+.platform-ios ion-header-bar.bar.bar-header.bar-stable.customModal {
     padding-top: 20px !important;
 }
 
@@ -121,7 +121,7 @@ ion-header-bar.bar.bar-header.bar-stable.customModal {
     height: 64px !important;
 }
 
-ion-header-bar.bar.bar-header.bar-stable.customModal h1 {
+.platform-ios ion-header-bar.bar.bar-header.bar-stable.customModal h1 {
     margin-top: 17px !important;
 }
 

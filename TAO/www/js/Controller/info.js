@@ -21,7 +21,7 @@ app.controller('infoCtrl', function ($scope, $state) {
             headline: "Hotelreservierung",
             text: "Sichern Sie sich Ihr Quartier!",
             image: "img/icons/bed.png",
-            state: "informations"
+            state: "hotel"
         },
         {
             headline: "Kongresstarife",
@@ -38,8 +38,29 @@ app.controller('infoCtrl', function ($scope, $state) {
 
 
     $scope.goToState = function (state) {
+        if (state === "hotel") {
+            var options = {
+                enableViewportScale: 'yes',
+                location: 'no',
+                clearcache: 'yes',
+                toolbar: 'yes'
+            };
 
-            $state.go(state);
+            var address = "https://www.graztourismus.at/kongress/de/13-internationaler-tcm-kongress---tao_kongressformular-6253"
+            var inAppBrowser = window.open(address, "_blank", "location=no,enableviewportscale=yes");
+
+            inAppBrowser.addEventListener('loaderror', function (event) {
+                console.log(event.url + " kann nicht geöffnet werden.");
+                showWebsiteError();
+                inAppBrowser.close();
+            });
+            
+            return;
+        }
+        else {
+             $state.go(state);
+        }
+       
 
     }
 

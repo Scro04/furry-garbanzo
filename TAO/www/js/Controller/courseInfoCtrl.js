@@ -1,16 +1,16 @@
-app.controller('courseInfoCtrl', function ($scope, $state, $stateParams, $ionicPopup, $ionicModal, $q, 
-$cordovaCalendar, dataFactory) {
+app.controller('courseInfoCtrl', function ($scope, $state, $stateParams, $ionicPopup, $ionicModal, $q,
+    $cordovaCalendar, dataFactory) {
 
     $scope.speakerDataModel = undefined;
     $scope.eventAdded = false;
-    
-    $scope.$on("$ionicView.beforeEnter", function() {
+
+    $scope.$on("$ionicView.beforeEnter", function () {
         console.log($scope.$root.currentProgram);
-        dataFactory.getData($scope.$root.currentProgram.WorkshopId.toString()).then(function(value) {
+        dataFactory.getData($scope.$root.currentProgram.WorkshopId.toString()).then(function (value) {
             console.log(value);
-            if(value != undefined) {
+            if (value != undefined) {
                 $scope.eventAdded = Boolean(value);
-            }  
+            }
         })
     })
 
@@ -40,17 +40,13 @@ $cordovaCalendar, dataFactory) {
 
     $scope.openSpeakerModal = function (referentId) {
         try {
-            for (var key in $scope.$root.speaker) {
-                if ($scope.$root.speaker.hasOwnProperty(key)) {
-                    for (var speaker in $scope.$root.speaker[key]) {
-                        if ($scope.$root.speaker[key].hasOwnProperty(speaker) && $scope.$root.speaker[key][speaker].id != null && $scope.$root.speaker[key][speaker].id == referentId) {
-                            $scope.speakerDataModel = $scope.$root.speaker[key][speaker];
 
-                            $scope.openModal();
-                        }
-                    }
-                }
-            }
+            dataFactory.getSpeaker(referentId).then(function (result) {
+                console.log(result);
+                $scope.speakerDataModel = result;
+                $scope.openModal();
+            })
+
         } catch (error) {
             console.log(error);
             $scope.showAlert();
@@ -67,7 +63,7 @@ $cordovaCalendar, dataFactory) {
                 notes += " | ";
             }
         }
-        
+
         var title = "[TA0 2016] " + $scope.$root.currentProgram.TitelGER;
 
         console.log(notes);
