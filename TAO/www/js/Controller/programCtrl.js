@@ -1,4 +1,4 @@
-app.controller('programCtrl', function ($scope, $state, dataFactory, $ionicPopup) {
+app.controller('programCtrl', function ($scope, $state, dataFactory, $ionicPopup, $ionicHistory) {
   $scope.data = undefined;
 
   $scope.showAlert = function () {
@@ -13,14 +13,14 @@ app.controller('programCtrl', function ($scope, $state, dataFactory, $ionicPopup
   };
 
   $scope.$on("$ionicView.beforeEnter", function () {
-        if ($scope.data == undefined) {
-            dataFactory.getProgram().then(function (data) {
-                $scope.data = data;
-            }, function () {
-                $scope.showAlert();
-            })
-        }
-    });
+    if ($scope.data == undefined) {
+      dataFactory.getProgram().then(function (data) {
+        $scope.data = data;
+      }, function () {
+        $scope.showAlert();
+      })
+    }
+  });
 
   $scope.goToDetail = function (entry) {
     $scope.$root.currentProgram = entry;
@@ -29,6 +29,10 @@ app.controller('programCtrl', function ($scope, $state, dataFactory, $ionicPopup
 
 
   $scope.goHome = function () {
+    $ionicHistory.clearHistory();
+    $ionicHistory.nextViewOptions({
+      historyRoot: true
+    });
     $state.go('home');
   }
 });

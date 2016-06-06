@@ -2,6 +2,12 @@
 <link href="templates/css/tab-referenten.css" rel="stylesheet">
 
 <ion-view view-title="Referenten">
+    <ion-nav-buttons side="left">
+        <button class="button homeBtn" ng-click="goHome()">
+        <i class="ion-home"></i>
+        </button>
+    </ion-nav-buttons>  
+    
     <ion-content class="referenten" scroll="true">
 
         <div class="list noPaddingList" ng-repeat="(key, value) in data">

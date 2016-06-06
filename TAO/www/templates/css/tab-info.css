@@ -1,5 +1,6 @@
 .infoWrapper {
   float: left;
+  max-width: 92%;
 }
 .item {
   display: flex;

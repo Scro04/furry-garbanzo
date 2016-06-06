@@ -1,4 +1,4 @@
-app.controller('infoCtrl', function ($scope, $state) {
+app.controller('infoCtrl', function ($scope, $state, $ionicHistory) {
 
     console.log("infoCtrl");
 
@@ -31,7 +31,7 @@ app.controller('infoCtrl', function ($scope, $state) {
         },
         {
             headline: "Kontakt",
-            text: "Für weitere Informationen stehen wir gerne zur Verfügung!",
+            text: "Wir stehen Ihnen gerne zur Verfügung!",
             image: "img/icons/contact.png",
             state: "tab.kontakt"
         }];
@@ -54,14 +54,23 @@ app.controller('infoCtrl', function ($scope, $state) {
                 showWebsiteError();
                 inAppBrowser.close();
             });
-            
+
             return;
         }
         else {
-             $state.go(state);
+            $state.go(state);
         }
-       
 
+
+    }
+
+
+    $scope.goHome = function () {
+        $ionicHistory.clearHistory();
+        $ionicHistory.nextViewOptions({
+            historyRoot: true
+        });
+        $state.go('home');
     }
 
 

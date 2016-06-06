@@ -105,8 +105,10 @@ app.factory('dataFactory', function ($localstorage, apiFactory, $q) {
             var result = undefined;
             for (var key in elem) {
                 if (elem.hasOwnProperty(key)) {
+     
                     for (var program in elem[key]) {
-                        if (elem[key].hasOwnProperty(program) && elem[key][program].WorkshopId == id) {
+                        
+                        if (elem[key].hasOwnProperty(program) && elem[key][program].WorkshopId === parseInt(id)) {
                            result = elem[key][program];
                         }
                     }

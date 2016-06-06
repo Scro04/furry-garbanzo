@@ -44,8 +44,7 @@
 
 .homeView .actionTitle {
     font-size: 19px;
-    font-family: Helvetica;
-    font-weight: 100;
+    font-weight: 400;
     color: white;
     letter-spacing: 1px;
 }
@@ -70,7 +69,10 @@
 .homeView .titleImageContainer #homeTitle {
     color: #b61e3a;
     margin-bottom: 7.5%;
+    font-weight: 600;
+    font-size: 21px;
 }
+
 
 .homeView .titleImageContainer #homeSubtitle {
     font-size: 21px;

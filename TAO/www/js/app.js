@@ -8,7 +8,7 @@
 var app = angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'ngCordova', 'ionic.ion.imageCacheFactory'])
 
     .constant('ApiEndpoint', {
-        url: 'http://192.168.0.18:8100/'
+        url: 'http://localhost:8100/'
     })
 
     .run(function ($ionicPlatform) {

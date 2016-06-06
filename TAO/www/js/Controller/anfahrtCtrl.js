@@ -1,9 +1,9 @@
-app.controller('anfahrtCtrl', function($scope, $state, $cordovaInAppBrowser) {
+app.controller('anfahrtCtrl', function ($scope, $state, $cordovaInAppBrowser, $ionicHistory) {
 
   console.log("anfahrtCtrl");
 
 
-  $scope.openInAppBrowser = function(url) {
+  $scope.openInAppBrowser = function (url) {
 
     var options = {
       location: 'no',
@@ -21,6 +21,26 @@ app.controller('anfahrtCtrl', function($scope, $state, $cordovaInAppBrowser) {
 
 
     //$cordovaInAppBrowser.close();
+  }
+  
+  
+  $scope.toggleGroup = function(group) {
+    if ($scope.isGroupShown(group)) {
+      $scope.shownGroup = null;
+    } else {
+      $scope.shownGroup = group;
+    }
+  };
+  $scope.isGroupShown = function(group) {
+    return $scope.shownGroup === group;
+  };
+
+  $scope.goHome = function () {
+    $ionicHistory.clearHistory();
+    $ionicHistory.nextViewOptions({
+      historyRoot: true
+    });
+    $state.go('home');
   }
 
 });
