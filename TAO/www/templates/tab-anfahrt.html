@@ -9,9 +9,9 @@
   <ion-content class="anfahrt" padding="true">
 
     <h1 id="headline">Kongressort</h1>
-    <h2>Vorklinik der Medizinischen Universität Graz<br></h2>
-    <h2>Harrachgasse 21<br></h2>
-    <h2>8010 Graz<br></h2>
+    <h2>Vorklinik der Medizinischen Universität Graz<br>
+    Harrachgasse 21<br>
+    8010 Graz</h2>
 
     <h3>Anfahrt mit: </h3>
 
@@ -43,18 +43,12 @@
     </ion-list>
 
     <div class="route-section">
-      <h3>Route planen:</h3>
-      <form method="get" action="https://www.google.com/maps" target="mapframe">
-        <input name="saddr" type="text" id="saddr" placeholder="Start">
-        <input name="output" type="hidden" value="embed">
-        <input name="f" type="hidden" value="d">
-        <input name="z" type="hidden" value="11">
-        <input name="daddr" type="hidden" id="daddr" value="Vorklinik Medizinische Universität Graz, Harrachgasse">
-        <input type="submit" name="Submit" value="Berechnen">
-      </form>
+      <button id="route-button" class="button button-assertive" ng-click="navigateToCongress()">
+        Routenplaner starten
+      </button>
     </div>
 
-    <iframe name="mapframe" style="height:500px;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=Vorklinik+(Medizinische+Universität+Graz),+Harrachgasse,+Graz,+Austria&key=AIzaSyAN0om9mFmy1QN6Wf54tXAowK4eT0ZUPrU" "></iframe>
+    <iframe name="mapframe" style="height:300px;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=Vorklinik+(Medizinische+Universität+Graz),+Harrachgasse,+Graz,+Austria&key=AIzaSyAN0om9mFmy1QN6Wf54tXAowK4eT0ZUPrU" "></iframe>
   </ion-content>
 </ion-view>
 

@@ -1,6 +1,9 @@
-app.controller('anfahrtCtrl', function ($scope, $state, $cordovaInAppBrowser, $ionicHistory) {
+app.controller('anfahrtCtrl', function ($scope, $state, $cordovaInAppBrowser, $ionicHistory, $ionicPopup) {
 
-  console.log("anfahrtCtrl");
+  console.log(window.innerWidth);
+  if(window != undefined && window.innerWidth < 700) {
+    jQuery("#route-button").addClass("button-small");
+  }
 
 
   $scope.openInAppBrowser = function (url) {
@@ -22,6 +25,33 @@ app.controller('anfahrtCtrl', function ($scope, $state, $cordovaInAppBrowser, $i
 
     //$cordovaInAppBrowser.close();
   }
+
+  var startNavigation = function () {
+        //replace , with .
+        var lat = "47.077042";
+        var lon = "15.447721";
+
+        var start = null; //current location
+        //var destination = [lat, lon];
+        var destination = "Harrachgasse 21, 8020 Graz";
+
+        launchnavigator.navigate(
+            destination,
+            start,
+            function () {
+                console.log("Navigation Plugin success");
+            },
+            function (error) {
+                console.log("Navigation Plugin error: " + error);
+            }, {
+                disableAutoGeolocation: true
+            }
+        );
+    }
+
+    $scope.navigateToCongress = function () {
+        startNavigation();
+    }
   
   
   $scope.toggleGroup = function(group) {

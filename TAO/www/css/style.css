@@ -131,3 +131,9 @@ ion-header-bar.bar.bar-header.bar-stable.customModal h1 {
 .platform-ios.platform-cordova .modal-wrapper .modal .has-header {
     top: 64px !important;
 }
+
+.homeBtn i,
+.searchBtn i {
+    font-size: 22px;
+    color: #b61e3a;
+}
