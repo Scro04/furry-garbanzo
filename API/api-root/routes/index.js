@@ -9,6 +9,7 @@ router.use('/congresses', require('./congresses.js'));
 router.use('/prices', require('./prices.js'));
 router.use('/speakers', require('./speaker.js'));
 router.use('/workshops', require('./workshops.js'));
+router.use('/exhibitors', require('./exhibitors.js'));
 
 
 // default route

@@ -14,16 +14,19 @@ var connection = require('../helpers/database.js');
 router.get('/', function (req, res) {
     connection.connection.query('SELECT WorkshopId, appWorkshops.EinheitId, appWorkshops.Sprache, appWorkshops.TitelGER, appWorkshops.TitelENG, appWorkshops.BeschreibungGER, appWorkshops.BeschreibungENG, appWorkshops.Teil, Zeit, appWorkshops.AKId, appWorkshops.Handout, AKPunkte, appWorkshops.Reihung, appWorkshops.Seminarraum, GROUP_CONCAT(DISTINCT ReferentId) as ReferentId, appEinheiten.TagId ,appEinheiten.Uhrzeit AS EinheitZeit, appTage.Datum, group_concat( appReferenten.Vorname) as Vorname, group_concat( appReferenten.Name) as Name ,group_concat( appReferenten.AkadgradPre ) as AkadgradPre , group_concat(appReferenten.AkadGradPost ) as AkadGradPost, group_concat(appReferenten.Land) as Land, group_concat(DISTINCT appReferenten.id) as SpeakerId FROM appWorkshopsReferenten JOIN appWorkshops on WorkshopId = appWorkshops.id JOIN appEinheiten on appWorkshops.EinheitId = appEinheiten.id JOIN appTage on appTage.id = appEinheiten.TagId JOIN appReferenten on appReferenten.id = ReferentId GROUP BY WorkshopId ORDER BY appEinheiten.TagId', function (err, rows) {
         // ordering to match structure
+
+        // TODO: Order by starting time
+
         var response = {};
         const weekdays = [ "Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag"];
         for (var i = 0; i < rows.length; i++) {
             var date = new Date(rows[i]["Datum"]);
-            stringdate = weekdays[date.getDay()] + " " + date.getDate() + "." + (date.getMonth() + 1);
+            stringdate = weekdays[date.getDay()].substring(0,2) + " " + date.getDate() + "." + (date.getMonth() + 1) + ".";
             if (response[stringdate] == undefined)
                 response[stringdate] = [];
 
             // splitting time
-            rows[i]["dayStringShort"] = weekdays[date.getDay()].substring(0,2).toUpperCase();
+            rows[i]["dayStringShort"] = weekdays[date.getDay()].substring(0,2);
             rows[i]["dateString"] = date.getDate() + "." + (date.getMonth() + 1);
             try {
                 if (rows[i]["Zeit"]) {
