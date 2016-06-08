@@ -10,15 +10,17 @@
 }
 
 .programRow {
-    padding-left: 8px !important;
+    padding-left: 8px;
     height: auto;
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    padding: 5px;
+    padding-right: 8px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
-.dividerLine {
+.item.dividerLine {
     color: white;
     background-color: #b61e3a;
     font-size: 12px;
@@ -31,7 +33,7 @@
 .timeWrapper {
     position: relative;
     float: left;
-    width: auto;
+    width: 40px;
     text-align: center;
     height: 100%;
     font-size: 12px;
@@ -95,7 +97,7 @@
     border-top: none;
 }
 
-.dividerLine {
+.item.dividerLine {
     justify-content: flex-start;
 }
 
@@ -143,5 +145,5 @@
 }
 
 .smallLineHeight {
-  line-height: 12px;
+  line-height: 14px;
 }

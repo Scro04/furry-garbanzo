@@ -1,15 +1,38 @@
-app.controller('programCtrl', function ($scope, $state, apiFactory) {
+app.controller('programCtrl', function ($scope, $state, dataFactory, $ionicPopup, $ionicHistory) {
+  $scope.data = undefined;
 
-    $scope.data = $scope.$root.program;
+  $scope.showAlert = function () {
+    var alertPopup = $ionicPopup.alert({
+      title: 'Daten konnten nicht geladen werden!',
+      template: 'Bitte überprüfen Sie Ihre Internetverbindung',
+      buttons: [{
+        text: 'OK',
+        type: 'button-assertive'
+      }]
+    });
+  };
 
-    $scope.goToDetail = function(entry)
-    {
-      $scope.$root.currentProgram = entry;
-      $state.go('tab.courseInfo');
+  $scope.$on("$ionicView.beforeEnter", function () {
+    if ($scope.data == undefined) {
+      dataFactory.getProgram().then(function (data) {
+        $scope.data = data;
+      }, function () {
+        $scope.showAlert();
+      })
     }
+  });
 
-  $scope.goHome = function ()
-  {
+  $scope.goToDetail = function (entry) {
+    $scope.$root.currentProgram = entry;
+    $state.go('tab.courseInfo');
+  }
+
+
+  $scope.goHome = function () {
+    $ionicHistory.clearHistory();
+    $ionicHistory.nextViewOptions({
+      historyRoot: true
+    });
     $state.go('home');
   }
 });
