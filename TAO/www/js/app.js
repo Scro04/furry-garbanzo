@@ -27,6 +27,10 @@ var app = angular.module('starter', ['ionic', 'starter.controllers', 'starter.se
     });
 })
 
+  .config(function ($sceDelegateProvider) {
+    $sceDelegateProvider.resourceUrlWhitelist(['self', 'http://www.cnn.com/']);
+  })
+
 .config(function ($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
 
     // Ionic uses AngularUI Router which uses the concept of states
@@ -112,7 +116,25 @@ var app = angular.module('starter', ['ionic', 'starter.controllers', 'starter.se
                     controller: 'pricesCtrl'
                 }
             }
-        });
+        })
+      .state('tab.information', {
+        url: '/information',
+        views: {
+          'tab-info': {
+            templateUrl: 'templates/information.html',
+            controller: 'informationCtrl'
+          }
+        }
+      })
+      .state('tab.kontakt', {
+        url: '/kontakt',
+        views: {
+          'tab-info': {
+            templateUrl: 'templates/kontakt.html',
+            controller: 'kontaktCtrl'
+          }
+        }
+      });
 
     console.log("otherwise");
     // if none of the above states are matched, use this as the fallback

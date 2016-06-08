@@ -1,0 +1,47 @@
+.anfahrt h1 {
+  font-family: Helvetica;
+  font-size: 22px;
+  text-transform: uppercase;
+  font-weight:400;
+  color: #b61e3a;
+}
+.anfahrt #headline {
+  padding-top: 20px;
+}
+
+.anfahrt h2 {
+  font-family: Helvetica;
+  font-size: 16px;
+  line-height:10px;
+  font-weight: 600;
+}
+
+.anfahrt a {
+  text-decoration: underline;
+  color: black;
+}
+
+iframe {
+  padding-top: 20px;
+}
+
+#verkehrsmittelHeadline {
+  padding-top: 20px;
+}
+
+@media(min-width: 415px) {
+  .anfahrt h1 {
+    font-size: 25px;
+  }
+  .anfahrt h2 {
+    font-size: 22px;
+    line-height:18px;
+  }
+}
+
+@media(max-width: 320px) and (max-width: 568px)
+{
+  iframe {
+    height: 450px !important;
+  }
+}
