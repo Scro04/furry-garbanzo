@@ -1,10 +1,10 @@
 app.controller('anfahrtCtrl', function ($scope, $state, $cordovaInAppBrowser, $ionicHistory, $ionicPopup) {
 
-  console.log(window.innerWidth);
   if(window != undefined && window.innerWidth < 700) {
-    jQuery("#route-button").addClass("button-small");
+    setTimeout(function() {
+      jQuery('ion-nav-view[nav-view="active"] #route-button').addClass("button-small");
+    }, 50);
   }
-
 
   $scope.openInAppBrowser = function (url) {
 

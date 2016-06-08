@@ -137,3 +137,28 @@ ion-header-bar.bar.bar-header.bar-stable.customModal h1 {
     font-size: 22px;
     color: #b61e3a;
 }
+
+i {
+    color: #b61e3a;
+}
+
+@media only screen and (min-width: 600px) {
+    ion-header-bar.bar {
+        height: 64px;
+    }
+    ion-header-bar.bar .title {
+        height: 63px;
+        line-height: 64px !important;
+        font-size: 20px !important;
+    }
+
+    ion-content.has-header {
+        top: 64px;
+    }
+
+    .homeBtn i,
+    .searchBtn i {
+        font-size: 28px !important;
+    }
+
+}
