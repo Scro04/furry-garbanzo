@@ -1,47 +1,59 @@
-.infoWrapper {
+#info-tab-view .infoWrapper {
   float: left;
-  max-width: 92%;
+  position: relative;
 }
+
 .info-tab .item {
+
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  padding-left: 0px;
 }
-.infoDetailChevron {
+#info-tab-view .infoDetailChevron {
   float: right;
   margin-left: auto;
   padding-left: 15px;
   font-size:22px;
   color: #b61e3a;
 }
-.info-tab a.item:nth-child(1) {
+#info-tab-view a.item:nth-child(1) {
   border-top: none;
 }
 
-.info-tab h2, .info-tab p {
+#info-tab-view .info-tab h2, .info-tab p {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
 }
 
-.info-tab h2 {
-  font-size: 16px;
+#info-tab-view .item .item-image {
+  width: 40px !important;
+  position: relative !important;
+  float: left !important;
+  top: 0px !important;
+  left: 0px !important;
+  margin-left: 15px;
+  margin-right: 15px;
 }
-.info-tab p {
-  font-size: 12px;
+
+@media (max-width: 320px) {
+
+  #info-tab-view .item .item-image {
+    width: 30px !important;
+    margin-left: 0px !important;
+  }
+  .item {
+    padding: 10px !important;
+  }
+
 }
 
 
 @media(min-width: 415px) {
 
-  .info-tab .item {
+  #info-tab-view .info-tab .item {
     padding-top: 20px !important;
     padding-bottom: 20px !important;
-  }
-  .info-tab h2 {
-    font-size: 18px;
-  }
-  .info-tab p {
-    font-size: 14px;
   }
 }

@@ -1,17 +1,18 @@
 <link href="templates/css/tab-info.css" rel="stylesheet">
 
 <ion-view view-title="Informationen">
+
     <ion-nav-buttons side="left">
         <button class="button homeBtn" ng-click="goHome()">
         <i class="ion-home"></i>
         </button>
     </ion-nav-buttons>
-    
-    <ion-content>
+
+  <ion-content id="info-tab-view">
 
         <div class="list info-tab">
             <a class="item item-avatar" ng-click="goToState(section.state)" ng-repeat="section in sections">
-                <img ng-src="{{section.image}}">
+                <img class="item-image" ng-src="{{section.image}}">
                 <div class="infoWrapper">
                     <h2>{{section.headline}}</h2>
                     <p>{{section.text}}</p>
