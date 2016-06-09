@@ -22,18 +22,6 @@ app.controller('programCtrl', function ($scope, $state, dataFactory, $ionicPopup
   $scope.$on("$ionicView.beforeEnter", function () {
     if ($scope.data == undefined) {
       dataFactory.getProgram().then(function (data) {
-        //dirty fix -> PLEASE UPDATE API Accordingly
-        for (var old_key in data) {
-          var k = old_key.split(" ")[0];
-          var o = old_key.split(" ")[1];
-          k = k.substr(0, 2);
-          var new_key = k + " " + o + ".";
-          if (old_key !== new_key) {
-            Object.defineProperty(data, new_key,
-              Object.getOwnPropertyDescriptor(data, old_key));
-            delete data[old_key];
-          }
-        }
         $scope.data = data;
         $scope.switchList(1);
 
