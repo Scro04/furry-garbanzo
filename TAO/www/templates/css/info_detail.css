@@ -180,6 +180,9 @@
 }
 
 @media(max-width: 414px) {
+  .contactView h1:first-of-type {
+    padding-bottom: 0px;
+  }
   #image-wrapper img {
     max-height: 100px !important;
     margin-right: 10px !important;
