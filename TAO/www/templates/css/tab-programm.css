@@ -10,15 +10,17 @@
 }
 
 .programRow {
-    padding-left: 8px !important;
+    padding-left: 8px;
     height: auto;
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    padding: 5px;
+    padding-right: 8px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
-.dividerLine {
+.item.dividerLine {
     color: white;
     background-color: #b61e3a;
     font-size: 12px;
@@ -31,22 +33,25 @@
 .timeWrapper {
     position: relative;
     float: left;
-    width: auto;
+    width: 40px;
     text-align: center;
     height: 100%;
     font-size: 12px;
     padding-right: 8px;
+    margin-right: 8px;
+    border-right: 1px solid #aaa;
+    font-weight: 400;
 }
 
 .programType {
     color: #b61e3a;
     text-transform: uppercase;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .programName {
-    font-size: 16px;
+    font-size: 13px;
     color: black;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -54,7 +59,7 @@
 }
 
 .programAuthor {
-    font-size: 14px;
+    font-size: 12px;
     color: darkgray;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -92,12 +97,42 @@
     border-top: none;
 }
 
-.dividerLine {
+.item.dividerLine {
     justify-content: flex-start;
 }
 
 .noPaddingTop {
     padding-top: 0px;
+}
+
+/* Switcher */
+#tab-programm {
+    margin-top: 10px;
+}
+#tab-programm .button-bar{
+    margin-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#tab-programm .button-bar .button {
+    border-color: #b61e3a;
+    color: #b61e3a;
+    border-radius: 0px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+#tab-programm .button-bar .button.active{
+    background-color: #b61e3a;
+    border: #b61e3a;
+    color: white;
+}
+
+#tab-programm .button-bar .button.activated {
+    background-color: white;
+    border: #b61e3a 1px solid;
+    color: #b61e3a;
 }
 
 @media only screen and (min-width: 415px) {
@@ -110,12 +145,13 @@
     .timeWrapper {
         text-align: center;
         font-size: 16px;
+        width: 7.5%;
+        padding-right: 10px;
     }
     .infoWrapper {
-        padding-left: 20px;
-        width: 95%;
-        max-width: 95%;
+        padding-left: 10px;
         height: 100%;
+        width: 90%;
     }
     .dividerLine {
         font-size: 15px;
@@ -137,8 +173,12 @@
     .detailBox {
         font-size: 30px;
     }
+
+    #tab-programm .button-bar .button {
+        font-size: 20px;
+    }
 }
 
 .smallLineHeight {
-  line-height: 12px;
+  line-height: 14px;
 }

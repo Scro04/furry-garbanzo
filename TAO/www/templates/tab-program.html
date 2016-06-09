@@ -12,19 +12,22 @@
       <i class="ion-search"></i>
     </button>
   </ion-nav-buttons>
-  <ion-content>
-    <div class="list noPaddingTop" ng-repeat="(key, value) in data">
-      <div class="item item-divider dividerLine">
-        {{key}}
-      </div>
-      <a class="item programRow" ng-repeat="entry in value" ng-click="goToDetail(entry)">
+  <ion-content id="tab-programm">
+    <div class="button-bar">
+      <a class="button button-outline btn-switch" 
+        ng-repeat="(key, value) in data track by $index" id="btn-{{$index+1}}" 
+        ng-click="switchList({{$index+1}})">{{key}}</a>
+    </div>
+    <div class="list noPaddingTop">
+      <a class="item programRow" ng-repeat="entry in listData" ng-click="goToDetail(entry)">
         <div class="timeWrapper">
-         {{entry.startZeit}} <br> - <br> {{entry.endZeit}}
+          {{entry.startZeit}} <br> - <br> {{entry.endZeit}}
         </div>
         <div class="infoWrapper">
-          <div class="programType" ng-class="{type0: entry.typeString == 'Vortrag', type1: entry.typeString == 'Workshop', type2: entry.typeString == 'Vorkongress', type3: entry.typeString == 'Nachkongress'}">{{entry.typeString}}</div>
+          <div class="programType" ng-class="{type0: entry.typeString == 'Vortrag', type1: entry.typeString == 'Workshop', type2: entry.typeString == 'Vorkongress', 
+          type3: entry.typeString == 'Nachkongress'}">{{entry.typeString}} {{entry.Teil !== null ? "- Teil " + entry.Teil : ""}}</div>
           <div class="programName">{{entry.TitelGER}}</div>
-          <div class="programAuthor">{{entry.speakers[0].AkadgradPre}} {{entry.speakers[0].Name}} {{entry.speakers[0].Vorname}}</div>
+          <div class="programAuthor">{{entry.speakers[0].Vorname}} {{entry.speakers[0].Name}} </div>
         </div>
         <div class="detailBox">
           <i class="ion-chevron-right"></i>

@@ -31,7 +31,7 @@ app.factory('apiFactory', function ($http, $ionicPlatform, ApiEndpoint) {
                 return response.data;
             }, function (error) {
                 console.log(error);
-                return error;
+                return error.data;
             });
         },
         getWorkshops: function () {
@@ -47,7 +47,7 @@ app.factory('apiFactory', function ($http, $ionicPlatform, ApiEndpoint) {
                 return response.data;
             }, function (error) {
                 console.log(error);
-                return error;
+                return error.data;
             });
         },
         getPrices: function () {

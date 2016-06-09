@@ -18,14 +18,14 @@
 
 .groupDesc {
     font-size: 18px;
-    font-weight: 400;
+    font-weight: 600;
     line-height: 25px;
     margin: 0;
 }
 
 .priceSection h3 {
     font-size: 15px;
-    font-weight: 300;
+    font-weight: 400;
     color: black;
     margin-top: 0;
 }
@@ -48,7 +48,7 @@
 }
 
 .priceSection tr th {
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .priceSection tr:nth-child(even) {
@@ -76,20 +76,7 @@
 /*                     CSS FOR INFORMATION SCREEN               */
 /* ------------------------------------------------------------ */
 
-.information h1, .information h2, .information h3 {
-  font-family: Helvetica;
-  font-weight: 400;
-}
-.information h1 {
-  font-size: 22px;
-  font-weight: 400;
-}
-.information h2 {
-  font-size: 18px;
-}
-.information h3 {
-  font-size: 18px;
-}
+
 .information bold {
   font-weight: bold;
 }
@@ -112,20 +99,105 @@
   padding-bottom: 20px;
 }
 
-@media(min-width: 415px) {
-  .information h1 {
-    font-size: 22px;
+
+/* ------------------------------------------------------------ */
+/*                     CSS FOR CONTACT SCREEN                   */
+/* ------------------------------------------------------------ */
+
+.contactView {
+  padding-top: 20px;
+}
+
+.contactView h1:first-of-type {
+  padding-bottom: 20px;
+}
+
+
+#image-wrapper img
+{
+  max-height: 200px !important;
+  float: left;
+  position: relative;
+  margin-right: 20px;
+  object-fit: cover;
+}
+
+#image-wrapper {
+  float: left;
+  width: auto;
+  margin-right: 20px;
+  height:100%;
+}
+
+.contactPerson, a[x-apple-data-detectors]
+{
+  text-decoration: none !important;
+}
+
+#contactPerson {
+  float: left;
+  width: auto;
+  justify-content:flex-start;
+  height:100%;
+  padding-bottom: 20px;
+}
+
+#contactPerson a, #contactPerson p {
+  padding-bottom: 10px;
+  margin-bottom: 0px;
+}
+
+
+#info-wrapper {
+  float: left;
+  position: relative;
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  justify-content:flex-start;
+
+}
+
+.no-action {
+  pointer-events: none !important;
+  text-decoration: none !important;
+}
+.no-border, #contactPerson a {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.no-border i, #contactPerson i {
+  padding-right: 10px;
+  font-size: 24px;
+}
+
+
+
+
+.contactInfosWrapper {
+  padding-bottom: 20px;
+}
+
+@media(max-width: 414px) {
+  #image-wrapper img {
+    max-height: 170px !important;
+    margin-right: 10px !important;
   }
-  .information h2 {
-    font-size: 20px;
+  .no-border i, #contactPerson i {
+    font-size: 18px !important;
   }
-  .information h3 {
-    font-size: 18px;
+  #contactPerson a, #contactPerson p {
+    padding-bottom: 5px;
+    margin-bottom: 0px;
   }
-  .information #headline {
-    font-size: 25px;
+}
+@media(max-width: 320px) {
+  #image-wrapper img {
+    max-height: 100px !important;
+    margin-right: 10px !important;
   }
-  .information #subline {
-   font-size: 25px;
+  .no-border i, #contactPerson i {
+    font-size: 14px !important;
   }
 }

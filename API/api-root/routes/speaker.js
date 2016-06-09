@@ -19,6 +19,7 @@ router.get('/', function (req, res) {
         //var index = 0;
         for(var i = 0; i < rows.length ; i++)
         {
+          
             rows[i]["Bild"] = "http://www.tcmkongress.at/de/Referenten/GetFoto/" + rows[i]["id"];
 
             if(rows[i]["WorkshopId"])

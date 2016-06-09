@@ -1,3 +1,7 @@
+div, span, a, button, input, select, body, header, footer, p, h1, h2, h3, h4 {
+    font-family: ff-netto-web, sans-serif;
+}
+
 .tabs {
     background-color: #b61e3a !important;
 }
@@ -71,7 +75,6 @@ ion-tabs.tabs-striped.tabs-color-active-positive .tab-item.activated {
 
 div.loading-container.visible.active {
     background-color: white;
-    !important;
 }
 
 ion-spinner.spinner.spinner-ios {
@@ -113,7 +116,7 @@ ion-header-bar.bar.bar-header.bar-stable.customModal h1 {
     width: 100%;
 }
 
-ion-header-bar.bar.bar-header.bar-stable.customModal {
+.platform-ios ion-header-bar.bar.bar-header.bar-stable.customModal {
     padding-top: 20px !important;
 }
 
@@ -121,10 +124,86 @@ ion-header-bar.bar.bar-header.bar-stable.customModal {
     height: 64px !important;
 }
 
-ion-header-bar.bar.bar-header.bar-stable.customModal h1 {
+.platform-ios ion-header-bar.bar.bar-header.bar-stable.customModal h1 {
     margin-top: 17px !important;
 }
 
 .platform-ios.platform-cordova .modal-wrapper .modal .has-header {
     top: 64px !important;
+}
+
+.homeBtn i,
+.searchBtn i {
+    font-size: 22px;
+    color: #b61e3a;
+}
+
+i {
+    color: #b61e3a;
+}
+
+@media only screen and (min-width: 600px) {
+    ion-header-bar.bar {
+        height: 64px;
+    }
+    ion-header-bar.bar .title {
+        height: 63px;
+        line-height: 64px !important;
+        font-size: 20px !important;
+    }
+
+    ion-content.has-header {
+        top: 64px;
+    }
+
+    .homeBtn i,
+    .searchBtn i {
+        font-size: 28px !important;
+    }
+
+}
+
+
+h1 {
+  font-size: 18px;
+  line-height: 1.6em;
+  font-weight: 400;
+}
+h2, .item h2 {
+  font-size: 16px;
+  line-height: 1.6em;
+  font-weight: 500;
+}
+h3, .item h2 {
+  font-size: 14px;
+  line-height: 1.6em;
+  font-weight: 600;
+}
+p, .item p, a, .item a, .item {
+  font-size: 14px;
+}
+
+@media(min-width: 768px) {
+  h1 {
+    font-size: 20px;
+  }
+  h2, .item h2 {
+    font-size: 18px;
+  }
+  h3, p, .item h3, .item p, a, .item a, .item {
+    font-size: 16px;
+  }
+}
+
+@media(max-width: 414px) {
+  h1 {
+    font-size: 14px;
+  }
+  h2, .item h2 {
+    font-size: 12px;
+  }
+  h3, p, .item h3, .item p, a, .item a, .item {
+    font-size: 10px;
+  }
+
 }

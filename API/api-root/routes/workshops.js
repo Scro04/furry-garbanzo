@@ -18,29 +18,29 @@ router.get('/', function (req, res) {
         const weekdays = ["Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag", "Sonntag"];
         for (var i = 0; i < rows.length; i++) {
             var date = new Date(rows[i]["Datum"]);
-            date = weekdays[date.getDay()] + " " + date.getDate() + "." + (date.getMonth() + 1);
-            if (response[date] == undefined)
-                response[date] = [];
+            stringdate = weekdays[date.getDay()] + " " + date.getDate() + "." + (date.getMonth() + 1);
+            if (response[stringdate] == undefined)
+                response[stringdate] = [];
 
             // splitting time
-
-
+            rows[i]["dayStringShort"] = weekdays[date.getDay()].substring(0,2).toUpperCase();
+            rows[i]["dateString"] = date.getDate() + "." + (date.getMonth() + 1);
             try {
                 if (rows[i]["Zeit"]) {
                     rows[i]["type"] = 1
-                    rows[i]["typeString"] = "Vortrag"
+                    rows[i]["typeString"] = "Vortrag";
                     var time = rows[i]["Zeit"];
                     time = time.split(" - ");
-                    rows[i]["startZeit"] = time[0]
-                    rows[i]["endZeit"] = time[1]
+                    rows[i]["startZeit"] = time[0].replace(".", ":");
+                    rows[i]["endZeit"] = time[1].replace(".", ":");
                     delete rows[i]["Zeit"];
                 } else {
                     rows[i]["type"] = 0
                     rows[i]["typeString"] = "Workshop"
                     var time = rows[i]["EinheitZeit"];
                     time = time.split("-");
-                    rows[i]["startZeit"] = time[0]
-                    rows[i]["endZeit"] = time[1]
+                    rows[i]["startZeit"] = time[0].replace(".", ":");
+                    rows[i]["endZeit"] = time[1].replace(".", ":");
                     delete rows[i]["Zeit"];
                 }
 
@@ -67,12 +67,12 @@ router.get('/', function (req, res) {
                 delete rows[i]["AkadgradPre"];
                 delete rows[i]["AkadGradPost"];
                 delete rows[i]["Land"];
-
+                delete rows[i]["Reihung"];
                 delete rows[i]["EinheitZeit"];
                 delete rows[i]["EinheitId"];
                 delete rows[i]["TagId"];
 
-                response[date].push(rows[i])
+                response[stringdate].push(rows[i])
 
                 delete rows[i]["EinheitZeit"];
             } catch (err) {

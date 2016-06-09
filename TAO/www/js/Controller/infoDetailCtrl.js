@@ -43,3 +43,25 @@ app.controller('informationCtrl', function ($scope, $state, $cordovaInAppBrowser
       });
   }
 });
+app.controller('kontaktCtrl', function ($scope, $state, apiFactory, $cordovaInAppBrowser) {
+
+  console.log("kontaktCtrl");
+
+  $scope.openInAppBrowser = function(url) {
+
+    var options = {
+      location: 'no',
+      clearcache: 'yes',
+      toolbar: 'yes'
+    };
+
+    $cordovaInAppBrowser.open(url, '_blank', options)
+      .then(function (event) {
+        // success
+      })
+      .catch(function (event) {
+        // error
+      });
+  }
+
+});

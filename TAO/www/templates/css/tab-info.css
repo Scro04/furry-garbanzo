@@ -2,7 +2,9 @@
   float: left;
   position: relative;
 }
-#info-tab-view .item {
+
+.info-tab .item {
+
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -25,26 +27,21 @@
   white-space: nowrap;
 }
 
-#info-tab-view .info-tab h2 {
-  font-size: 16px;
-}
-#info-tab-view .info-tab p {
-  font-size: 12px;
-}
 #info-tab-view .item .item-image {
   width: 40px !important;
   position: relative !important;
   float: left !important;
   top: 0px !important;
   left: 0px !important;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-left: 15px;
+  margin-right: 15px;
 }
 
 @media (max-width: 320px) {
 
   #info-tab-view .item .item-image {
     width: 30px !important;
+    margin-left: 0px !important;
   }
   .item {
     padding: 10px !important;
@@ -58,11 +55,5 @@
   #info-tab-view .info-tab .item {
     padding-top: 20px !important;
     padding-bottom: 20px !important;
-  }
-  #info-tab-view .info-tab h2 {
-    font-size: 18px;
-  }
-  #info-tab-view .info-tab p {
-    font-size: 14px;
   }
 }

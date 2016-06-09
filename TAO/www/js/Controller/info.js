@@ -1,4 +1,4 @@
-app.controller('infoCtrl', function ($scope, $state) {
+app.controller('infoCtrl', function ($scope, $state, $ionicHistory) {
 
     console.log("infoCtrl");
 
@@ -21,7 +21,7 @@ app.controller('infoCtrl', function ($scope, $state) {
             headline: "Hotelreservierung",
             text: "Sichern Sie sich Ihr Quartier!",
             image: "img/icons/bed.png",
-            state: "informations"
+            state: "hotel"
         },
         {
             headline: "Kongresstarife",
@@ -31,16 +31,46 @@ app.controller('infoCtrl', function ($scope, $state) {
         },
         {
             headline: "Kontakt",
-            text: "Für weitere Informationen stehen wir gerne zur Verfügung!",
+            text: "Wir stehen Ihnen gerne zur Verfügung!",
             image: "img/icons/contact.png",
-            state: "informations"
+            state: "tab.kontakt"
         }];
 
 
     $scope.goToState = function (state) {
+        if (state === "hotel") {
+            var options = {
+                enableViewportScale: 'yes',
+                location: 'no',
+                clearcache: 'yes',
+                toolbar: 'yes'
+            };
 
+            var address = "https://www.graztourismus.at/kongress/de/13-internationaler-tcm-kongress---tao_kongressformular-6253"
+            var inAppBrowser = window.open(address, "_blank", "location=no,enableviewportscale=yes");
+
+            inAppBrowser.addEventListener('loaderror', function (event) {
+                console.log(event.url + " kann nicht geöffnet werden.");
+                showWebsiteError();
+                inAppBrowser.close();
+            });
+
+            return;
+        }
+        else {
             $state.go(state);
+        }
 
+
+    }
+
+
+    $scope.goHome = function () {
+        $ionicHistory.clearHistory();
+        $ionicHistory.nextViewOptions({
+            historyRoot: true
+        });
+        $state.go('home');
     }
 
 

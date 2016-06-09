@@ -8,7 +8,7 @@
 
     <div class="speakerUpperSection">
 
-      <div class="imageSpeaker"><img ng-src="{{$root.currentSpeaker.Bild}}"/></div>
+      <img ng-src="{{$root.currentSpeaker.Bild}}" />
 
       <div class="informationSection">
 
@@ -18,30 +18,28 @@
 
       </div>
     </div>
-
-
     <div class="speakerEventsWrapper" ng-if="workshopsSpeaker.length > 0">
 
-      <span class="headline">Events</span>
+      <span id="courseHeader">Events</span>
 
-      <div ng-repeat="entry in workshopsSpeaker">
-        <a class="item eventRow" id="test" ng-click="openWorkshopModal(entry)">
-          <div class="timeWrapper leftAligned">
-            <span id="day">FR</span><br>22.09
-          </div>
-          <div class="timeWrapper smallLineHeight">
-            {{entry.startZeit}}<br> - <br>{{entry.endZeit}}
-          </div>
-          <div class="infoWrapper">
-            <div class="programType" ng-class="{type0: entry.typeString == 'Vortrag', type1: entry.typeString == 'Workshop', type2: entry.typeString == 'Vorkongress', type3: entry.typeString == 'Nachkongress'}">{{entry.typeString}}</div>
-            <div class="programName">{{entry.TitelGER}}</div>
-           <!-- <div class="programAuthor" ng-bind-html="entry.BeschreibungGER"></div> -->
-          </div>
-          <div class="detailBox">
-            <i class="ion-chevron-right"></i>
-          </div>
-        </a>
-      </div>
+
+      <a ng-repeat="entry in workshopsSpeaker" class="item eventRow" id="test" ng-click="openWorkshopModal(entry)">
+        <div class="timeWrapper leftAligned">
+          <span id="day">FR</span><br>22.09
+        </div>
+        <div class="timeWrapper smallLineHeight">
+          {{entry.startZeit}}<br> - <br>{{entry.endZeit}}
+        </div>
+        <div class="infoWrapper">
+          <div class="programType" ng-class="{type0: entry.typeString == 'Vortrag', type1: entry.typeString == 'Workshop', type2: entry.typeString == 'Vorkongress', type3: entry.typeString == 'Nachkongress'}">{{entry.typeString}}</div>
+          <div class="programName">{{entry.TitelGER}}</div>
+          <!-- <div class="programAuthor" ng-bind-html="entry.BeschreibungGER"></div> -->
+        </div>
+        <div class="detailBox">
+          <i class="ion-chevron-right"></i>
+        </div>
+      </a>
+
     </div>
 
 
@@ -54,4 +52,4 @@
 
   </ion-content>
 
-  </ion-view>
+</ion-view>
