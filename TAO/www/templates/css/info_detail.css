@@ -115,7 +115,7 @@
 
 #image-wrapper img
 {
-  max-height: 200px !important;
+  max-height: 170px !important;
   float: left;
   position: relative;
   margin-right: 20px;
@@ -181,7 +181,7 @@
 
 @media(max-width: 414px) {
   #image-wrapper img {
-    max-height: 170px !important;
+    max-height: 100px !important;
     margin-right: 10px !important;
   }
   .no-border i, #contactPerson i {
@@ -194,7 +194,7 @@
 }
 @media(max-width: 320px) {
   #image-wrapper img {
-    max-height: 100px !important;
+    max-height: 80px !important;
     margin-right: 10px !important;
   }
   .no-border i, #contactPerson i {
