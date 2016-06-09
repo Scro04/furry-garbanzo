@@ -42,17 +42,20 @@
     position: relative;
     float: left;
     color: #000;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .filter_headline {
     text-align: center;
     width: 100%;
     margin-top: 10px;
+    float: left;
+    height: auto;
 }
 
 .filter_headline h1{
     color: #b61e3a;
+    margin: 0;
 }
 
 .filter_item {
@@ -60,20 +63,22 @@
     height: 20%;
     border-bottom: 1px solid #CBCBCB;
     text-align: center;
-    padding: 20px;
+    padding: 10px;
     position: relative;
     float: left;
+    padding-bottom: 15px;
 }
 
 .filterModalView input {
-    height: 3em;
+    height: 40px;
     border: 1px solid #CBCBCB;
     background-color: white;
     position: relative;
     float: left;
-    font-size: 16px;
+    font-size: 14px;
     -webkit-appearance: none;
     outline: 0;
+    padding: 5px;
     padding-left: 0.5em;
 }
 

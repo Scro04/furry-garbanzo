@@ -195,7 +195,7 @@ p, .item p, a, .item a, .item {
   }
 }
 
-@media(max-width: 414px) {
+@media(max-width: 374px) {
   h1 {
     font-size: 14px;
   }
