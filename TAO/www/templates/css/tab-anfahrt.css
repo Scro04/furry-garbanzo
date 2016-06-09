@@ -46,7 +46,7 @@ iframe {
   background-color: #eee;
 }
 
-.item h2 {
+.anfahrt .item h2 {
   max-width: 95%;
   float: left;
   line-height: 20px;
@@ -54,20 +54,20 @@ iframe {
   font-weight: 300;
 }
 
-.item .icon {
+.anfahrt .item .icon {
   color: #b61e3a;
   position: absolute;
   right: 10px;
   line-height: 20px;
 }
 
-.item-accordion {
+.anfahrt .item-accordion {
   background-color: white;
   border: 1px solid #ddd;
   padding: 10px;
 }
 
-.item-accordion ul {
+.anfahrt .item-accordion ul {
   list-style-type: disc;
   width: 100%;
   float: left;
@@ -77,13 +77,13 @@ iframe {
   margin-left: 10px;
 }
 
-.item-accordion ul li {
+.anfahrt .item-accordion ul li {
     padding-left: 5px;
     padding-bottom: 2px;
     line-height: 20px;
     margin-left: 15px;
 }
-.item-accordion ul li span {
+.anfahrt .item-accordion ul li span {
     display:block;
     margin-left:-0.1em;
     color:#000; /* black text */
@@ -136,12 +136,12 @@ iframe {
     margin-bottom: 20px;
   }
 
-  .item-accordion ul li, .item-accordion p {
+  .anfahrt .item-accordion ul li, .item-accordion p {
     font-size: 18px;
     line-height: 22px;
   }
 
-  .scroll {
+  .anfahrt .scroll {
     padding: 20px;
   }
 

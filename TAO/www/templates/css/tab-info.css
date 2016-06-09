@@ -2,7 +2,7 @@
   float: left;
   max-width: 92%;
 }
-.item {
+.info-tab .item {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -14,7 +14,7 @@
   font-size:22px;
   color: #b61e3a;
 }
-a.item:nth-child(1) {
+.info-tab a.item:nth-child(1) {
   border-top: none;
 }
 
