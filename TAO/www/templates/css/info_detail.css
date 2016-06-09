@@ -144,3 +144,56 @@
 {
   text-decoration: none !important;
 }
+
+/* ------------------------------------------------------------ */
+/*                     CSS FOR CONTACT SCREEN                   */
+/* ------------------------------------------------------------ */
+
+.partners .list {
+  margin-bottom: 0px;
+}
+
+.partners .item-divider {
+    background-color: #b61e3a;
+    color: white;
+}
+
+.partners .programRow {
+    padding-left: 5px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.partners .programRow span {
+  width: 95%;
+  position: relative;
+  float: left;
+  height: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 12px;
+}
+
+.partners .item.dividerLine {
+    color: white;
+    background-color: #b61e3a;
+    font-size: 12px;
+    height: 22px;
+    padding: 0px;
+    padding-left: 8px;
+    min-height: 22px;
+}
+
+.partners .detailBox {
+    position: relative;
+    float: right;
+    font-size: 14px;
+    color: #b61e3a;
+    padding-left: 10px;
+}

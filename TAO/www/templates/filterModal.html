@@ -1,0 +1,32 @@
+<link href="templates/css/filter.css" rel="stylesheet">
+<ion-modal-view class="filterModalView" scroll="false">
+    <ion-header-bar align-title="center" class="bar-stable">
+        <button class="button button-clear button-dark modalBack" ng-click="closeFilter()">
+            <i id="modelCloseLogo" class="ionicon ion-close"></i>
+        </button>
+        <h1 class="title">Programm filtern</h1>
+    </ion-header-bar>
+    <ion-content cache="false">
+        <!------------------------------------------------------------------------>
+        <!--------------------------- Content ------------------------------------>
+        <!------------------------------------------------------------------------>
+        <div id="filter_container">
+            <div class="filter_headline"><h1>Gewählter Tag: {{filterDay}}</h1></div>
+            <div class="filter_item">
+                <h1 class="filter_txt">Nach Referent suchen</h1>
+                <input id="input_name" type="text" placeholder="Name" ng-model="options.name" />
+            </div>
+            <div class="filter_item">
+                <h1 class="filter_txt">Art der Veranstaltung</h1>
+                <ion-list>
+                    <ion-checkbox class="checkbox-assertive" ng-model="options.vortrag">Vortrag</ion-checkbox>
+                    <ion-checkbox class="checkbox-assertive" ng-model="options.workshop">Workshop</ion-checkbox>
+                </ion-list>
+            </div>
+        </div>
+        <button class="button button-full button-assertive filter-save-button" ng-click="startFilter(options)">
+            Start
+        </button>
+    </ion-content>
+
+</ion-modal-view>

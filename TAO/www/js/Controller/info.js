@@ -15,7 +15,7 @@ app.controller('infoCtrl', function ($scope, $state, $ionicHistory) {
             headline: "Partner",
             text: "Alle Infos zu unseren Partnern!",
             image: "img/icons/partner.png",
-            state: "partners"
+            state: "tab.partners"
         },
         {
             headline: "Hotelreservierung",

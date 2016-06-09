@@ -8,7 +8,7 @@
     </button>
   </ion-nav-buttons>
   <ion-nav-buttons side="right">
-    <button class="button searchBtn" ng-click="search()">
+    <button class="button searchBtn" ng-click="openFilter()">
       <i class="ion-search"></i>
     </button>
   </ion-nav-buttons>
@@ -18,6 +18,11 @@
         ng-repeat="(key, value) in data track by $index" id="btn-{{$index+1}}" 
         ng-click="switchList({{$index+1}})">{{key}}</a>
     </div>
+    <a ng-if="filter_enabled" class="filter_wrapper" ng-click="disableFilter()">
+        <i class="filter_left ion-ios-search-strong"></i>
+        <span>Filter aktiv</span>
+        <i class="filter_right ion-close-circled"></i>
+    </a>
     <div class="list noPaddingTop">
       <a class="item programRow" ng-repeat="entry in listData" ng-click="goToDetail(entry)">
         <div class="timeWrapper">
