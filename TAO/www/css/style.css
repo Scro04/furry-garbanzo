@@ -207,3 +207,46 @@ p, .item p, a, .item a, .item {
   }
 
 }
+
+ion-header-bar.bar, .homeBtn {
+  display: flex;
+  align-items: center;
+}
+.platform-ios.platform-cordova:not(.fullscreen) .has-header, .platform-ios.platform-cordova:not(.fullscreen) .bar-subheader,
+.platform-ios.platform-cordova .modal-wrapper .modal .has-header
+{
+  top: 74px !important;
+}
+.platform-ios.platform-cordova:not(.fullscreen) .bar-header:not(.bar-subheader),
+.platform-ios.platform-cordova .modal-wrapper .modal .bar-header:not(.bar-subheader){
+  height:74px !important;
+}
+.platform-ios .header-item {
+  margin-top: 0px !important;
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+  align-items: center;
+}
+.platform-ios ion-header-bar.bar .title {
+  height:73px !important;
+  line-height: 0px !important;
+}
+.platform-ios.platform-cordova:not(.fullscreen) .bar-header:not(.bar-subheader) > * {
+  margin-top: 0px !important;
+}
+.platform-ios .bar-stable .custom-btn {
+  display: flex;
+  align-items: center;
+}
+.platform-ios .bar-stable .buttons-left, .platform-ios .bar-stable .buttons-right,
+.platform-ios .bar-stable .back-button{
+  padding-top: 10px;
+}
+
+.platform-ios .modal ion-header-bar.bar .title {
+  line-height: 83px !important;
+}
+.platform-ios ion-header-bar.bar.bar-header.bar-stable.customModal h1 {
+  margin-top: 0px !important;
+}
