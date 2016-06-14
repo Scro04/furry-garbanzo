@@ -129,6 +129,15 @@ var app = angular.module('starter', ['ionic', 'starter.controllers', 'starter.se
                     }
                 }
             })
+            .state('tab.partners', {
+                url: '/partners',
+                views: {
+                    'tab-info': {
+                        templateUrl: 'templates/partners.html',
+                        controller: 'partnersCtrl'
+                    }
+                }
+            })
             .state('tab.kontakt', {
                 url: '/kontakt',
                 views: {

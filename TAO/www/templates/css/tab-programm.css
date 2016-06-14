@@ -84,6 +84,8 @@
 
 .list {
     margin-bottom: 0px;
+    float: left;
+    width: 100%;
 }
 
 .eventRow {
@@ -134,6 +136,44 @@
     border: #b61e3a 1px solid;
     color: #b61e3a;
 }
+
+#tab-programm .filter_wrapper {
+    height: 2.5em;
+    background-color: #F7F7F7;
+    width: 100%;
+    position: relative;
+    border-top: 1px solid #CBCBCB;
+    float: left;
+    padding-top: 0em;
+    padding-bottom: 0em;
+    padding-left: 0.5em;
+    padding-right: 0.5em; 
+  }
+
+  #tab-programm .filter_wrapper span {
+    font-size: 12px;
+    position: relative;
+    float: left;
+    line-height: 2.8em;
+    margin-left: 10px;
+    color: black;
+  }
+
+#tab-programm .filter_wrapper .filter_right {
+    font-size: 18px;
+    line-height: 2em;
+    position: relative;
+    float: right;
+    color: #b61e3a; 
+  }
+
+#tab-programm .filter_wrapper .filter_left {
+    font-size: 18px;
+    line-height: 2em;
+    position: relative;
+    float: left;
+    color: #b61e3a; 
+  }
 
 @media only screen and (min-width: 415px) {
     .programRow {
