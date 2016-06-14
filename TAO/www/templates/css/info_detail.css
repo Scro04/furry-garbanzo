@@ -166,17 +166,16 @@
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
-  font-size: 12px;
 }
 
 .partners .item.dividerLine {
     color: white;
     background-color: #b61e3a;
-    font-size: 12px;
-    height: 22px;
+    height: 30px;
     padding: 0px;
     padding-left: 8px;
-    min-height: 22px;
+    min-height: 30px;
+    line-height: 30px;
 }
 
 .partners .detailBox {

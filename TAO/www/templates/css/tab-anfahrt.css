@@ -1,10 +1,3 @@
-.anfahrt h1 {
-
-  text-transform: uppercase;
-  font-weight: 400;
-  color: #b61e3a;
-}
-
 .anfahrt h2 {
   font-weight: 600;
 }
@@ -158,7 +151,7 @@ iframe {
 #upper-section {
   float: left;
   width: 100%;
-  height: 45%;
+  height: auto;
 }
 
 @media (min-width: 320px) and (max-width: 568px) {

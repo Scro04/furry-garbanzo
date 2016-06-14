@@ -20,7 +20,7 @@
     </div>
     <div class="speakerEventsWrapper" ng-if="workshopsSpeaker.length > 0">
 
-      <span id="courseHeader">Events</span>
+      <h1 class="fullWidth">Events</h1>
 
 
       <a ng-repeat="entry in workshopsSpeaker" class="item eventRow" id="test" ng-click="openWorkshopModal(entry)">
@@ -45,7 +45,7 @@
 
     <div class="courseContent">
 
-      <span id="courseHeader" class="fullWidth">Lebenslauf</span>
+      <h1 class="fullWidth">Lebenslauf</h1>
       <span id="courseText" class="fullWidth" ng-bind-html="$root.currentSpeaker.BeschreibungGER"></span>
 
     </div>

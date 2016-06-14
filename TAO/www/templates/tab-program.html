@@ -1,5 +1,5 @@
 <link href="templates/css/tab-programm.css" rel="stylesheet">
-<ion-view view-title="Kongressprogramm">
+<ion-view view-title="Kongressprogramm" class="tab-program">
 
 
   <ion-nav-buttons side="left">
@@ -12,12 +12,12 @@
       <i class="ion-search"></i>
     </button>
   </ion-nav-buttons>
-  <ion-content id="tab-programm">
-    <div class="button-bar">
+  <div class="button-bar">
       <a class="button button-outline btn-switch"
         ng-repeat="(key, value) in data track by $index" id="btn-{{$index+1}}"
         ng-click="switchList({{$index+1}})">{{key}}</a>
-    </div>
+  </div>
+  <ion-content id="tab-programm">
     <a ng-if="filter_enabled" class="filter_wrapper" ng-click="disableFilter()">
         <i class="filter_left ion-ios-search-strong"></i>
         <span>Filter aktiv</span>

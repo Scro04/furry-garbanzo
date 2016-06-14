@@ -109,29 +109,31 @@
 
 /* Switcher */
 #tab-programm {
-    margin-top: 10px;
+    margin-top: 54px;
 }
-#tab-programm .button-bar{
+.tab-program .button-bar{
     margin-bottom: 10px;
     padding-left: 10px;
     padding-right: 10px;
+    margin-top: 54px;
 }
 
-#tab-programm .button-bar .button {
+.tab-program .button-bar .button {
     border-color: #b61e3a;
     color: #b61e3a;
     border-radius: 0px;
     font-size: 14px;
     font-weight: 500;
+    line-height: 34px;
 }
 
-#tab-programm .button-bar .button.active{
+.tab-program .button-bar .button.active{
     background-color: #b61e3a;
     border: #b61e3a;
     color: white;
 }
 
-#tab-programm .button-bar .button.activated {
+.tab-program .button-bar .button.activated {
     background-color: white;
     border: #b61e3a 1px solid;
     color: #b61e3a;
