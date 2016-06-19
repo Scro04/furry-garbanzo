@@ -8,21 +8,21 @@
             <h2 id="courseTitle" class="fullWidth">{{$root.currentProgram.TitelGER}}</h2>
             <div class="outer-wrapper">
                 <div class="courseTimeWrapper">
-                    <span id="courseTime" class="fullWidth"><i class="ion-clock"></i></span>
-                    <span id="courseStart" class="fullWidth">Beginn: {{$root.currentProgram.startZeit}}</span>
-                    <span id="courseEnd" class="fullWidth">Ende: {{$root.currentProgram.endZeit}}</span>
+                    <p id="courseTime" class="fullWidth"><i class="ion-clock"></i></p>
+                    <p id="courseStart" class="fullWidth">Beginn: {{$root.currentProgram.startZeit}}</p>
+                    <p id="courseEnd" class="fullWidth">Ende: {{$root.currentProgram.endZeit}}</p>
                 </div>
 
                 <div class="locationWrapper">
-                    <span id="courseLocation" class="fullWidth"><i class="ion-location"></i></span>
-                    <span id="courseLocationText" class="fullWidth">{{$root.currentProgram.Seminarraum}}</span>
-                    <span id="courseLocationLink" class="fullWidth" ng-click="openRaumplan()">Raumplan</span>
+                    <p id="courseLocation" class="fullWidth"><i class="ion-location"></i></p>
+                    <p id="courseLocationText" class="fullWidth">{{$root.currentProgram.Seminarraum}}</p>
+                    <p id="courseLocationLink" class="fullWidth" ng-click="openRaumplan()">Raumplan</p>
                 </div>
             </div>
             <div class="pointWrapper">
-                <span id="courseLocation" class="fullWidth"><i class="ion-ribbon-b"></i></span>
-                <span ng-if="$root.currentProgram.AKPunkte != null" class="akPoints">AK-Punkte:</span>
-                <span ng-if="$root.currentProgram.AKPunkte != null" class="akPoints">{{$root.currentProgram.AKPunkte}}</span>
+                <p id="courseLocation" class="fullWidth"><i class="ion-ribbon-b"></i></p>
+                <p ng-if="$root.currentProgram.AKPunkte != null" class="akPoints">AK-Punkte:</p>
+                <p ng-if="$root.currentProgram.AKPunkte != null" class="akPoints">{{$root.currentProgram.AKPunkte}}</p>
             </div>
             <button class="button icon-left ion-calendar button-assertive" ng-click="addToCalendar()" ng-if="!eventAdded">Termin eintragen</button>
             <button class="button icon-left ion-checkmark button-positive" ng-if="eventAdded">Hinzugefügt</button>
@@ -32,13 +32,13 @@
             <div class="speakerContainer">
                 <div id="speakerImage"><img ng-src="{{speakerObject.Bild}}" /></div>
                 <div id="speakerName">
-                    <span id="country">
-                        <span ng-if="speakerObject.AkadgradPre != ''">{{speakerObject.AkadgradPre}}<br></span>
-                    </span>
-                    {{speakerObject.Vorname}} {{speakerObject.Name}} {{speakerObject.AkadGradPost != "" ? 
+                    <p id="country">
+                        <p ng-if="speakerObject.AkadgradPre != ''">{{speakerObject.AkadgradPre}}<br></p>
+                    </p>
+                    {{speakerObject.Vorname}} {{speakerObject.Name}} {{speakerObject.AkadGradPost != "" ?
                     ', ' + speakerObject.AkadGradPost : ""}}
                     <br>
-                    <span id="country">{{speakerObject.Land}}</span>
+                    <p id="country">{{speakerObject.Land}}</p>
                 </div>
                 <div id="speakerLinking"><i class="ion-chevron-right"></i></div>
             </div>
@@ -53,8 +53,8 @@
 
         <div class="courseContent" ng-if="$root.currentProgram.BeschreibungGER != null">
 
-            <span id="courseHeader" class="fullWidth">Inhalt</span>
-            <span id="courseText" class="fullWidth" ng-bind-html="$root.currentProgram.BeschreibungGER"></span>
+            <p id="courseHeader" class="fullWidth">Inhalt</p>
+            <p id="courseText" class="fullWidth" ng-bind-html="$root.currentProgram.BeschreibungGER"></p>
 
         </div>
 
