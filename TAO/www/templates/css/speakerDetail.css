@@ -22,11 +22,11 @@
 .speakerUpperSection .informationSection {
   float: left;
   width: auto;
-  padding-left: 40px;
+  padding-left: 20px;
 }
 
 .speakerUpperSection img {
-  width: 75px;
+  width: 70px;
   height:auto;
   float: left;
 }

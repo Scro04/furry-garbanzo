@@ -221,7 +221,7 @@ div.speakerContainer {
 }
 
 .pointWrapper {
-    width: 30%;
+    width: 35%;
     height: auto;
     position: relative;
     float: left;
@@ -239,7 +239,7 @@ div.speakerContainer {
     font-size: 13px;
     position: relative;
     float: right;
-    max-width: 70%;
+    max-width: 65%;
     margin-top: 30px;
     min-height: 30px;
     line-height: 35px;
