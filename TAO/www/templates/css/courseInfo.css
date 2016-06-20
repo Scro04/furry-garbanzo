@@ -165,28 +165,6 @@
     cursor: pointer;
 }
 
-@media(min-width: 415px) {
-    #courseHeader {
-        font-size: 24px;
-    }
-    #courseText {
-        font-size: 16px;
-    }
-    #courseType {
-        font-size: 24px;
-    }
-    #courseTitle {
-        font-size: 22px;
-    }
-    #courseSubtitle {
-        font-size: 20px;
-    }
-    #courseTime i,
-    #courseLocation i {
-        font-size: 26px;
-    }
-}
-
 .back-text {
     display: none !important;
 }
@@ -275,4 +253,33 @@ div.speakerContainer {
     margin-top: 30px;
     min-height: 30px;
     line-height: 35px;
+}
+
+@media(min-width: 415px) {
+    #courseHeader {
+        font-size: 24px;
+    }
+    #courseText {
+        font-size: 16px;
+    }
+    #courseType {
+        font-size: 24px;
+    }
+    #courseTitle {
+        font-size: 22px;
+    }
+    #courseStart,
+    #courseEnd,
+    #courseLocationText,
+    #courseLocationLink, .akPoints {
+        font-size: 19px;
+        line-height: 1.3em;
+    }
+    #courseSubtitle {
+        font-size: 20px;
+    }
+    #courseTime i,
+    #courseLocation i {
+        font-size: 26px;
+    }
 }
