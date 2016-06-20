@@ -74,7 +74,7 @@
     height: 100px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
 }
 
 #handoutImage {
@@ -104,6 +104,10 @@
     align-items: left;
     justify-content: flex-start;
     padding-right: 20px;
+}
+
+#speakerName {
+  padding-left: 10px;
 }
 
 #speakerName,
@@ -282,4 +286,8 @@ div.speakerContainer {
     #courseLocation i {
         font-size: 26px;
     }
+}
+
+.courseDetailView p {
+  margin: 0 !important;
 }

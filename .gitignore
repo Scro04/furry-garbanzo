@@ -5,7 +5,8 @@ API/node_modules/
 TAO/platforms/
 TAO/plugins/
 TAO/.brackets.json
-TAO/resources
+TAO/resources/android
+TAO/resources/ios
 .DS_Store
 .gitignore~HEAD
 .idea/

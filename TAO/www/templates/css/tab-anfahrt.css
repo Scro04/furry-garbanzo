@@ -2,9 +2,6 @@
   font-weight: 600;
 }
 
-.route-section .button {
-bor
-}
 
 .anfahrt h3 {
   font-weight: 500;
@@ -219,4 +216,9 @@ iframe {
   #upper-section {
     height: 65%;
   }
+}
+
+button#route-button.button.button-assertive.button-small {
+  margin-top: 0px;
+  float: left;
 }
