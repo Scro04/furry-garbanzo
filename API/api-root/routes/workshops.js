@@ -21,7 +21,9 @@ router.get('/', function (req, res) {
         const weekdays = [ "Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag"];
         for (var i = 0; i < rows.length; i++) {
             var date = new Date(rows[i]["Datum"]);
-            stringdate = weekdays[date.getDay()].substring(0,2) + " " + date.getDate() + "." + (date.getMonth() + 1) + ".";
+            var day = (date.getDate() > 9 )? date.getDate() : "0" + date.getDate()
+            var month = (date.getMonth() > 8)? (date.getMonth() + 1) : "0" + (date.getMonth() + 1)
+            stringdate = weekdays[date.getDay()].substring(0,2) + " " + day  + "." + month + ".";
             if (response[stringdate] == undefined)
                 response[stringdate] = [];
 
