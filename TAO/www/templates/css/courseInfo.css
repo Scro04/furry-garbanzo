@@ -9,17 +9,13 @@
 }
 
 #courseType {
-    font-size: 22px;
-    font-weight: 500;
-    line-height: 30px;
-    text-transform: uppercase;
+    color: #b61e3a;
+    margin: 0;
 }
 
 #courseTitle {
-    font-size: 20px;
     color: black;
-    font-weight: 500;
-    line-height: 30px;
+    margin: 0;
 }
 
 #courseSubtitle {
@@ -113,7 +109,7 @@
 #speakerName,
 #handoutInfo {
     float: left;
-    font-size: 20px;
+    font-size: 17px;
     color: black;
     font-weight: 500;
 }
@@ -132,7 +128,6 @@
 #speakerName #country {
     font-size: 14px;
     font-weight: normal;
-    text-transform: uppercase;
 }
 
 #speakerLinking {
@@ -158,7 +153,6 @@
     color: black;
     font-weight: 500;
     color: #b61e3a;
-    text-transform: uppercase;
 }
 
 #courseText {
@@ -169,28 +163,6 @@
 #courseLocationLink,
 #handoutInfo {
     cursor: pointer;
-}
-
-@media(min-width: 415px) {
-    #courseHeader {
-        font-size: 24px;
-    }
-    #courseText {
-        font-size: 16px;
-    }
-    #courseType {
-        font-size: 24px;
-    }
-    #courseTitle {
-        font-size: 22px;
-    }
-    #courseSubtitle {
-        font-size: 20px;
-    }
-    #courseTime i,
-    #courseLocation i {
-        font-size: 26px;
-    }
 }
 
 .back-text {
@@ -225,6 +197,13 @@ div.speakerContainer {
     color: #b61e3a;
 }
 
+.outer-wrapper {
+    float: left;
+    width: 100%;
+    position: relative;
+    height: auto;
+}
+
 .courseTimeWrapper {
     width: 50%;
     height: auto;
@@ -242,7 +221,7 @@ div.speakerContainer {
 }
 
 .pointWrapper {
-    width: 30%;
+    width: 35%;
     height: auto;
     position: relative;
     float: left;
@@ -260,7 +239,7 @@ div.speakerContainer {
     font-size: 13px;
     position: relative;
     float: right;
-    max-width: 70%;
+    max-width: 65%;
     margin-top: 30px;
     min-height: 30px;
     line-height: 35px;
@@ -274,4 +253,33 @@ div.speakerContainer {
     margin-top: 30px;
     min-height: 30px;
     line-height: 35px;
+}
+
+@media(min-width: 415px) {
+    #courseHeader {
+        font-size: 24px;
+    }
+    #courseText {
+        font-size: 16px;
+    }
+    #courseType {
+        font-size: 24px;
+    }
+    #courseTitle {
+        font-size: 22px;
+    }
+    #courseStart,
+    #courseEnd,
+    #courseLocationText,
+    #courseLocationLink, .akPoints {
+        font-size: 19px;
+        line-height: 1.3em;
+    }
+    #courseSubtitle {
+        font-size: 20px;
+    }
+    #courseTime i,
+    #courseLocation i {
+        font-size: 26px;
+    }
 }

@@ -89,7 +89,6 @@ app.factory('dataFactory', function ($localstorage, apiFactory, $q) {
             for (var key in elem) {
                 if (elem.hasOwnProperty(key)) {
                     for (var speaker in elem[key]) {
-                        console.log(speaker);
                         if (elem[key].hasOwnProperty(speaker) && elem[key][speaker].id == id) {
                            result = elem[key][speaker];
                         }
@@ -105,8 +104,10 @@ app.factory('dataFactory', function ($localstorage, apiFactory, $q) {
             var result = undefined;
             for (var key in elem) {
                 if (elem.hasOwnProperty(key)) {
+     
                     for (var program in elem[key]) {
-                        if (elem[key].hasOwnProperty(program) && elem[key][program].WorkshopId == id) {
+                        
+                        if (elem[key].hasOwnProperty(program) && elem[key][program].WorkshopId === parseInt(id)) {
                            result = elem[key][program];
                         }
                     }

@@ -1,10 +1,16 @@
-app.controller('infoCtrl', function ($scope, $state) {
+app.controller('infoCtrl', function ($scope, $state, $ionicHistory) {
 
     console.log("infoCtrl");
 
 
     $scope.sections = [
 
+        {
+            headline: "Kongressanmeldung",
+            text: "Jetzt für den Kongress anmelden!",
+            image: "img/icons/open_modal.png",
+            state: "anmeldung"
+        },
         {
             headline: "Informationen",
             text: "Wichtige Details und News!",
@@ -15,7 +21,7 @@ app.controller('infoCtrl', function ($scope, $state) {
             headline: "Partner",
             text: "Alle Infos zu unseren Partnern!",
             image: "img/icons/partner.png",
-            state: "partners"
+            state: "tab.partners"
         },
         {
             headline: "Hotelreservierung",
@@ -31,7 +37,7 @@ app.controller('infoCtrl', function ($scope, $state) {
         },
         {
             headline: "Kontakt",
-            text: "Für weitere Informationen stehen wir gerne zur Verfügung!",
+            text: "Wir stehen Ihnen gerne zur Verfügung!",
             image: "img/icons/contact.png",
             state: "tab.kontakt"
         }];
@@ -39,29 +45,44 @@ app.controller('infoCtrl', function ($scope, $state) {
 
     $scope.goToState = function (state) {
         if (state === "hotel") {
-            var options = {
-                enableViewportScale: 'yes',
-                location: 'no',
-                clearcache: 'yes',
-                toolbar: 'yes'
-            };
-
-            var address = "https://www.graztourismus.at/kongress/de/13-internationaler-tcm-kongress---tao_kongressformular-6253"
-            var inAppBrowser = window.open(address, "_blank", "location=no,enableviewportscale=yes");
-
-            inAppBrowser.addEventListener('loaderror', function (event) {
-                console.log(event.url + " kann nicht geöffnet werden.");
-                showWebsiteError();
-                inAppBrowser.close();
-            });
-            
-            return;
+            var address = "https://www.graztourismus.at/kongress/de/13-internationaler-tcm-kongress---tao_kongressformular-6253";
+            $scope.openInAppBrowser(address);
+        }
+        else if(state === "anmeldung") {
+            var address = "http://tcm-kongress.at/de/Anmeldung";
+            $scope.openInAppBrowser(address);
         }
         else {
-             $state.go(state);
+            $state.go(state);
         }
-       
+    }
 
+    $scope.openInAppBrowser = function (address) {
+        var options = {
+            enableViewportScale: 'yes',
+            location: 'no',
+            clearcache: 'yes',
+            toolbar: 'yes'
+        };
+
+        var inAppBrowser = window.open(address, "_blank", "location=no,enableviewportscale=yes");
+
+        inAppBrowser.addEventListener('loaderror', function (event) {
+            console.log(event.url + " kann nicht geöffnet werden.");
+            showWebsiteError();
+            inAppBrowser.close();
+        });
+
+    }
+    
+
+
+    $scope.goHome = function () {
+        $ionicHistory.clearHistory();
+        $ionicHistory.nextViewOptions({
+            historyRoot: true
+        });
+        $state.go('home');
     }
 
 

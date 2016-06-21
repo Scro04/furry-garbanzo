@@ -16,7 +16,7 @@ app.controller('speakerDetailCtrl', function ($scope, $state, $stateParams, $ion
 
   $scope.$on("$ionicView.beforeEnter", function (scopes, states) {
     $scope.showLoading();
-    $scope.getWorkshopsOfSpeaker($scope.$root.currentSpeaker.id).then(function () {
+    $scope.getWorkshopsOfSpeaker().then(function () {
       console.log($scope.workshopsSpeaker);
       $scope.hideLoading();
     });
@@ -59,14 +59,37 @@ app.controller('speakerDetailCtrl', function ($scope, $state, $stateParams, $ion
     }
   }
 
-  $scope.getWorkshopsOfSpeaker = function (referentId) {
+  function compare(a, b) {
+    var x_1 = parseInt(a.startZeit.split(":")[0]);
+    var x_2 = parseInt(a.startZeit.split(":")[1]);
+    var y_1 = parseInt(b.startZeit.split(":")[0]);
+    var y_2 = parseInt(b.startZeit.split(":")[1]);
+
+    if (x_1 < y_1)
+      return -1;
+    else if (x_1 > y_1)
+      return 1;
+    else {
+      if (x_2 < y_2)
+        return -1;
+      else if (x_2 > y_2)
+        return 1;
+      else
+        return 0;
+    }
+
+  }
+
+  $scope.getWorkshopsOfSpeaker = function () {
     var defered = $q.defer();
     $scope.workshopsSpeaker = [];
     try {
       for (id in $scope.$root.currentSpeaker.WorkshopId) {
-        dataFactory.getEventsForSpeaker(id).then(function (res) {
-          if(res != undefined) {
+        var search_id = $scope.$root.currentSpeaker.WorkshopId[id];
+        dataFactory.getEventsForSpeaker(search_id).then(function (res) {
+          if (res != undefined) {
             $scope.workshopsSpeaker.push(res);
+            $scope.workshopsSpeaker.sort(compare);
           }
         })
 

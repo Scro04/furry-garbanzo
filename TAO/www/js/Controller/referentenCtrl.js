@@ -1,4 +1,4 @@
-app.controller('referentenCtrl', function ($scope, $state, dataFactory, $ionicPopup) {
+app.controller('referentenCtrl', function ($scope, $state, dataFactory, $ionicPopup, $ionicHistory) {
 
     console.log("referentenCtrl");
     $scope.data = undefined;
@@ -30,4 +30,12 @@ app.controller('referentenCtrl', function ($scope, $state, dataFactory, $ionicPo
         $state.go('tab.speakerDetail');
     }
 
-})
+    $scope.goHome = function () {
+        $ionicHistory.clearHistory();
+        $ionicHistory.nextViewOptions({
+            historyRoot: true
+        });
+        $state.go('home');
+    }
+
+});

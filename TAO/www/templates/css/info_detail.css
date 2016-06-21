@@ -18,14 +18,14 @@
 
 .groupDesc {
     font-size: 18px;
-    font-weight: 400;
+    font-weight: 600;
     line-height: 25px;
     margin: 0;
 }
 
 .priceSection h3 {
     font-size: 15px;
-    font-weight: 300;
+    font-weight: 400;
     color: black;
     margin-top: 0;
 }
@@ -48,7 +48,7 @@
 }
 
 .priceSection tr th {
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .priceSection tr:nth-child(even) {
@@ -76,20 +76,7 @@
 /*                     CSS FOR INFORMATION SCREEN               */
 /* ------------------------------------------------------------ */
 
-.information h1, .information h2, .information h3 {
-  font-family: Helvetica;
-  font-weight: 400;
-}
-.information h1 {
-  font-size: 22px;
-  font-weight: 400;
-}
-.information h2 {
-  font-size: 18px;
-}
-.information h3 {
-  font-size: 18px;
-}
+
 .information bold {
   font-weight: bold;
 }
@@ -112,35 +99,160 @@
   padding-bottom: 20px;
 }
 
-@media(min-width: 415px) {
-  .information h1 {
-    font-size: 22px;
-  }
-  .information h2 {
-    font-size: 20px;
-  }
-  .information h3 {
-    font-size: 18px;
-  }
-  .information #headline {
-    font-size: 25px;
-  }
-  .information #subline {
-   font-size: 25px;
-  }
-}
-
 
 /* ------------------------------------------------------------ */
 /*                     CSS FOR CONTACT SCREEN                   */
 /* ------------------------------------------------------------ */
 
-.contactView img
+.contactView {
+  padding-top: 20px;
+}
+
+.contactView h1:first-of-type {
+  padding-bottom: 20px;
+}
+
+
+#image-wrapper img
 {
-  max-width: 150px;
+  max-height: 170px !important;
+  float: left;
+  position: relative;
+  margin-right: 20px;
+  object-fit: cover;
+}
+
+#image-wrapper {
+  float: left;
+  width: auto;
+  margin-right: 20px;
+  height:100%;
 }
 
 .contactPerson, a[x-apple-data-detectors]
 {
   text-decoration: none !important;
+}
+
+/* ------------------------------------------------------------ */
+/*                     CSS FOR CONTACT SCREEN                   */
+/* ------------------------------------------------------------ */
+
+.partners .list {
+  margin-bottom: 0px;
+}
+
+.partners .item-divider {
+    background-color: #b61e3a;
+    color: white;
+}
+
+.partners .programRow {
+    padding-left: 5px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.partners .programRow span {
+  width: 95%;
+  position: relative;
+  float: left;
+  height: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.partners .item.dividerLine {
+    color: white;
+    background-color: #b61e3a;
+    height: 30px;
+    padding: 0px;
+    padding-left: 8px;
+    min-height: 30px;
+    line-height: 30px;
+}
+
+.partners .detailBox {
+    position: relative;
+    float: right;
+    font-size: 14px;
+    color: #b61e3a;
+    padding-left: 10px;
+}
+
+#contactPerson {
+  float: left;
+  width: auto;
+  justify-content:flex-start;
+  height:100%;
+  padding-bottom: 20px;
+}
+
+#contactPerson a, #contactPerson p {
+  padding-bottom: 10px;
+  margin-bottom: 0px;
+}
+
+
+#info-wrapper {
+  float: left;
+  position: relative;
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  justify-content:flex-start;
+
+}
+
+.no-action {
+  pointer-events: none !important;
+  text-decoration: none !important;
+}
+.no-border, #contactPerson a {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.no-border i, #contactPerson i {
+  padding-right: 10px;
+  font-size: 24px;
+}
+
+
+
+
+.contactInfosWrapper {
+  padding-bottom: 20px;
+}
+
+@media(max-width: 414px) {
+  .contactView h1:first-of-type {
+    padding-bottom: 0px;
+  }
+  #image-wrapper img {
+    max-height: 100px !important;
+    margin-right: 10px !important;
+  }
+  .no-border i, #contactPerson i {
+    font-size: 18px !important;
+  }
+  #contactPerson a, #contactPerson p {
+    padding-bottom: 5px;
+    margin-bottom: 0px;
+  }
+}
+@media(max-width: 320px) {
+  #image-wrapper img {
+    max-height: 80px !important;
+    margin-right: 10px !important;
+  }
+  .no-border i, #contactPerson i {
+    font-size: 14px !important;
+  }
 }

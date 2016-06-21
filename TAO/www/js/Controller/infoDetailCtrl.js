@@ -21,6 +21,41 @@ app.controller('pricesCtrl', function ($scope, $state, apiFactory) {
     });
 });
 
+//-------------------------------------------------------------------------------------
+app.controller('partnersCtrl', function ($scope, $state, apiFactory, $cordovaInAppBrowser) {
+
+    console.log("partnerCtrl");
+
+    $scope.data = [];
+
+    apiFactory.getPartners().then(function (response) {
+        if (response != undefined) {
+            $scope.data = response;
+            console.log($scope.data);
+        }
+    }, function (error) {
+        console.log(error);
+    });
+
+    $scope.openInAppBrowser = function(url) {
+  
+    var options = {
+      location: 'no',
+      clearcache: 'yes',
+      toolbar: 'yes'
+    };
+
+    $cordovaInAppBrowser.open(url, '_blank', options)
+      .then(function (event) {
+        // success
+      })
+      .catch(function (event) {
+        // error
+      });
+  }
+});
+
+//------------------------------------------------------------------------------------------
 
 app.controller('informationCtrl', function ($scope, $state, $cordovaInAppBrowser) {
 
@@ -43,6 +78,8 @@ app.controller('informationCtrl', function ($scope, $state, $cordovaInAppBrowser
       });
   }
 });
+
+//----------------------------------------------------------------------------------------
 app.controller('kontaktCtrl', function ($scope, $state, apiFactory, $cordovaInAppBrowser) {
 
   console.log("kontaktCtrl");
@@ -65,3 +102,5 @@ app.controller('kontaktCtrl', function ($scope, $state, apiFactory, $cordovaInAp
   }
 
 });
+
+//----------------------------------------------------------------------------------------
