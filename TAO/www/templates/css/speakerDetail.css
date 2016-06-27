@@ -34,16 +34,24 @@
 .informationSection #name {
   color: #b61e3a;
   font-weight:500;
-  line-height:25px;
+  margin: 0;
+  margin-bottom: 5px;
 }
 
 .informationSection #profession {
   font-weight:500;
+  margin: 0;
+  margin-bottom: 5px;
 }
-
 .informationSection #country {
   font-weight:500;
+  margin: 0;
 }
+
+#name span {
+  text-transform: uppercase;
+}
+
 
 .speakerEventsWrapper {
   float: left;

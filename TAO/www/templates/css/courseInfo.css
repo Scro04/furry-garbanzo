@@ -291,3 +291,12 @@ div.speakerContainer {
 .courseDetailView p {
   margin: 0 !important;
 }
+
+span#courseType.fullWidth.headline.ng-binding.type1,
+span#courseType.fullWidth.headline.ng-binding.type0{
+  line-height: 2.5em;
+}
+
+span#courseTitle.fullWidth.headline.ng-binding {
+  line-height: 1.2em;
+}

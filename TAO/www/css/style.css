@@ -165,18 +165,18 @@ i {
 
 
 h1 {
-  font-size: 22px;
+  font-size: 20px;
   line-height: 1.6em;
   font-weight: 400;
   color: #b61e3a;
 }
 h2, .item h2 {
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.6em;
 }
 h3, .item h3 {
-  font-size: 16px;
-  line-height: 1.6em;
+  font-size: 14px;
+  line-height: 1em;
 }
 p, .item p, a, .item a, .item {
   font-size: 14px;
