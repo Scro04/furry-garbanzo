@@ -59,7 +59,7 @@ app.controller('infoCtrl', function ($scope, $state, $ionicHistory) {
 
     $scope.openInAppBrowser = function (address) {
         window.open = cordova.InAppBrowser.open;
-        var options = "location=no,enableviewportscale=yes,clearcache=yes,toolbar=yes,closebuttoncaption='Zurück',toolbarposition=top";
+        var options = "location=no,enableviewportscale=yes,clearcache=yes,toolbar=yes,closebuttoncaption=Schließen,toolbarposition=top";
 
         var inAppBrowser = window.open(address, "_blank", options);
 
@@ -70,7 +70,7 @@ app.controller('infoCtrl', function ($scope, $state, $ionicHistory) {
         });
 
     }
-    
+
 
 
     $scope.goHome = function () {

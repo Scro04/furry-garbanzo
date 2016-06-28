@@ -248,3 +248,9 @@ ion-header-bar.bar, .homeBtn {
 .bar-stable .button {
   background-color: transparent;
 }
+
+@media(min-width: 768px) {
+  .platform-ios .tab-program .button-bar {
+    margin-top: 88px;
+  }
+}
