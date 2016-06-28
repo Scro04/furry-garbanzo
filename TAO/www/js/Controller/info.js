@@ -58,14 +58,10 @@ app.controller('infoCtrl', function ($scope, $state, $ionicHistory) {
     }
 
     $scope.openInAppBrowser = function (address) {
-        var options = {
-            enableViewportScale: 'yes',
-            location: 'no',
-            clearcache: 'yes',
-            toolbar: 'yes'
-        };
+        window.open = cordova.InAppBrowser.open;
+        var options = "location=no,enableviewportscale=yes,clearcache=yes,toolbar=yes,closebuttoncaption='Zurück',toolbarposition=top";
 
-        var inAppBrowser = window.open(address, "_blank", "location=no,enableviewportscale=yes");
+        var inAppBrowser = window.open(address, "_blank", options);
 
         inAppBrowser.addEventListener('loaderror', function (event) {
             console.log(event.url + " kann nicht geöffnet werden.");
