@@ -240,3 +240,11 @@ ion-header-bar.bar, .homeBtn {
 .platform-ios ion-header-bar.bar.bar-header.bar-stable.customModal h1 {
   margin-top: 0px !important;
 }
+
+.bar.bar-stable {
+  background-color: white !important;
+  border-bottom: 1px solid #ddd;
+}
+.bar-stable .button {
+  background-color: transparent;
+}
