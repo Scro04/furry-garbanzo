@@ -257,3 +257,17 @@ ion-header-bar.bar, .homeBtn {
     line-height: 0px !important;
     }
 }
+
+@media(max-width: 767px) {
+  .platform-ios.platform-cordova:not(.fullscreen) .bar-header:not(.bar-subheader) {
+    height:50px;
+    display: flex;
+    align-items: center;
+  }
+  .platform-ios .header-item {
+    padding-top: 0px;
+  }
+  ion-content#tab-programm {
+    margin-top: 29px;
+  }
+}
