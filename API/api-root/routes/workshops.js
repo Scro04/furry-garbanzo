@@ -11,8 +11,8 @@ var connection = require('../helpers/database.js');
  *
  * @apiSuccess {JSON} All workshops listed
  */
-router.get('/', function (req, res) {
-    connection.connection.query('SELECT WorkshopId, appWorkshops.EinheitId, appWorkshops.Sprache, appWorkshops.TitelGER, appWorkshops.TitelENG, appWorkshops.BeschreibungGER, appWorkshops.BeschreibungENG, appWorkshops.Teil, Zeit, appWorkshops.AKId, appWorkshops.Handout, AKPunkte, appWorkshops.Reihung, appWorkshops.Seminarraum, GROUP_CONCAT(DISTINCT ReferentId) as ReferentId, appEinheiten.TagId ,appEinheiten.Uhrzeit AS EinheitZeit, appTage.Datum, group_concat( appReferenten.Vorname) as Vorname, group_concat( appReferenten.Name) as Name ,group_concat( appReferenten.AkadgradPre ) as AkadgradPre , group_concat(appReferenten.AkadGradPost ) as AkadGradPost, group_concat(appReferenten.Land) as Land, group_concat(DISTINCT appReferenten.id) as SpeakerId FROM appWorkshopsReferenten JOIN appWorkshops on WorkshopId = appWorkshops.id JOIN appEinheiten on appWorkshops.EinheitId = appEinheiten.id JOIN appTage on appTage.id = appEinheiten.TagId JOIN appReferenten on appReferenten.id = ReferentId GROUP BY WorkshopId ORDER BY appEinheiten.TagId', function (err, rows) {
+router.get('/', function(req, res) {
+    connection.connection.query('SELECT WorkshopId, appWorkshops.EinheitId, appWorkshops.Sprache, appWorkshops.TitelGER, appWorkshops.TitelENG, appWorkshops.BeschreibungGER, appWorkshops.BeschreibungENG, appWorkshops.Teil, Zeit, appWorkshops.AKId, appWorkshops.Handout, AKPunkte, appWorkshops.Reihung, appWorkshops.Seminarraum, GROUP_CONCAT(DISTINCT ReferentId) as ReferentId, appEinheiten.TagId ,appEinheiten.Uhrzeit AS EinheitZeit, appTage.Datum, group_concat( appReferenten.Vorname) as Vorname, group_concat( appReferenten.Name) as Name ,group_concat( appReferenten.AkadgradPre ) as AkadgradPre , group_concat(appReferenten.AkadGradPost ) as AkadGradPost, group_concat(appReferenten.Land) as Land, group_concat(DISTINCT appReferenten.id) as SpeakerId FROM appWorkshopsReferenten JOIN appWorkshops on WorkshopId = appWorkshops.id JOIN appEinheiten on appWorkshops.EinheitId = appEinheiten.id JOIN appTage on appTage.id = appEinheiten.TagId JOIN appReferenten on appReferenten.id = ReferentId GROUP BY WorkshopId ORDER BY appEinheiten.TagId', function(err, rows) {
         // ordering to match structure
         var response = {};
         const weekdays = ["Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag", "Sonntag"];
@@ -23,7 +23,7 @@ router.get('/', function (req, res) {
                 response[stringdate] = [];
 
             // splitting time
-            rows[i]["dayStringShort"] = weekdays[date.getDay()].substring(0,2).toUpperCase();
+            rows[i]["dayStringShort"] = weekdays[date.getDay()].substring(0, 2).toUpperCase();
             rows[i]["dateString"] = date.getDate() + "." + (date.getMonth() + 1);
             try {
                 if (rows[i]["Zeit"]) {
@@ -46,14 +46,13 @@ router.get('/', function (req, res) {
 
                 rows[i]["speakers"] = [];
 
-                var tempspeakers =  rows[i]["ReferentId"].split(",");
-                for(var z = 0; z < tempspeakers.length; z++)
-                {
+                var tempspeakers = rows[i]["ReferentId"].split(",");
+                for (var z = 0; z < tempspeakers.length; z++) {
                     var speaker = {};
                     speaker.ReferentId = tempspeakers[z];
                     speaker.Vorname = (rows[i]["Vorname"]) ? rows[i]["Vorname"].split(",")[z] : "";
                     speaker.Name = (rows[i]["Name"]) ? rows[i]["Name"].split(",")[z] : "";
-                    speaker.AkadgradPre = (rows[i]["AkadgradPre"])  ? rows[i]["AkadgradPre"].split(",")[z] : "";
+                    speaker.AkadgradPre = (rows[i]["AkadgradPre"]) ? rows[i]["AkadgradPre"].split(",")[z] : "";
                     speaker.AkadGradPost = (rows[i]["AkadGradPost"]) ? rows[i]["AkadGradPost"].split(",")[z] : "";
                     speaker.Land = (rows[i]["Land"]) ? rows[i]["Land"].split(",")[z] : "";
                     speaker.Bild = (rows[i]["SpeakerId"]) ? "http://www.tcmkongress.at/de/Referenten/GetFoto/" + rows[i]["SpeakerId"].split(",")[z] : "";
@@ -80,7 +79,14 @@ router.get('/', function (req, res) {
             }
 
         }
-
+        for (var r in response) {
+            console.log(r);
+            response[r] = response[r].sort(function(a, b) {
+                if (a.startZeit < b.startZeit) return -1;
+                if (a.startZeit > b.startZeit) return 1;
+                return 0;
+            });
+        }
         res.send(response);
     });
 });
