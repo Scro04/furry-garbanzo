@@ -1,31 +1,27 @@
-app.controller('referentenCtrl', function ($scope, $state, apiFactory) {
+app.controller('referentenCtrl', function ($scope, $state, dataFactory, $ionicPopup, $ionicHistory) {
 
     console.log("referentenCtrl");
+    $scope.data = undefined;
 
-
-    $scope.data = $scope.$root.speaker;
-
+    $scope.showAlert = function () {
+        var alertPopup = $ionicPopup.alert({
+            title: 'Daten konnten nicht geladen werden!',
+            template: 'Bitte überprüfen Sie Ihre Internetverbindung',
+            buttons: [{
+                text: 'OK',
+                type: 'button-assertive'
+            }]
+        });
+    };
 
     $scope.$on("$ionicView.beforeEnter", function () {
-
-        /*$scope.data["A"] = [];
-        $scope.data["B"] = [];
-        $scope.data["C"] = [];
-
-        for (var i = 0; i < 2; i++) {
-            var elem = {
-                id: i,
-                vorname: "Dr. Peter",
-                nachname: "Aluani",
-                country: "Österreich",
-                image: "img/16.jpg"
-            };
-            $scope.data["A"].push(elem);
-            $scope.data["B"].push(elem);
-            $scope.data["C"].push(elem);
-
-        }*/
-
+        if ($scope.data == undefined) {
+            dataFactory.getSpeakers().then(function (data) {
+                $scope.data = data;
+            }, function () {
+                $scope.showAlert();
+            })
+        }
     });
 
     $scope.goToSpeakerDetail = function (speaker) {
@@ -34,4 +30,12 @@ app.controller('referentenCtrl', function ($scope, $state, apiFactory) {
         $state.go('tab.speakerDetail');
     }
 
-})
+    $scope.goHome = function () {
+        $ionicHistory.clearHistory();
+        $ionicHistory.nextViewOptions({
+            historyRoot: true
+        });
+        $state.go('home');
+    }
+
+});

@@ -1,0 +1,224 @@
+.anfahrt h2 {
+  font-weight: 600;
+}
+
+
+.anfahrt h3 {
+  font-weight: 500;
+  margin: 0;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.anfahrt a {
+  text-decoration: underline;
+  color: #b61e3a;
+}
+
+iframe {
+  padding-top: 10px;
+}
+
+#verkehrsmittelHeadline {
+  padding-top: 20px;
+}
+
+.anfahrt .list {
+  margin-bottom: 10px;
+}
+
+.anfahrt .item {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.anfahrt .item.active {
+  background-color: #eee;
+}
+
+.anfahrt .item h2 {
+  max-width: 95%;
+  float: left;
+  font-weight: 300;
+}
+
+.anfahrt .item .icon {
+  color: #b61e3a;
+  position: relative;
+  float: left;
+  margin-left: auto;
+  right: 10px;
+}
+
+.anfahrt .item-accordion {
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+.anfahrt .item-accordion ul {
+  list-style-type: disc;
+  width: 100%;
+  float: left;
+  padding-right: 10px;
+  position: relative;
+  padding-bottom: 10px;
+  margin-left: 10px;
+}
+
+.anfahrt .item-accordion ul li {
+  padding-left: 5px;
+  padding-bottom: 2px;
+  line-height: 20px;
+  margin-left: 15px;
+}
+
+.anfahrt .item-accordion ul li span {
+  display: block;
+  margin-left: -0.1em;
+  color: #000; /* black text */
+}
+
+.anfahrt .route-section {
+  width: 100%;
+  float: left;
+}
+
+.anfahrt form {
+  width: 100%;
+  float: left;
+}
+
+#saddr {
+  border: 1px solid #ddd;
+  height: 30px;
+  font-size: 14px;
+  line-height: 30px;
+  color: black;
+  width: 70%;
+  margin-bottom: 5px;
+  padding: 5px;
+}
+
+.anfahrt input[type="submit"] {
+  background-color: #b61e3a;
+  color: white;
+  border: none;
+  padding: 5px;
+}
+
+@media (min-width: 700px) {
+  iframe {
+    height: 55% !important;
+  }
+
+  .anfahrt .list, .anfahrt .route-section {
+    margin-bottom: 20px;
+  }
+
+  .anfahrt .item-accordion ul li, .item-accordion p {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .anfahrt .scroll {
+    padding: 20px;
+  }
+
+  .anfahrt .item {
+    padding: 10px;
+  }
+
+  .anfahrt h1 {
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+
+  .anfahrt h2 {
+    margin-bottom: 20px;
+  }
+}
+
+.anfahrt .scroll {
+  position: relative;
+  float: left;
+  height: 100%;
+  width: 100%;
+  padding: 10px;
+}
+
+#upper-section {
+  float: left;
+  width: 100%;
+  height: auto;
+}
+
+@media (min-width: 320px) and (max-width: 568px) {
+  iframe {
+    height: 55% !important;
+  }
+
+  .anfahrt .item {
+    padding: 5px;
+  }
+}
+
+@media (min-width: 375px) and (max-width: 667px) {
+
+  .route-section .button {
+    min-height: 30px;
+  }
+}
+
+@media (max-width: 375px) {
+  iframe {
+    height: 50% !important;
+    margin-top: 5%;
+  }
+
+  .route-section .button {
+    min-height: 30px;
+  }
+}
+
+@media (max-width: 320px) {
+  .anfahrt .item {
+    padding: 5px;
+  }
+
+  .anfahrt .item h3 {
+    padding: 2px;
+  }
+
+  iframe {
+    height: 40% !important;
+    margin-top: 25%;
+  }
+
+  #upper-section {
+    height: 55%;
+  }
+
+  .route-section .button {
+    min-height: 30px;
+  }
+}
+
+@media (max-width: 320px) and (max-height: 480px) {
+  iframe {
+    height: 70% !important;
+    margin-top: 0%;
+    margin-bottom: 5%;
+  }
+
+  #upper-section {
+    height: 65%;
+  }
+}
+
+button#route-button.button.button-assertive.button-small {
+  margin-top: 0px;
+  float: left;
+}

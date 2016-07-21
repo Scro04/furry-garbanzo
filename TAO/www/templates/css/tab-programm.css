@@ -1,144 +1,253 @@
 .homeBtn i,
 .searchBtn i {
-    font-size: 22px;
-    color: #b61e3a;
+  font-size: 22px;
+  color: #b61e3a;
 }
 
 .item-divider {
-    background-color: #b61e3a;
-    color: white;
+  background-color: #b61e3a;
+  color: white;
 }
 
 .programRow {
-    padding-left: 8px !important;
-    height: auto;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 5px;
+  padding-left: 8px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-right: 8px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
-.dividerLine {
-    color: white;
-    background-color: #b61e3a;
-    font-size: 12px;
-    height: 22px;
-    padding: 0px;
-    padding-left: 8px;
-    min-height: 22px;
+.item.dividerLine {
+  color: white;
+  background-color: #b61e3a;
+  font-size: 12px;
+  height: 22px;
+  padding: 0px;
+  padding-left: 8px;
+  min-height: 22px;
 }
 
 .timeWrapper {
-    position: relative;
-    float: left;
-    width: auto;
-    text-align: center;
-    height: 100%;
-    font-size: 12px;
-    padding-right: 8px;
+  position: relative;
+  float: left;
+  width: 40px;
+  text-align: center;
+  height: 100%;
+  font-size: 12px;
+  padding-right: 8px;
+  margin-right: 8px;
+  border-right: 1px solid #aaa;
+  font-weight: 400;
 }
 
 .programType {
-    color: #b61e3a;
-    text-transform: uppercase;
-    font-weight: 500;
-    font-size: 16px;
+  color: #b61e3a;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 14px;
 }
 
 .programName {
-    font-size: 16px;
-    color: black;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
+  font-size: 13px;
+  color: black;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .programAuthor {
-    font-size: 14px;
-    color: darkgray;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
+  font-size: 12px;
+  color: darkgray;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .infoWrapper {
-    position: relative;
-    float: left;
-    width: 85%;
-    overflow-x: hidden;
-    padding-right: 8px;
+  position: relative;
+  float: left;
+  width: 85%;
+  overflow-x: hidden;
+  padding-right: 8px;
 }
 
 .detailBox {
-    position: relative;
-    float: right;
-    font-size: 22px;
-    color: #b61e3a;
-    padding-left: 10px;
+  position: relative;
+  float: right;
+  font-size: 22px;
+  color: #b61e3a;
+  padding-left: 10px;
 }
 
 .list {
-    margin-bottom: 0px;
+  margin-bottom: 0px;
+  float: left;
+  width: 100%;
 }
 
 .eventRow {
-    float: left;
-    width: 100%;
-    border-left: none;
-    border-right: none;
+  float: left;
+  width: 100%;
+  border-left: none;
+  border-right: none;
 }
 
 .eventRow:nth-child(1) a {
-    border-top: none;
+  border-top: none;
 }
 
-.dividerLine {
-    justify-content: flex-start;
+.item.dividerLine {
+  justify-content: flex-start;
 }
 
 .noPaddingTop {
-    padding-top: 0px;
+  padding-top: 0px;
+}
+
+/* Switcher */
+#tab-programm {
+  margin-top: 54px;
+}
+
+.tab-program .button-bar {
+  margin-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: 57px;
+}
+
+.tab-program .button-bar .button {
+  border-color: #b61e3a;
+  color: #b61e3a;
+  border-radius: 0px;
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tab-program .button-bar .button.active {
+  background-color: #b61e3a;
+  border: #b61e3a;
+  color: white;
+}
+
+.tab-program .button-bar .button.activated {
+  background-color: white;
+  border: #b61e3a 1px solid;
+  color: #b61e3a;
+}
+
+#tab-programm .filter_wrapper {
+  height: 2.5em;
+  background-color: #F7F7F7;
+  width: 100%;
+  position: relative;
+  border-top: 1px solid #CBCBCB;
+  float: left;
+  padding-top: 0em;
+  padding-bottom: 0em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+
+#tab-programm .filter_wrapper span {
+  font-size: 12px;
+  position: relative;
+  float: left;
+  line-height: 2.8em;
+  margin-left: 10px;
+  color: black;
+}
+
+#tab-programm .filter_wrapper .filter_right {
+  font-size: 18px;
+  line-height: 2em;
+  position: relative;
+  float: right;
+  color: #b61e3a;
+}
+
+#tab-programm .filter_wrapper .filter_left {
+  font-size: 18px;
+  line-height: 2em;
+  position: relative;
+  float: left;
+  color: #b61e3a;
 }
 
 @media only screen and (min-width: 415px) {
-    .programRow {
-        justify-content: flex-start;
-        padding: 10px !important;
-        padding-left: 10px !important;
-        width: 100%;
-    }
-    .timeWrapper {
-        text-align: center;
-        font-size: 16px;
-    }
-    .infoWrapper {
-        padding-left: 20px;
-        width: 95%;
-        max-width: 95%;
-        height: 100%;
-    }
-    .dividerLine {
-        font-size: 15px;
-        line-height: 25px;
-        height: 28px;
-    }
-    .programType {
-        font-size: 20px;
-        line-height: 25px;
-    }
-    .programName {
-        font-size: 19px;
-        line-height: 24px;
-    }
-    .programAuthor {
-        font-size: 17px;
-        line-height: 22px;
-    }
-    .detailBox {
-        font-size: 30px;
-    }
+  .programRow {
+    justify-content: flex-start;
+    padding: 10px !important;
+    padding-left: 10px !important;
+    width: 100%;
+  }
+
+  .timeWrapper {
+    text-align: center;
+    font-size: 16px;
+    width: 7.5%;
+    padding-right: 10px;
+  }
+
+  .infoWrapper {
+    padding-left: 10px;
+    height: 100%;
+    width: 90%;
+  }
+
+  .dividerLine {
+    font-size: 15px;
+    line-height: 25px;
+    height: 28px;
+  }
+
+  .programType {
+    font-size: 20px;
+    line-height: 25px;
+  }
+
+  .programName {
+    font-size: 19px;
+    line-height: 24px;
+  }
+
+  .programAuthor {
+    font-size: 17px;
+    line-height: 22px;
+  }
+
+  .detailBox {
+    font-size: 30px;
+  }
+
+  #tab-programm .button-bar .button {
+    font-size: 20px;
+  }
 }
 
 .smallLineHeight {
-  line-height: 12px;
+  line-height: 14px;
+}
+
+@media (min-width: 768px) {
+  #tab-programm {
+    margin-top: 74px;
+  }
+
+  .tab-program .button-bar {
+    margin-top: 79px;
+  }
+  .tab-program .button-bar .button {
+    font-size: 19px;
+  }
+  .item.dividerLine {
+    font-size: 16px;
+    line-height: 18px;
+  }
 }

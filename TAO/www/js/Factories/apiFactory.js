@@ -31,7 +31,7 @@ app.factory('apiFactory', function ($http, $ionicPlatform, ApiEndpoint) {
                 return response.data;
             }, function (error) {
                 console.log(error);
-                return error;
+                return error.data;
             });
         },
         getWorkshops: function () {
@@ -47,13 +47,28 @@ app.factory('apiFactory', function ($http, $ionicPlatform, ApiEndpoint) {
                 return response.data;
             }, function (error) {
                 console.log(error);
-                return error;
+                return error.data;
             });
         },
         getPrices: function () {
             return $http({
                 method: 'GET',
                 url: urlBase + 'prices',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+                        //'Authorization': "Basic M9PEVE8PjvPryiYjKTmLUqeYpLxnAdshfdEr"
+                }
+            }).then(function (response) {
+                return response.data;
+            }, function (error) {
+                console.log(error);
+                return error;
+            });
+        },
+        getPartners: function () {
+            return $http({
+                method: 'GET',
+                url: urlBase + 'exhibitors',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
                         //'Authorization': "Basic M9PEVE8PjvPryiYjKTmLUqeYpLxnAdshfdEr"

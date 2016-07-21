@@ -5,7 +5,7 @@
 
     <ion-header-bar class="bar bar-header bar-stable customModal">
       <button class="button button-clear item-button-left button-primary" ng-click="modal.hide()"><i class="ion ion-close"></i></button>
-      <h1 class="title">Programm</h1>
+      <h1 class="title title-center">Programm</h1>
     </ion-header-bar>
 
 
@@ -14,8 +14,8 @@
 
     <div class="upperSection">
 
-      <span id="courseType" class="fullWidth" ng-class="{type0: workshopDataModal.typeString == 'Vortrag', type1: workshopDataModal.typeString == 'Workshop', type2: workshopDataModal.typeString == 'Vorkongress', type3: workshopDataModal.typeString == 'Nachkongress'}">{{workshopDataModal.typeString}}</span>
-      <span id="courseTitle" class="fullWidth">{{workshopDataModal.TitelGER}}</span>
+      <span id="courseType" class="fullWidth headline" ng-class="{type0: workshopDataModal.typeString == 'Vortrag', type1: workshopDataModal.typeString == 'Workshop', type2: workshopDataModal.typeString == 'Vorkongress', type3: workshopDataModal.typeString == 'Nachkongress'}">{{workshopDataModal.typeString}}</span>
+      <span id="courseTitle" class="fullWidth headline">{{workshopDataModal.TitelGER}}</span>
 
       <span id="courseTime" class="fullWidth"><i class="ion-clock"></i></span>
       <span id="courseStart" class="fullWidth">Beginn: {{workshopDataModal.startZeit}}</span>
@@ -23,7 +23,7 @@
 
 
       <span id="courseLocation" class="fullWidth"><i class="ion-location"></i></span>
-      <span id="courseLocationText" class="fullWidth">{{workshopDataModal.Seminarraum}} Empty aktuell<span ng-if="workshopDataModal.AKPunkte != null" class="akPoints">AK-Punkte:</span></span>
+      <span id="courseLocationText" class="fullWidth">{{workshopDataModal.Seminarraum}}<span ng-if="workshopDataModal.AKPunkte != null" class="akPoints">AK-Punkte:</span></span>
       <span id="courseLocationLink" class="fullWidth" ng-click="openRaumplan()">Raumplan<span ng-if="workshopDataModal.AKPunkte != null" class="akPoints">{{workshopDataModal.AKPunkte}}</span></span>
     </div>
 

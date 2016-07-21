@@ -1,4 +1,4 @@
-app.controller('infoCtrl', function ($scope, $state) {
+app.controller('infoCtrl', function ($scope, $state, $ionicHistory) {
 
     console.log("infoCtrl");
 
@@ -6,51 +6,79 @@ app.controller('infoCtrl', function ($scope, $state) {
     $scope.sections = [
 
         {
+            headline: "Kongressanmeldung",
+            text: "Jetzt für den Kongress anmelden!",
+            image: "img/icons/open_modal.png",
+            state: "anmeldung"
+        },
+        {
             headline: "Informationen",
             text: "Wichtige Details und News!",
             image: "img/icons/info_icon.png",
-            state: "informations"
+            state: "tab.information"
         },
         {
             headline: "Partner",
             text: "Alle Infos zu unseren Partnern!",
             image: "img/icons/partner.png",
-            state: "partners"
+            state: "tab.partners"
         },
         {
             headline: "Hotelreservierung",
             text: "Sichern Sie sich Ihr Quartier!",
             image: "img/icons/bed.png",
-            state: "informations"
-        },
-        {
-            headline: "Anfahrt",
-            text: "Alle Infos rund um die Anreise!",
-            image: "img/icons/map_icon.png",
-            state: "informations"
+            state: "hotel"
         },
         {
             headline: "Kongresstarife",
             text: "Alle Info's zur Teilnahme!",
             image: "img/icons/ticket.png",
-            state: "informations"
+            state: "tab.prices"
         },
         {
             headline: "Kontakt",
-            text: "Für weitere Informationen stehen wir gerne zur Verfügung!",
+            text: "Wir stehen Ihnen gerne zur Verfügung!",
             image: "img/icons/contact.png",
-            state: "informations"
+            state: "tab.kontakt"
         }];
 
 
-    $scope.goToState = function (headline) {
-        switch (headline) {
-        case "Kongresstarife":
-            $state.go("tab.prices");
-            break;
-        default:
-            break;
+    $scope.goToState = function (state) {
+        if (state === "hotel") {
+            var address = "https://www.graztourismus.at/kongress/de/13-internationaler-tcm-kongress---tao_kongressformular-6253";
+            $scope.openInAppBrowser(address);
         }
+        else if(state === "anmeldung") {
+            var address = "http://tcm-kongress.at/de/Anmeldung";
+            $scope.openInAppBrowser(address);
+        }
+        else {
+            $state.go(state);
+        }
+    }
+
+    $scope.openInAppBrowser = function (address) {
+        window.open = cordova.InAppBrowser.open;
+        var options = "location=no,enableviewportscale=yes,clearcache=yes,toolbar=yes,closebuttoncaption=Schließen,toolbarposition=top";
+
+        var inAppBrowser = window.open(address, "_blank", options);
+
+        inAppBrowser.addEventListener('loaderror', function (event) {
+            console.log(event.url + " kann nicht geöffnet werden.");
+            showWebsiteError();
+            inAppBrowser.close();
+        });
+
+    }
+
+
+
+    $scope.goHome = function () {
+        $ionicHistory.clearHistory();
+        $ionicHistory.nextViewOptions({
+            historyRoot: true
+        });
+        $state.go('home');
     }
 
 

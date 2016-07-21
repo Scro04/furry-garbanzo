@@ -6,11 +6,12 @@
 .informationSection .fullWidth {
   float: left;
   width: 100%;
+  line-height: 24px;
 }
 
 .speakerUpperSection {
   float: left;
-  padding: 20px;
+  padding: 10px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -21,48 +22,49 @@
 .speakerUpperSection .informationSection {
   float: left;
   width: auto;
-  padding-left: 40px;
+  padding-left: 20px;
 }
 
-.speakerUpperSection .imageSpeaker {
-  float: left;
-  width: 100px;
-}
-.speakerUpperSection .imageSpeaker img {
-  width: 100px;
+.speakerUpperSection img {
+  width: 70px;
   height:auto;
+  float: left;
 }
-
 
 .informationSection #name {
   color: #b61e3a;
-  font-size: 20px;
   font-weight:500;
-  line-height:25px;
+  margin: 0;
+  margin-bottom: 5px;
 }
 
 .informationSection #profession {
-  color: #b61e3a;
-  font-size: 16px;
   font-weight:500;
+  margin: 0;
+  margin-bottom: 5px;
+}
+.informationSection #country {
+  font-weight:500;
+  margin: 0;
 }
 
-.informationSection #country {
-  font-size: 16px;
-  font-weight:500;
+#name span {
+  text-transform: uppercase;
 }
+
 
 .speakerEventsWrapper {
   float: left;
   width: 100%;
+  padding: 5px 10px 0px 10px;
+  border-bottom: 1px solid #ddd;
 }
 .speakerEventsWrapper .headline {
   float: left;
-  font-size: 24px;
   width: 100%;
-  padding-left: 20px;
-  padding-bottom: 20px;
-  padding-top: 20px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  padding-top: 10px;
   font-weight:500;
   color: #b61e3a;
 }
@@ -76,37 +78,45 @@
 }
 .eventRow {
   border-top: none;
-  border-bottom:  1px solid #ddd;
-  margin-bottom: 1px;
-  padding-left: 20px;
+  border-bottom: 1px solid #ddd;
+  padding: 0px 10px 5px 10px;
+  margin-bottom: 10px;
 }
+
+.eventRow:last-of-type {
+  border: none;
+  margin-bottom: 5px;
+}
+
 .courseContent {
-  padding: 20px;
+  padding: 10px;
+  float: left;
+  position: relative;
+  width: 100%;
 }
 
 #courseHeader {
-  float: left;
-  width: 100%;
-  padding-top: 15px;
-  line-height:35px;
-  font-size: 24px;
-  color: black;
   font-weight:500;
   color: #b61e3a;
-  text-transform: uppercase;
+  float: left;
+  width: 100%;
+  padding-bottom: 5px;
+  line-height:35px;
 }
 
 #courseText {
-  font-size: 16px;
-  padding-bottom: 20px;
+  padding: 0px 0px 5px 10px;
+  width: 100%;
+  float: left;
+  position: relative;
 }
+
 
 .timeWrapper.leftAligned {
   text-align: left !important;
-  font-size: 14px;
+  border: none !important;
 }
 .timeWrapper #day {
-  font-size: 20px;
   text-transform: uppercase;
 }
 .speakerEventsWrapper .detailBox{
@@ -122,28 +132,13 @@
 .speakerEventsWrapper .timeWrapper
 {
   text-align: center;
+  border: none !important;
 }
 
 div.timeWrapper.leftAligned {
-  padding-right: 40px;
+  padding-right: 20px;
 }
 
-
-@media(min-width: 415px) {
-  .informationSection #name {
-    font-size: 24px;
-    line-height:35px;
-  }
-
-  .informationSection #profession {
-    font-size: 20px;
-  }
-
-  .informationSection #country {
-    font-size: 20px;
-  }
-
-}
 
 .back-text {
   display: none !important;
