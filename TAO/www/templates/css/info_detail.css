@@ -21,6 +21,7 @@
     font-weight: 600;
     line-height: 25px;
     margin: 0;
+    padding-bottom: 15px;
 }
 
 .priceSection h3 {
@@ -208,6 +209,11 @@
   display: flex;
   justify-content:flex-start;
 
+}
+
+
+.no-line {
+  text-decoration: none !important;
 }
 
 .no-action {

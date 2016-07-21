@@ -20,9 +20,10 @@
                 </div>
             </div>
             <div class="pointWrapper">
-                <p id="courseLocation" class="fullWidth"><i class="ion-ribbon-b"></i></p>
+               <!-- <p id="courseLocation" class="fullWidth"><i class="ion-ribbon-b"></i></p>
                 <p ng-if="$root.currentProgram.AKPunkte != null" class="akPoints">AK-Punkte:</p>
                 <p ng-if="$root.currentProgram.AKPunkte != null" class="akPoints">{{$root.currentProgram.AKPunkte}}</p>
+                -->
             </div>
             <button class="button icon-left ion-calendar button-assertive" ng-click="addToCalendar()" ng-if="!eventAdded">Termin eintragen</button>
             <button class="button icon-left ion-checkmark button-positive" ng-if="eventAdded">Hinzugefügt</button>
@@ -44,12 +45,11 @@
             </div>
         </div>
 
-        <div class="handoutSection" ng-click="openLink('{{$root.currentProgram.Handout}}')">
-
+        <!--<div class="handoutSection" ng-click="openLink('{{$root.currentProgram.Handout}}')">
             <div id="handoutImage"><img src="img/icons/pdf_logo.jpg" />Handout downloaden</div>
-            <!--<div id="handoutInfo" ></div>-->
-
+            <div id="handoutInfo" ></div>
         </div>
+        -->
 
         <div class="courseContent" ng-if="$root.currentProgram.BeschreibungGER != null">
 

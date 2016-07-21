@@ -7,19 +7,19 @@
             <h2 class="groupDesc">
                 {{values.BezeichnungGER}}
             </h2>
-            <h3>
+            <!--<h3>
                 {{values.BeschreibungGER}}
-            </h3>
+            </h3>-->
             <table>
                 <tr>
                     <th>Ticket</th>
                     <th>Preis</th>
-                    <th>Frühbucher-Preis</th>
+                    <!--<th>Frühbucher-Preis</th>-->
                 </tr>
                 <tr ng-repeat="prices in values.Preise">
                     <th>{{prices.PreisbezeichnungGer}}</th>
                     <td>{{prices.Preis}} €</td>
-                    <td>{{prices.PreisFruehbucher}} €</td>
+                    <!--<td>{{prices.PreisFruehbucher}} €</td>-->
                 </tr>
             </table>
         </div>

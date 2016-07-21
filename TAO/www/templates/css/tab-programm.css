@@ -43,6 +43,11 @@
   font-weight: 400;
 }
 
+.timeWrapper span {
+  font-weight: 900;
+  font-size: 22px;
+}
+
 .programType {
   color: #b61e3a;
   text-transform: uppercase;
