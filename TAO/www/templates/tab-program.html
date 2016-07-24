@@ -24,7 +24,11 @@
         <i class="filter_right ion-close-circled"></i>
     </a>
     <div class="list noPaddingTop">
-      <a class="item programRow" ng-repeat="entry in listData" ng-click="goToDetail(entry)">
+      <a class="item programRow" ng-repeat="entry in listData track by $index" 
+      ng-click="goToDetail(entry)" ng-style="$index > 0 &&
+          listData[($index-1)].startZeit != entry.startZeit && entry.type === 0 &&
+          {'border-top-color': '#b61e3a'} || 
+          {'border-top-color': '#ddd'}">
         <div class="timeWrapper">
           {{entry.startZeit}} <br> <span>-</span> <br> {{entry.endZeit}}
         </div>

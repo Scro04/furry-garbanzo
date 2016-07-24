@@ -60,23 +60,39 @@ app.controller('speakerDetailCtrl', function ($scope, $state, $stateParams, $ion
   }
 
   function compare(a, b) {
+    console.log(a);
+    console.log(b);
     var x_1 = parseInt(a.startZeit.split(":")[0]);
     var x_2 = parseInt(a.startZeit.split(":")[1]);
     var y_1 = parseInt(b.startZeit.split(":")[0]);
     var y_2 = parseInt(b.startZeit.split(":")[1]);
 
-    if (x_1 < y_1)
-      return -1;
-    else if (x_1 > y_1)
+    var x_a = parseInt(a.dateString.split('.')[0]);
+    var x_b = parseInt(b.dateString.split('.')[0]);
+
+    console.log(x_a);
+    console.log(x_b);
+
+    if (x_a > x_b)
       return 1;
+    else if (x_a < x_b)
+      return -1;
     else {
-      if (x_2 < y_2)
+      if (x_1 < y_1)
         return -1;
-      else if (x_2 > y_2)
+      else if (x_1 > y_1)
         return 1;
-      else
-        return 0;
+      else {
+        if (x_2 < y_2)
+          return -1;
+        else if (x_2 > y_2)
+          return 1;
+        else
+          return 0;
+      }
     }
+
+
 
   }
 

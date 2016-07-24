@@ -138,6 +138,24 @@ var app = angular.module('starter', ['ionic', 'starter.controllers', 'starter.se
                     }
                 }
             })
+            .state('tab.ernaehrungstag', {
+                url: '/ernaehrungstag',
+                views: {
+                    'tab-info': {
+                        templateUrl: 'templates/ernaehrungstag.html',
+                        controller: 'ernaehrungCtrl'
+                    }
+                }
+            })
+            .state('tab.rahmenprogramm', {
+                url: '/rahmenprogramm',
+                views: {
+                    'tab-info': {
+                        templateUrl: 'templates/rahmenprogramm.html',
+                        controller: 'rahmenprogrammCtrl'
+                    }
+                }
+            })
             .state('tab.kontakt', {
                 url: '/kontakt',
                 views: {

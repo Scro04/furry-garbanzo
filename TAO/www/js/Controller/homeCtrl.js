@@ -3,6 +3,8 @@ app.controller('homeCtrl', function ($scope, $state, dataFactory, $ionicPopup, $
     $scope.$root.currentSpeaker;
     $scope.$root.currentProgram;
 
+    //console.log = function(){};
+
     $scope.showAlert = function () {
         var alertPopup = $ionicPopup.alert({
             title: 'Daten konnten nicht aktulisiert werden!',

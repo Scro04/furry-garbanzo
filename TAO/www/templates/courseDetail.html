@@ -15,16 +15,18 @@
 
                 <div class="locationWrapper">
                     <p id="courseLocation" class="fullWidth"><i class="ion-location"></i></p>
-                    <p id="courseLocationText" class="fullWidth">{{$root.currentProgram.Seminarraum}}</p>
-                    <p id="courseLocationLink" class="fullWidth" ng-click="openRaumplan()">Raumplan</p>
+                    <p class="courseLocationPh">Raum:</p>
+                    <p id="courseLocationText" class="fullWidth"> 
+                        {{$root.currentProgram.Seminarraum ? $root.currentProgram.Seminarraum : 'TBA'}}</p>
+                    <!--<p id="courseLocationLink" class="fullWidth" ng-click="openRaumplan()">Raumplan</p>-->
                 </div>
             </div>
-            <div class="pointWrapper">
-               <!-- <p id="courseLocation" class="fullWidth"><i class="ion-ribbon-b"></i></p>
+            <!--<div class="pointWrapper">
+                <p id="courseLocation" class="fullWidth"><i class="ion-ribbon-b"></i></p>
                 <p ng-if="$root.currentProgram.AKPunkte != null" class="akPoints">AK-Punkte:</p>
                 <p ng-if="$root.currentProgram.AKPunkte != null" class="akPoints">{{$root.currentProgram.AKPunkte}}</p>
-                -->
-            </div>
+                
+            </div>-->
             <button class="button icon-left ion-calendar button-assertive" ng-click="addToCalendar()" ng-if="!eventAdded">Termin eintragen</button>
             <button class="button icon-left ion-checkmark button-positive" ng-if="eventAdded">Hinzugefügt</button>
         </div>

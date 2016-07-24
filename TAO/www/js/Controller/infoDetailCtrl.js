@@ -104,3 +104,70 @@ app.controller('kontaktCtrl', function ($scope, $state, apiFactory, $cordovaInAp
 });
 
 //----------------------------------------------------------------------------------------
+app.controller('ernaehrungCtrl', function ($scope, $state, apiFactory, $cordovaInAppBrowser) {
+
+    console.log("ernaehrungCtrl");
+
+    $scope.data = [];
+
+    /*apiFactory.getPartners().then(function (response) {
+        if (response != undefined) {
+            $scope.data = response;
+            console.log($scope.data);
+        }
+    }, function (error) {
+        console.log(error);
+    });*/
+
+    $scope.openInAppBrowser = function(url) {
+  
+    var options = {
+      location: 'no',
+      clearcache: 'yes',
+      toolbar: 'yes'
+    };
+
+    $cordovaInAppBrowser.open(url, '_blank', options)
+      .then(function (event) {
+        // success
+      })
+      .catch(function (event) {
+        // error
+      });
+  }
+});
+
+//----------------------------------------------------------------------------------------
+
+app.controller('rahmenprogrammCtrl', function ($scope, $state, apiFactory, $cordovaInAppBrowser) {
+
+    console.log("rahmenprogrammCtrl");
+
+    $scope.data = [];
+
+    /*apiFactory.getPartners().then(function (response) {
+        if (response != undefined) {
+            $scope.data = response;
+            console.log($scope.data);
+        }
+    }, function (error) {
+        console.log(error);
+    });*/
+
+    $scope.openInAppBrowser = function(url) {
+  
+    var options = {
+      location: 'no',
+      clearcache: 'yes',
+      toolbar: 'yes'
+    };
+
+    $cordovaInAppBrowser.open(url, '_blank', options)
+      .then(function (event) {
+        // success
+      })
+      .catch(function (event) {
+        // error
+      });
+  }
+});

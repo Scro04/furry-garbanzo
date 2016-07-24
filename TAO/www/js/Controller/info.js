@@ -12,34 +12,46 @@ app.controller('infoCtrl', function ($scope, $state, $ionicHistory) {
             state: "anmeldung"
         },
         {
-            headline: "Informationen",
-            text: "Wichtige Details und News!",
-            image: "img/icons/info_icon.png",
-            state: "tab.information"
-        },
-        {
             headline: "Partner",
             text: "Alle Infos zu unseren Partnern!",
             image: "img/icons/partner.png",
             state: "tab.partners"
         },
         {
+            headline: "Rahmenprogramm",
+            text: "Das gibt's rund um den Kongress",
+            image: "img/icons/info_icon.png",
+            state: "tab.rahmenprogramm"
+        },
+        {
+            headline: "Kongresstarife",
+            text: "Alle Infos zu Tickets und Ermäßigungen!",
+            image: "img/icons/ticket.png",
+            state: "tab.prices"
+        },
+         {
+            headline: "Ernährungstag",
+            text: 'Der g5e „5-Elemente Ernährungstag“',
+            image: "img/icons/info_icon.png",
+            state: "tab.ernaehrungstag"
+        },
+         {
             headline: "Hotelreservierung",
             text: "Sichern Sie sich Ihr Quartier!",
             image: "img/icons/bed.png",
             state: "hotel"
         },
         {
-            headline: "Kongresstarife",
-            text: "Alle Info's zur Teilnahme!",
-            image: "img/icons/ticket.png",
-            state: "tab.prices"
-        },
-        {
             headline: "Kontakt",
             text: "Wir stehen Ihnen gerne zur Verfügung!",
             image: "img/icons/contact.png",
             state: "tab.kontakt"
+        },
+        {
+            headline: "Informationen",
+            text: "Wichtige Details und News!",
+            image: "img/icons/info_icon.png",
+            state: "tab.information"
         }];
 
 
