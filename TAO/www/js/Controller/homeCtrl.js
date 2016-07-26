@@ -3,7 +3,7 @@ app.controller('homeCtrl', function ($scope, $state, dataFactory, $ionicPopup, $
     $scope.$root.currentSpeaker;
     $scope.$root.currentProgram;
 
-    //console.log = function(){};
+    console.log = function(){};
 
     $scope.showAlert = function () {
         var alertPopup = $ionicPopup.alert({
