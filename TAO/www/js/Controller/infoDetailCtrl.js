@@ -57,9 +57,20 @@ app.controller('partnersCtrl', function ($scope, $state, apiFactory, $cordovaInA
 
 //------------------------------------------------------------------------------------------
 
-app.controller('informationCtrl', function ($scope, $state, $cordovaInAppBrowser) {
+app.controller('informationCtrl', function ($scope, $state, $cordovaInAppBrowser, apiFactory) {
 
   console.log("informationCtrl");
+
+ //$scope.content_information = [];
+
+    apiFactory.getInformation().then(function (response) {
+        if (response != undefined) {
+            $scope.content_information = response;
+            //console.log($scope.content_information);
+        }
+    }, function (error) {
+        console.log(error);
+    });
 
   $scope.openInAppBrowser = function(url) {
 
@@ -108,16 +119,16 @@ app.controller('ernaehrungCtrl', function ($scope, $state, apiFactory, $cordovaI
 
     console.log("ernaehrungCtrl");
 
-    $scope.data = [];
+   //$scope.content_ernaehrung = [];
 
-    /*apiFactory.getPartners().then(function (response) {
+    apiFactory.getErnaehrung().then(function (response) {
         if (response != undefined) {
-            $scope.data = response;
-            console.log($scope.data);
+            $scope.content_ernaehrung = response;
+            //console.log($scope.content_ernaehrung);
         }
     }, function (error) {
         console.log(error);
-    });*/
+    });
 
     $scope.openInAppBrowser = function(url) {
   
@@ -143,16 +154,16 @@ app.controller('rahmenprogrammCtrl', function ($scope, $state, apiFactory, $cord
 
     console.log("rahmenprogrammCtrl");
 
-    $scope.data = [];
+    //$scope.content_rahmenprogramm = [];
 
-    /*apiFactory.getPartners().then(function (response) {
+    apiFactory.getRahmenprogramm().then(function (response) {
         if (response != undefined) {
-            $scope.data = response;
-            console.log($scope.data);
+            $scope.content_rahmenprogramm = response;
+            //console.log($scope.content_rahmenprogramm);
         }
     }, function (error) {
         console.log(error);
-    });*/
+    });
 
     $scope.openInAppBrowser = function(url) {
   

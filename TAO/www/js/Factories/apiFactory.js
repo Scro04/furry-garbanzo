@@ -79,6 +79,51 @@ app.factory('apiFactory', function ($http, $ionicPlatform, ApiEndpoint) {
                 console.log(error);
                 return error;
             });
+        },
+         getErnaehrung: function () {
+            return $http({
+                method: 'GET',
+                url: 'http://codeshaped.at/tao/ernearung.html',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+                        //'Authorization': "Basic M9PEVE8PjvPryiYjKTmLUqeYpLxnAdshfdEr"
+               }
+            }).then(function (response) {
+                return response.data;
+            }, function (error) {
+                console.log(error);
+                return error;
+            });
+        },
+         getRahmenprogramm: function () {
+            return $http({
+                method: 'GET',
+                url: 'http://codeshaped.at/tao/rahmenprogramm.html',
+                headers: {
+                  'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+                        //'Authorization': "Basic M9PEVE8PjvPryiYjKTmLUqeYpLxnAdshfdEr"
+               }
+            }).then(function (response) {
+                return response.data;
+            }, function (error) {
+                console.log(error);
+                return error;
+            });
+        },
+         getInformation: function () {
+            return $http({
+                method: 'GET',
+                url: 'http://codeshaped.at/tao/info.html',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+                        //'Authorization': "Basic M9PEVE8PjvPryiYjKTmLUqeYpLxnAdshfdEr"
+                }
+            }).then(function (response) {
+                return response.data;
+            }, function (error) {
+                console.log(error);
+                return error;
+            });
         }
     }
 });
