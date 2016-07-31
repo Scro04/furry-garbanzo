@@ -267,7 +267,7 @@ ion-header-bar.bar, .homeBtn {
   .platform-ios .header-item {
     padding-top: 0px;
   }
-  ion-content#tab-programm {
+  .platform-ios ion-content#tab-programm {
     margin-top: 29px;
   }
 }

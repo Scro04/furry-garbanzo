@@ -3,7 +3,7 @@ app.controller('homeCtrl', function ($scope, $state, dataFactory, $ionicPopup, $
     $scope.$root.currentSpeaker;
     $scope.$root.currentProgram;
 
-    console.log = function(){};
+    console.log = function () { };
 
     $scope.showAlert = function () {
         var alertPopup = $ionicPopup.alert({
@@ -21,6 +21,15 @@ app.controller('homeCtrl', function ($scope, $state, dataFactory, $ionicPopup, $
         try {
             var data_obj = {};
             var images = [];
+            var local_img = [
+                "img/icons/open_modal.png",
+                "img/icons/partner.png",
+                "img/icons/info_icon.png",
+                "img/icons/ticket.png",
+                "img/icons/bed.png",
+                "img/icons/contact.png"
+            ];
+            images.push.apply(images, local_img);
             dataFactory.getSpeakers().then(function (data) {
                 data_obj = data;
                 if (data_obj != undefined) {
@@ -37,9 +46,9 @@ app.controller('homeCtrl', function ($scope, $state, dataFactory, $ionicPopup, $
                             }
                         }
                     }
-                    
+
                     deferred.resolve();
-                    
+
                     $ImageCacheFactory.Cache(images).then(function () {
                         console.log("Images done loading!");
 

@@ -2,7 +2,6 @@ app.controller('infoCtrl', function ($scope, $state, $ionicHistory) {
 
     console.log("infoCtrl");
 
-
     $scope.sections = [
 
         {
