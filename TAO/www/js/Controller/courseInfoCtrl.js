@@ -81,7 +81,6 @@ app.controller('courseInfoCtrl', function ($scope, $state, $stateParams, $ionicP
         var end_minute = parseInt($scope.$root.currentProgram.endZeit.split(":")[1]);
 
         if ($cordovaCalendar && window.cordova) {
-
             $cordovaCalendar.createEventInteractively({
                 title: title,
                 location: 'Vorklinik Uni Graz',
@@ -97,8 +96,6 @@ app.controller('courseInfoCtrl', function ($scope, $state, $stateParams, $ionicP
                 console.error("There was an error: " + err);
             });
         }
-
-
     }
 
 

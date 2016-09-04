@@ -23,8 +23,8 @@
 
 
       <span id="courseLocation" class="fullWidth"><i class="ion-location"></i></span>
-      <span id="courseLocationText" class="fullWidth">{{workshopDataModal.Seminarraum}}<span ng-if="workshopDataModal.AKPunkte != null" class="akPoints">AK-Punkte:</span></span>
-      <span id="courseLocationLink" class="fullWidth" ng-click="openRaumplan()">Raumplan<span ng-if="workshopDataModal.AKPunkte != null" class="akPoints">{{workshopDataModal.AKPunkte}}</span></span>
+      <span id="courseLocationText" class="fullWidth">{{workshopDataModal.Seminarraum}}</span><!--<span ng-if="workshopDataModal.AKPunkte != null" class="akPoints">AK-Punkte:</span></span>
+      <span id="courseLocationLink" class="fullWidth" ng-click="openRaumplan()">Raumplan<span ng-if="workshopDataModal.AKPunkte != null" class="akPoints">{{workshopDataModal.AKPunkte}}</span></span>-->
     </div>
 
     <!--
@@ -36,14 +36,14 @@
     </div>
     </div>
 
-    -->
+    
 
     <div class="handoutSection modalBorder" ng-click="openLink('{{workshopDataModal.Handout}}')">
 
       <div id="handoutImage"><img src="img/icons/pdf_logo.jpg"/>Handout downloaden</div>
-      <!--<div id="handoutInfo" ></div>-->
+      <!--<div id="handoutInfo" ></div>
 
-    </div>
+    </div>-->
 
     <div class="courseContent" ng-if="workshopDataModal.BeschreibungGER != null">
 
