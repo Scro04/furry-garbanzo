@@ -126,6 +126,7 @@ ion-header-bar.bar.bar-header.bar-stable.customModal h1 {
 
 .platform-ios ion-header-bar.bar.bar-header.bar-stable.customModal h1 {
     margin-top: 17px !important;
+    overflow: visible;
 }
 
 .platform-ios.platform-cordova .modal-wrapper .modal .has-header {
@@ -223,7 +224,7 @@ ion-header-bar.bar, .homeBtn {
   line-height: 83px !important;
 }
 .platform-ios ion-header-bar.bar.bar-header.bar-stable.customModal h1 {
-  margin-top: 0px !important;
+  margin-top: -2px !important;
 }
 
 .bar.bar-stable {
